@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
+  /* Un degradado muy sutil para no perder la base oscura */
+  background: linear-gradient(180deg, #0d0d0d 0%, #111111 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* En tu archivo index.css */
+.text-glow {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+.purple-glow{
+  text-shadow: 0 0 5px rgba(180, 0, 165, 0.8), 0 0 10px rgba(184, 0, 122, 0.6);
+
+}
