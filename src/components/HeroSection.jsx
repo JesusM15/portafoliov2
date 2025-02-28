@@ -6,7 +6,7 @@ import programmingImage from './../assets/hombre_programando.png';
 
 export default function HeroSection() {
   return (
-    <section className="w-full flex h-screen max-w-full flex-row p-18">
+    <section className="w-full flex h-screen flex-row p-16">
         <article className="flex-1 flex justify-center items-start flex-col">
             <h1 className='text-6xl text-purple-500 purple-glow'>
                 Hola, soy Jesus
@@ -17,7 +17,7 @@ export default function HeroSection() {
 
             <div className='flex gap-5 mt-6'>
                 <a href="/path-to-your-cv.pdf" download="CV_Jesus.pdf">
-                    <button className="text-purple-400 py-2 px-4 rounded-lg hover:bg-purple-600 hover:text-white transition-all
+                    <button className="text-purple-400 py-2 px-4 rounded-lg hover:bg-purple-600/20 hover:text-white transition-all
                      ease-in-out duration-300 flex items-center gap-3 shadow-purple-600 shadow-sm cursor-pointer">
                         <IoMdDownload className="text-2xl" />
                         Descargar CV
@@ -38,11 +38,10 @@ export default function HeroSection() {
             </div>
         </article>
 
-        {/* Aquí puedes agregar otro contenido en el segundo artículo */}
         <article className="flex-1 flex justify-center items-center">
-            {/* Otro contenido o imagen aquí */}
-            <picture className="   max-w-3/4">
-                <img src={programmingImage} />
+            <picture className="   max-w-3/4 rounded-full bg-gray-950 opacity-70" style={{
+            }}>
+                <img src={programmingImage} className='p-8' />
             </picture>
         </article>
     </section>
