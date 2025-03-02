@@ -10,7 +10,7 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
-      const threshold = 10; 
+      const threshold = 5; 
 
       if (currentScrollPos - lastScrollPosition > threshold && currentScrollPos > 30) {
         setShowNav(true);
@@ -29,7 +29,7 @@ export default function Header() {
   return (
     <nav
       className={`
-        fixed top-0 left-0 w-full h-14 px-6
+        fixed top-0 left-0 w-full h-16 px-6 
         flex items-center justify-between
         text-white
         transition-transform duration-300
@@ -38,7 +38,7 @@ export default function Header() {
       `}
       style={{
         // Un fondo semitransparente para no tapar completamente el contenido
-        backgroundColor: "rgba(0, 0, 0, 0.8)",
+        backgroundColor: "rgba(14, 14, 14, 0.8)",
         backdropFilter: "blur(4px)",
       }}
     >

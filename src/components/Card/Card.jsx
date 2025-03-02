@@ -1,88 +1,65 @@
 import React from 'react';
 
-import { TbBrandAstro } from "react-icons/tb";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { FaUser } from "react-icons/fa";
-import teslaLanding from "./../../assets/teslalanding.png";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"; // Iconos para GitHub y link externo
 
-let proyects = [
-  {
-    name: 'Tesla landing',
-    link: 'https://64f2a7ff7209f032f9b91def--astonishing-choux-8a470f.netlify.app/',
-    image: teslaLanding,
-    description: 'loremp loremp lorem loremp lorem loremp'
-  }
-];
+import  colorClasses  from './../../gradients';
 
-const proyect = proyects[0];
 
-export default function Card() {
+export default function Card({ project }) {
   return (
-    <article
-      className="h-auto pb-6 w-md rounded-2xl"
-      style={{
-        backgroundColor: '#101010'
-      }}
-    >
-      <div className='relative'>
-        <div className='bg-purple-900/90 absolute bottom-0 px-2 pt-1 flex gap-1 justify-center items-center text-sm'>
-            <FaUser />
-            <p className='p-0'>
-                Personal
-            </p>
-        </div>
+    <article className="h-auto w-full max-w-md rounded-2xl shadow-xl bg-[#1d1d1d] overflow-hidden transition-transform duration-300 hover:scale-100" key={project.id}>
+      <div className="relative">
+        {/* Imagen con overlay al pasar el mouse */}
+        
         <img
-          src={proyect.image}
-          className="h-56 w-full object-cover rounded-t-xl"
-          alt={`${proyect.name} hecho por JesusM15`}
+          src={project.image}
+          className="h-64 w-full object-cover rounded-t-2xl"
+          alt={`${project.name} hecho por JesusM15`}
         />
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-80">
+          <div className="flex gap-4">
+            {/* GitHub link */}
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white opacity-75 text-3xl hover:text-white hover:opacity-100 hover:drop-shadow-md transition-all shadow-white"
+              >
+                <FaGithub />
+              </a>
+            )}
+
+            {/* Link a la web */}
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white opacity-75 text-3xl hover:text-white hover:opacity-100 hover:drop-shadow-md transition-all shadow-white"
+              >
+                <FaExternalLinkAlt />
+              </a>
+            )}
+          </div>
+        </div>
       </div>
 
-      <div className="p-3 text-white">
-        <h6 className="font-semibold text-lg">
-          <b>{proyect.name}</b>
-        </h6>
-        <p className="opacity-70 pt-0.5">
-          {proyect.description}
-        </p>
+      <div className="p-3">
+        <h6 className="font-semibold text-2xl text-white">{project.name}</h6>
+        <p className="text-sm text-gray-400 mt-2 line-clamp-3">{project.description}</p>
 
-        <ul className="flex gap-2 mt-2">
-          {/* Ejemplo de tag con hover y opacidad */}
-          <li
-            className="
-              flex items-center gap-1
-              px-2 py-1
-              rounded
-              border border-purple-600
-              text-purple-600
-              bg-purple-600/20  /* Fondo morado muy claro */
-              transition-colors duration-300
-              hover:bg-purple-600/40   /* Al hover se pone más oscuro */
-              hover:text-white
-            "
-          >
-            <TbBrandAstro className="opacity-100" color="orange"/>
-            Astro
-          </li>
-
-          {/* Puedes replicar más tags si lo deseas */}
-          <li
-            className="
-              flex items-center gap-1
-              px-2 py-1
-              rounded
-              border border-purple-600
-              text-purple-600
-              bg-purple-600/20
-              transition-colors duration-300
-              hover:bg-purple-600/40
-              hover:text-white
-            "
-          >
-            <RiTailwindCssFill color="cyan"/>
-            TailwindCSS
-          </li>
+        <ul className="flex gap-3 mt-4 flex-wrap justify-start" >
+          {project?.tags?.map((tag, index) => (
+            <li
+              key={index}
+              className={`flex items-center gap-2 px-3 py-1 rounded-full cursor-pointer transition-all duration-300 border ${colorClasses[tag.color] || "border-gray-500 text-gray-300 bg-gray-600/20 hover:bg-gray-600/40"}`}              >
+              {tag.icon}
+              {tag.name}
+            </li>
+          ))}
         </ul>
+
       </div>
     </article>
   );
