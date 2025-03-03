@@ -4,9 +4,9 @@ import { IoMdDownload } from "react-icons/io";
 import './HeroSection.css';
 import programmingImage from './../assets/jsimage.png';
 
-export default function HeroSection() {
+export default function HeroSection({ ref }) {
   return (
-    <section className="w-full flex h-screen flex-row p-16">
+    <section className="w-full flex h-screen flex-row p-16" id="home" ref={ref}>
         <article className="flex-1 flex justify-center items-start flex-col">
             <h1 className='text-7xl text-white font-extrabold tracking-tight pb-2'>
                 Hola, soy <span className="text-purple-400 purple-glow">Jesús</span>

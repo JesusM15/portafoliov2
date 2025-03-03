@@ -21,7 +21,7 @@ function ProyectSection() {
     };
 
     return (
-        <section className="flex flex-col items-center w-full">
+        <section className="flex flex-col items-center w-full" id="projects">
             {/* Botones de filtro */}
             <div className="flex gap-6 mb-6">
                 {Object.keys(projects).map(category => (

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./../index.css";
 
-export default function Header() {
-  const [selected, setSelected] = useState("Inicio");
+export default function Header({ selected, setSelected, refs }) {
+  // const [selected, setSelected] = useState("Inicio");
 
   const [lastScrollPosition, setLastScrollPosition] = useState(0);
   const [showNav, setShowNav] = useState(false);
@@ -10,9 +10,9 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
-      const threshold = 5; 
+      const threshold = 4; 
 
-      if (currentScrollPos - lastScrollPosition > threshold && currentScrollPos > 30) {
+      if (currentScrollPos - lastScrollPosition > threshold && currentScrollPos > 20) {
         setShowNav(true);
       }
       else if (lastScrollPosition - currentScrollPos > threshold) {
@@ -25,6 +25,19 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollPosition]);
+
+  const handleClick = (section) => {
+    setSelected(section);
+    if (section === "Inicio" && refs.heroRef.current) {
+      refs.heroRef.current.scrollIntoView({ behavior: "smooth" });
+    } else if (section === "Proyectos" && refs.projectRef.current) {
+      refs.projectRef.current.scrollIntoView({ behavior: "smooth" });
+    } else if (section === "Experiencia" && refs.experienceRef.current) {
+      refs.experienceRef.current.scrollIntoView({ behavior: "smooth" });
+    } else if (section === "Acerca de mi" && refs.aboutRef.current) {
+      refs.aboutRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <nav
@@ -54,7 +67,9 @@ export default function Header() {
           }`}
           onClick={() => setSelected("Inicio")}
         >
-          Inicio
+          <a href="#home">
+            Inicio
+          </a>
         </li>
         <li
           className={`cursor-pointer text-lg font-normal ${
@@ -64,7 +79,9 @@ export default function Header() {
           }`}
           onClick={() => setSelected("Proyectos")}
         >
-          Proyectos
+          <a href="#projects">
+            Proyectos
+          </a>
         </li>
         <li
           className={`cursor-pointer text-lg font-normal ${
@@ -74,7 +91,9 @@ export default function Header() {
           }`}
           onClick={() => setSelected("Experiencia")}
         >
-          Experiencia
+          <a href="#experience">
+            Experiencia
+          </a>
         </li>
         <li
           className={`cursor-pointer text-lg font-normal ${
@@ -84,7 +103,9 @@ export default function Header() {
           }`}
           onClick={() => setSelected("Acerca de mi")}
         >
-          Acerca de mi
+          <a href="#about_me">
+            Acerca de mi
+          </a>
         </li>
       </ul>
     </nav>
