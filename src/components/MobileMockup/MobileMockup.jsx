@@ -3,7 +3,7 @@ import gradientColors from './../../gradients';
 
 function MobileMockup({ project }) {
     return (
-        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-6 p-5 rounded-2xl relative max-w-3xl m-auto lg:max-w-full bg-[#1d1d1d]">
+        <div className="flex flex-col lg:flex-row items-center justify-center lg:items-start gap-6 p-5 rounded-2xl relative max-w-3xl m-auto lg:max-w-full bg-[#1d1d1d] bg-transparent">
             {/* Teléfono arriba en móviles, a la izquierda en escritorio */}
             <div className="relative h-[32rem] bg-black rounded-2xl overflow-hidden shadow-lg border-[8px] border-black">
                 <div className="absolute top-0 left-0 right-0 mx-auto bg-black h-4 w-20 rounded-b-2xl"></div>

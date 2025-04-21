@@ -28,11 +28,11 @@ const experienceData = [
       "Trabajé en un entorno .NET utilizando Razor, CSS, JavaScript y Bootstrap, desarrollando interfaces de usuario interactivas y experiencias visuales. Implementé animaciones con JavaScript y CSS puro, y creé landing pages, dashboards y frontends para sistemas de gestión empresarial, incluyendo gráficos interactivos."
   },
   {
-    title: "Tutor de Programación en C",
+    title: "Tutor de Programación en C y Java",
     company: "Universidad Autónoma de Baja California",
     date: "Actualidad",
     description:
-      "Imparto tutorías y ayudantías en la materia de Programación Estructurada en C, calificando trabajos y prácticas, y apoyando a los alumnos en su proceso de aprendizaje."
+    "Imparto tutorías y ayudantías en la materia de Programación Estructurada en C y Programación Orientada a Objetos en Java, así como calificando trabajos y prácticas, y apoyando a los alumnos en su proceso de aprendizaje."
   },
   {
     title: "Proyectos Personales",

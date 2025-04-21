@@ -25,7 +25,7 @@ export default function HeroSection({ ref }) {
                     </button>
                 </a>
 
-                <a href="https://github.com/tuusuario" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/JesusM15" target="_blank" rel="noopener noreferrer">
                     <FaGithub className="text-4xl text-purple-400 hover:text-purple-600 hover:scale-110 
                     transition-all ease-in-out duration-300 cursor-pointer"
                     style={{ filter: 'drop-shadow(0px 0px 6px rgba(128, 0, 128, 0.6))' }} />

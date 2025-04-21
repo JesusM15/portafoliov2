@@ -3,8 +3,8 @@ import  gradientColors  from './../../gradients';
 
 function WatchMockup({ project }) {
     return (
-        <div className="flex items-center gap-6 p-5 rounded-2xl shadow-xl bg-gray-900">
-            <div className="relative h-48 w-48 bg-black rounded-full overflow-hidden shadow-lg border-8 border-black">
+        <div className="flex items-center gap-6 p-5 rounded-2xl shadow-xl max-w-3xl">
+            <div className="relative h-52 w-xl bg-black rounded-full overflow-hidden shadow-lg border-4 border-gray-900">
                 <img src={project.image} alt={project.name} className="w-full h-full object-contain" />
             </div>
             <div className="flex flex-col text-left text-white">

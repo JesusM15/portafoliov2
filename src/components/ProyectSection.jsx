@@ -30,8 +30,8 @@ function ProyectSection() {
                         onClick={() => setSelectedCategory(category)}
                         className={`px-6 py-2 text-lg font-medium rounded-full transition-all duration-300 cursor-pointer
                             ${selectedCategory === category 
-                                ? "text-white bg-purple-600 shadow-lg scale-105"
-                                : "text-gray-400 hover:bg-purple-600 hover:text-white hover:scale-105"
+                                ? "text-white bg-purple-800/30 border border-purple-500 shadow-lg scale-105"
+                                : "text-gray-400 hover:bg-purple-800/30 hover:border hover:border-purple-500 hover:text-white hover:scale-105 transition-all"
                             }`}
                     >
                         {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -47,7 +47,7 @@ function ProyectSection() {
                 }
 
                 {selectedCategory === "mobile" && (
-                    <div className="relative w-full max-w-6xl overflow-hidden">
+                    <div className="relative w-full max-w-6xl overflow-hidden ">
                         <div 
                             className="flex transition-transform duration-300"
                             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
