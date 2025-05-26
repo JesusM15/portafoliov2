@@ -1,5 +1,13 @@
 .background{
     /* background-color: #080808; */
-    background-color: oklch(0.16 0 0);
+    background-color: #020101 !important;
   
+}
+
+.degradade{
+    background: linear-gradient(to bottom, #020101, #050303, #0c0b0b);
+}
+
+.soft-background{
+    background: #0c0b0b;
 }

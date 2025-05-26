@@ -19,7 +19,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb{
-  background: #8b5cf6;
+  background: #612ddb;
   border-radius: 4px;
   transition: background 0.2s;
 }
@@ -34,7 +34,7 @@ html {
 
 body {
   margin: 0;
-  height: 100vh;
+  /* height: 100vh; */
   font-family: 'Inter', sans-serif;
   /* Un degradado muy sutil para no perder la base oscura */
   background: linear-gradient(180deg, #0d0d0d 0%, #111111 100%);

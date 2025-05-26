@@ -3,6 +3,7 @@ import Card from "./Card/Card";
 import projects from "../utils/projects.jsx";
 import MobileMockup from "./MobileMockup/MobileMockup";
 import WatchMockup from "./WatchMockup/WatchMockup";
+import './../App.css'
 
 function ProyectSection() {
     const [selectedCategory, setSelectedCategory] = useState("web");
@@ -21,7 +22,7 @@ function ProyectSection() {
     };
 
     return (
-        <section className="flex flex-col items-center w-full" id="projects">
+        <section className="flex flex-col items-center w-full degradade" id="projects">
             {/* Botones de filtro */}
             <div className="flex gap-6 mb-6">
                 {Object.keys(projects).map(category => (
@@ -39,7 +40,7 @@ function ProyectSection() {
                 ))}
             </div>
 
-            <div className="flex justify-center flex-wrap gap-10 w-full relative">
+            <div className="flex justify-center flex-wrap gap-10 w-full relative container">
                 {selectedCategory === "web" && 
                     projects[selectedCategory]?.map(project => (
                         <Card key={project.id} project={project} />
