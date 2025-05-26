@@ -4,6 +4,8 @@ import HeroSection from "./components/HeroSection";
 import ProyectSection from "./components/ProyectSection";
 import ExperienceSection from "./components/ExperienceSection";
 import AboutMeSection from "./components/AboutMeSection";
+import './index.css'
+import './app.css'
 
 function App() {
   // Referencias a cada sección para observarlas
