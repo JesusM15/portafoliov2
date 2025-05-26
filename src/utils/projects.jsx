@@ -24,6 +24,7 @@ export default {
         link: 'https://64f2a7ff7209f032f9b91def--astonishing-choux-8a470f.netlify.app/',
         github: 'https://github.com/JesusM15/tesla-landing', // GitHub link
         image: teslaLanding,
+        video: null,
         description: 'Clon de la landing page de Tesla',
         tags: [
             {
@@ -48,6 +49,7 @@ export default {
             name: "Geologistic ERP",
             link: "https://app.geologisticerp.com/",
             github: null,
+            video: null,
             image: erpWeb,
             description: "Sistema ERP (Planificación de Recursos Empresariales) con sistema multiroles, registros, dashboards con gráficas, sistemas de exportación a excel, envío de correos, etc.",
             tags: [
@@ -89,6 +91,7 @@ export default {
             link: "https://app.restec.mx/",
             github: null,
             image: ruf,
+            video: null,
             description: "Plataforma web para gestión de negocios en la App de Asistencia RUF.",
             tags: [
                 {
@@ -125,6 +128,7 @@ export default {
             link: "https://soundle-one.vercel.app/",
             github: "https://github.com/JesusM15/Soundle.git",
             image: soundleWeb,
+            video: 'dasd',
             description: "Juego estilo Wordle musical. Se escucha un fragmento de alguna canción y el usuario debe adivinar cuál es. Cuenta con animaciones, sugerencias y feedback visual.",
             tags: [
                 {
@@ -155,6 +159,7 @@ export default {
         {
             id: 2,
             name: "Ruf - App de Asistencia",
+            video: 'dasd',
             description: "App para asistencia en restaurantes, plazas, gimnasios y eventos.",
             functionalities: [
                 'Geolocalización',
@@ -201,6 +206,7 @@ export default {
         {
             id: 3,
             name: "Geologistic ERP",
+            video: null,
             description: "App de sistema ERP (Planificación de Recursos Empresariales) para transporte",
             functionalities: [
                 'Escaneo de QR',
@@ -247,6 +253,7 @@ export default {
         {
             id: 8,
             name: "Ruf - App para Asistencia al Cliente (Android)",
+            video: null,
             description: "App para meseros, cocineros o host de algún evento o restaurante, permite notificar a los empleados las solicitudes de los clientes por medio de alertas(notificaciones) y se puede visualizar estas notificaciones asi como leer notificaciones.",
             functionalities: [
                 'Calcúlo del tiempo de demora en leer notificación para analísis.',

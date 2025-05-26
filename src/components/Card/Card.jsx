@@ -1,15 +1,14 @@
 import React from 'react';
 
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"; // Iconos para GitHub y link externo
+import { FaGithub, FaExternalLinkAlt, FaYoutube } from "react-icons/fa"; // Iconos para GitHub y link externo
 
 import  colorClasses  from './../../gradients';
 
 
-export default function Card({ project }) {
+export default function Card({ project, onSelectProject }) {
   return (
-    <article className="h-auto w-full max-w-md rounded-2xl shadow-xl bg-[#1d1d1d] overflow-hidden transition-transform duration-300 hover:scale-100" key={project.id}>
+    <article className="h-auto w-full max-w-md rounded-2xl shadow-xl bg-[#0e0e0e] overflow-hidden transition-transform duration-300 hover:scale-100" key={project.id}>
       <div className="relative">
-        {/* Imagen con overlay al pasar el mouse */}
         
         <img
           src={project.image}
@@ -18,7 +17,6 @@ export default function Card({ project }) {
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-80">
           <div className="flex gap-4">
-            {/* GitHub link */}
             {project.github && (
               <a
                 href={project.github}
@@ -30,7 +28,16 @@ export default function Card({ project }) {
               </a>
             )}
 
-            {/* Link a la web */}
+            {
+              project.video && (
+              <button
+                className="text-white opacity-75 cursor-pointer text-3xl hover:text-white hover:opacity-100 hover:drop-shadow-md transition-all shadow-white"
+                onClick={onSelectProject}>
+                <FaYoutube />
+              </button>
+              )
+            }
+
             {project.link && (
               <a
                 href={project.link}
