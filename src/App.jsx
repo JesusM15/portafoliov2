@@ -7,20 +7,20 @@ import AboutMeSection from "./components/AboutMeSection";
 import './index.css'
 
 function App() {
-  // Referencias a cada sección para observarlas
   const heroRef = useRef(null);
   const projectRef = useRef(null);
   const experienceRef = useRef(null);
   const aboutRef = useRef(null);
 
-  // Estado para saber cuál sección está seleccionada
+  const [ selectedProject, setSelectedProject ] = useState(null);
+
   const [selected, setSelected] = useState("Inicio");
 
   useEffect(() => {
     const options = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.5, // cuando al menos el 50% de la sección esté visible
+      threshold: 0.5,
     };
 
     const observerCallback = (entries) => {
@@ -49,24 +49,70 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
-  return (
-    <div className=" text-white overflow-x-hidden overflow-y-auto background">
-      {/* Se le pasa el estado 'selected' y las referencias para el scroll */}
-      <Header selected={selected} setSelected={setSelected} refs={{ heroRef, projectRef, experienceRef, aboutRef }} />
+  useEffect(() => {
+    if (selectedProject) {
+      projectRef.current?.scrollIntoView({ behavior: "smooth" });
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
 
-      <div ref={heroRef}>
-        <HeroSection />
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [selectedProject]);
+
+  return (
+    <>
+      <div className=" text-white overflow-x-hidden relative overflow-y-auto background">
+        <Header selected={selected} setSelected={setSelected} refs={{ heroRef, projectRef, experienceRef, aboutRef }} />
+
+        <div ref={heroRef}>
+          <HeroSection />
+        </div>
+        <div ref={projectRef}>
+          <ProyectSection onSelectedProject={(project) => {
+            setSelectedProject(project);
+          }} />
+        </div>
+        <div ref={experienceRef}>
+          <ExperienceSection />
+        </div>
+        <div ref={aboutRef}>
+          <AboutMeSection />
+        </div>
+
+        {selectedProject && (
+          <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center">
+            <div className="bg-black  rounded-lg p-6 max-w-lg w-full relative shadow-lg">
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-3 right-3 text-white duration-150 hover:text-red-400 transition-colors text-2xl cursor-pointer"
+              >
+                &times;
+              </button>
+              {selectedProject.video && (
+                <div className="mb-4 aspect-video w-full rounded overflow-hidden">
+                  <iframe
+                    className="w-full h-full"
+                    src={`https://www.youtube.com/embed/${selectedProject.video?.split("v=")[1]}`}
+                    title={selectedProject.name}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              )}
+              <h2 className="text-2xl font-bold mb-4 text-white">{selectedProject.name || "Título del proyecto"}</h2>
+              <p className="text-gray-200 opacity-70">{selectedProject.description || "Descripción del proyecto..."}</p>
+            </div>
+          </div>
+        )}
+
       </div>
-      <div ref={projectRef}>
-        <ProyectSection />
-      </div>
-      <div ref={experienceRef}>
-        <ExperienceSection />
-      </div>
-      <div ref={aboutRef}>
-        <AboutMeSection />
-      </div>
-    </div>
+    </>
+
+    
   );
 }
 

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./../index.css";
 
 export default function Header({ selected, setSelected, refs }) {
-  // const [selected, setSelected] = useState("Inicio");
 
   const [lastScrollPosition, setLastScrollPosition] = useState(0);
   const [showNav, setShowNav] = useState(false);
@@ -51,7 +50,7 @@ export default function Header({ selected, setSelected, refs }) {
       `}
       style={{
         // Un fondo semitransparente para no tapar completamente el contenido
-        backgroundColor: "rgba(14, 14, 14, 0.8)",
+        backgroundColor: "rgba(5, 5, 5, 0.8)",
         backdropFilter: "blur(4px)",
       }}
     >

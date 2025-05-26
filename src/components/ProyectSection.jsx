@@ -5,7 +5,7 @@ import MobileMockup from "./MobileMockup/MobileMockup";
 import WatchMockup from "./WatchMockup/WatchMockup";
 import './../App.css'
 
-function ProyectSection() {
+function ProyectSection({ onSelectedProject }) {
     const [selectedCategory, setSelectedCategory] = useState("web");
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -21,18 +21,23 @@ function ProyectSection() {
         );
     };
 
+    const handleSelectProject = (project) => {
+        onSelectedProject(project)
+    }
+
     return (
-        <section className="flex flex-col items-center w-full degradade" id="projects">
-            {/* Botones de filtro */}
+        <>
+        <section className="flex flex-col items-center w-full degradade relative" id="projects">
+
             <div className="flex gap-6 mb-6">
                 {Object.keys(projects).map(category => (
                     <button 
                         key={category} 
                         onClick={() => setSelectedCategory(category)}
-                        className={`px-6 py-2 text-lg font-medium rounded-full transition-all duration-300 cursor-pointer
+                        className={`px-4 py-1 text-lg font-medium rounded-lg transition-all duration-300 cursor-pointer border border-gray-100
                             ${selectedCategory === category 
-                                ? "text-white bg-purple-800/30 border border-purple-500 shadow-lg scale-105"
-                                : "text-gray-400 hover:bg-purple-800/30 hover:border hover:border-purple-500 hover:text-white hover:scale-105 transition-all"
+                                ? "text-white bg-purple-800/30 border border-purple-500 shadow-lg scale-100"
+                                : "text-gray-400 hover:bg-purple-800/30 hover:border hover:border-purple-500 hover:text-white hover:scale-100 transition-all"
                             }`}
                     >
                         {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -43,37 +48,53 @@ function ProyectSection() {
             <div className="flex justify-center flex-wrap gap-10 w-full relative container">
                 {selectedCategory === "web" && 
                     projects[selectedCategory]?.map(project => (
-                        <Card key={project.id} project={project} />
+                        <Card key={project.id} project={project} onSelectProject={() =>  handleSelectProject(project)} />
                     ))
                 }
 
                 {selectedCategory === "mobile" && (
-                    <div className="relative w-full max-w-6xl overflow-hidden ">
+                <div className="relative  flex items-center w-full max-w-6xl overflow-hidden rounded-xl">
+                    <div 
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                    >
+                    {projects[selectedCategory]?.map(project => (
                         <div 
-                            className="flex transition-transform duration-300"
-                            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                        key={project.id} 
+                        className="w-full flex-shrink-0"
                         >
-                            {projects[selectedCategory]?.map(project => (
-                                <div key={project.id} className="w-full flex-shrink-0">
-                                    <MobileMockup project={project} />
-                                </div>
-                            ))}
+                        <MobileMockup project={project} onSelectProject={() => handleSelectProject(project)} />
                         </div>
-
-                        <button 
-                            onClick={handlePrev}
-                            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-700"
-                        >
-                            ❮
-                        </button>
-                        <button 
-                            onClick={handleNext}
-                            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-700"
-                        >
-                            ❯
-                        </button>
+                    ))}
                     </div>
+
+                    <button 
+                    onClick={handlePrev}
+                    className="absolute cursor-pointer left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-2 rounded-full backdrop-blur-md transition-all shadow-md"
+                    >
+                    ❮
+                    </button>
+
+                    <button 
+                    onClick={handleNext}
+                    className="absolute cursor-pointer right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-2 rounded-full backdrop-blur-md transition-all shadow-md"
+                    >
+                    ❯
+                    </button>
+
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                    {projects[selectedCategory]?.map((_, index) => (
+                        <div
+                        key={index}
+                        className={`h-2 w-2 rounded-full ${
+                            index === currentIndex ? "bg-purple-500" : "bg-white/30"
+                        }`}
+                        ></div>
+                    ))}
+                    </div>
+                </div>
                 )}
+
 
                 {selectedCategory === "watch" && 
                     projects[selectedCategory]?.map(project => (
@@ -81,7 +102,10 @@ function ProyectSection() {
                     ))
                 }
             </div>
+        
         </section>
+
+        </>
     );
 }
 

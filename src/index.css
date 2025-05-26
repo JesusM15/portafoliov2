@@ -15,12 +15,12 @@ html {
 
 ::-webkit-scrollbar-track{
   background: #111;
-  border-radius: 4px;
+  /* border-radius: 4px; */
 }
 
 ::-webkit-scrollbar-thumb{
-  background: #612ddb;
-  border-radius: 4px;
+  background: #26154e;
+  /* border-radius: 4px; */
   transition: background 0.2s;
 }
 
