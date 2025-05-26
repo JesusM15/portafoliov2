@@ -1,0 +1,63 @@
+.particle {
+    position: absolute;
+    top: -10px;
+    width: 6px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: 1;
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(0px) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) scale(0.3);
+      opacity: 0;
+    }
+  }
+  
+  .floatRotateForward {
+    animation: floatAndRotate 6s ease-in-out infinite;
+  }
+  
+  @keyframes floatAndRotate {
+    0% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-20px) rotate(10deg);
+    }
+    50% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    75% {
+      transform: translateY(20px) rotate(-10deg);
+    }
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+  }
+  
+  .glow {
+    filter: drop-shadow(0 0 10px rgba(128, 0, 128, 0.5));
+  }
+  
+  .astronaut-glow {
+    animation: glowEffect 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glowEffect {
+    0% {
+      filter: drop-shadow(0 0 5px #a855f7);
+    }
+    100% {
+      filter: drop-shadow(0 0 15px #a855f7);
+    }
+  }
+  

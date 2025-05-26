@@ -3,11 +3,23 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { IoMdDownload } from "react-icons/io";
 import './HeroSection.css';
 import programmingImage from './../assets/jsimage.png';
+import nebulosa from './../assets/nebulosa.png';
+import astronaut from './../assets/astronaut.png';
 
 export default function HeroSection({ ref }) {
   return (
-    <section className="w-full flex h-screen flex-row p-16" id="home" ref={ref}>
-        <article className="flex-1 flex justify-center items-start flex-col">
+    <section className="w-full flex h-screen flex-row p-16 relative" id="home" ref={ref}>
+        <div
+className="absolute inset-0 bg-no-repeat bg-cover bg-center opacity-10 blur-md pointer-events-none"
+style={{
+      backgroundImage: `url(${nebulosa})`,
+    }}></div>
+    <div className="absolute inset-0 pointer-events-none z-0"
+     style={{
+       background: 'linear-gradient(to bottom, rgba(1,1,1,0) 60%, #000 100%)',
+     }}
+/>
+        <article className=" flex justify-center items-start flex-col">
             <h1 className='text-7xl text-white font-extrabold tracking-tight pb-2'>
                 Hola, soy <span className="text-purple-400 purple-glow">Jesús</span>
             </h1>
@@ -39,13 +51,27 @@ export default function HeroSection({ ref }) {
             </div>
         </article>
 
-        <article className="flex-1 flex justify-center items-center">
-            <picture className=" opacity-80 max-w-3/4" style={{
-                filter: 'drop-shadow(0px 0px 6px rgba(128, 0, 128, 0.6))'
-            }}>
-                <img src={programmingImage} className='' />
-            </picture>
-        </article>
+        <div className="absolute w-full h-full overflow-hidden pointer-events-none z-0">
+                {[...Array(30)].map((_, i) => (
+                    <div
+                    key={i}
+                    className="particle"
+                    style={{
+                        left: `${Math.random() * 100}%`,
+                        animationDelay: `${Math.random() * 10}s`,
+                        animationDuration: `${3 + Math.random() * 5}s`,
+                    }}
+                    />
+                ))}
+                </div>
+
+                <article className="flex-1 flex justify-center items-center relative">
+                    <img
+                        src={astronaut}
+                        className="h-64 absolute floatRotateForward astronaut-glow glow"
+                        style={{ top: '50%', transform: 'translateY(-50%)' }}
+                    />
+                </article>
     </section>
   );
 }

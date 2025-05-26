@@ -1,9 +1,10 @@
 import React from "react";
 import ilustration from './../assets/3dilus.png';
+import './../App.css'
 
 export default function AboutMeSection() {
   return (
-    <section id="about_me" className="py-12 px-4  text-white h-screen flex justify-items-center">
+    <section id="about_me" className="py-12 px-4  text-white h-screen flex justify-items-center soft-background">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center">
         {/* Imagen personal */}
         <div className="md:w-1/3 mb-8 md:mb-0">

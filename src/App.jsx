@@ -5,7 +5,6 @@ import ProyectSection from "./components/ProyectSection";
 import ExperienceSection from "./components/ExperienceSection";
 import AboutMeSection from "./components/AboutMeSection";
 import './index.css'
-import './app.css'
 
 function App() {
   // Referencias a cada sección para observarlas
@@ -51,7 +50,7 @@ function App() {
   }, []);
 
   return (
-    <div className="w-full text-white overflow-x-hidden overflow-y-auto background">
+    <div className=" text-white overflow-x-hidden overflow-y-auto background">
       {/* Se le pasa el estado 'selected' y las referencias para el scroll */}
       <Header selected={selected} setSelected={setSelected} refs={{ heroRef, projectRef, experienceRef, aboutRef }} />
 

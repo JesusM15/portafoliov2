@@ -1,6 +1,6 @@
 import React from "react";
 
-
+import './../App.css'
 /**
  * Datos de experiencia con información actualizada.
  * Reemplaza o ajusta los datos según necesites.
@@ -53,7 +53,7 @@ const experienceData = [
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="py-12 px-4 text-white ">
+    <section id="experience" className="py-12 px-4 text-white soft-background ">
       <div className="max-w-5xl mx-auto">
         {/* Título principal de la sección */}
         <h2 className="text-3xl font-bold mb-8">Experiencia</h2>
