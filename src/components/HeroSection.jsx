@@ -48,6 +48,7 @@ style={{
                     transition-all ease-in-out duration-300 cursor-pointer"
                     style={{ filter: 'drop-shadow(0px 0px 6px rgba(128, 0, 128, 0.6))' }} />
                 </a>
+                
             </div>
         </article>
 

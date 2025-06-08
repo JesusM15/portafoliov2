@@ -55,9 +55,7 @@ export default function ExperienceSection() {
   return (
     <section id="experience" className="py-12 px-4 text-white soft-background ">
       <div className="max-w-5xl mx-auto">
-        {/* Título principal de la sección */}
         <h2 className="text-3xl font-bold mb-8">Experiencia</h2>
-
 
         <div className="relative border-l border-gray-600 pl-8">
           {experienceData.map((item, index) => (
@@ -70,7 +68,7 @@ export default function ExperienceSection() {
               
               <span className="text-sm text-gray-400 block mb-1">{item.date}</span>
               
-              <p className="lg:text-lg text-sm text-gray-300">{item.description}</p>
+              <p className="lg:text-md text-sm text-gray-300">{item.description}</p>
             </div>
           ))}
         </div>
