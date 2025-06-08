@@ -41,8 +41,8 @@ export default function Header({ selected, setSelected, refs }) {
   return (
     <nav
       className={`
-        fixed top-0 left-0 w-full h-16 px-6 
-        flex items-center justify-between
+        fixed top-0 left-0 w-full h-16 lg:px-6 px-0
+        flex items-center lg:justify-between justify-center
         text-white
         transition-transform duration-300
         z-50
@@ -57,7 +57,7 @@ export default function Header({ selected, setSelected, refs }) {
       <div className="font-bold text-lg">
       </div>
 
-      <ul className="text-lg font-normal flex gap-4">
+      <ul className="text-lg font-normal flex gap-3 lg:gap-4">
         <li
           className={`cursor-pointer text-lg font-normal ${
             selected === "Inicio"

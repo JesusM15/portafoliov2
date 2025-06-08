@@ -8,7 +8,7 @@ import astronaut from './../assets/astronaut.png';
 
 export default function HeroSection({ ref }) {
   return (
-    <section className="w-full flex h-screen flex-row p-16 relative" id="home" ref={ref}>
+    <section className="w-full flex h-screen lg:flex-row flex-col lg:p-16 p-8 relative" id="home" ref={ref}>
         <div
 className="absolute inset-0 bg-no-repeat bg-cover bg-center opacity-10 blur-md pointer-events-none"
 style={{
@@ -19,7 +19,7 @@ style={{
        background: 'linear-gradient(to bottom, rgba(1,1,1,0) 60%, #000 100%)',
      }}
 />
-        <article className=" flex justify-center items-start flex-col">
+        <article className="lg:flex-initial flex-1 flex justify-center items-center lg:items-start flex-col">
             <h1 className='text-7xl text-white font-extrabold tracking-tight pb-2'>
                 Hola, soy <span className="text-purple-400 purple-glow">Jesús</span>
             </h1>

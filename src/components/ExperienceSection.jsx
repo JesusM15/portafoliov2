@@ -59,24 +59,18 @@ export default function ExperienceSection() {
         <h2 className="text-3xl font-bold mb-8">Experiencia</h2>
 
 
-        {/* Contenedor principal de la línea de tiempo */}
         <div className="relative border-l border-gray-600 pl-8">
           {experienceData.map((item, index) => (
             <div key={index} className="mb-10 ml-4 relative">
-              {/* Punto circular en la línea */}
-              <div className="absolute w-3 h-3 bg-purple-600/80 rounded-full -left-[20px] mt-1.5"></div>
+              <div className="absolute w-2 h-2 bg-purple-600/80 rounded-full -left-[20px] mt-1.5"></div>
               
-              {/* Título del puesto */}
-              <h3 className="text-xl font-semibold text-purple-300">{item.title}</h3>
+              <h3 className=" text-lg lg:text-xl font-semibold text-purple-300">{item.title}</h3>
               
-              {/* Empresa */}
               <span className="text-sm text-gray-400 block mb-1">{item.company}</span>
               
-              {/* Fechas */}
               <span className="text-sm text-gray-400 block mb-1">{item.date}</span>
               
-              {/* Descripción */}
-              <p className="text-gray-300">{item.description}</p>
+              <p className="lg:text-lg text-sm text-gray-300">{item.description}</p>
             </div>
           ))}
         </div>
