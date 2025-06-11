@@ -5,6 +5,7 @@ import erpWeb from './../assets/erp_geologistic_web.jpg';
 import ruf from './../assets/ruf_landing.png';
 import soundleWeb from './../assets/soundleimage.png'
 import rufWear from './../assets/ruf_wear.jpg';
+import rufWatch from './../assets/ruf_watch.jpg';
 import FlappyBird from './../assets/flappybird.png';
 import bakersGame from './../assets/bakersgame.png';
 import ejchat from './../assets/chat.png';
@@ -14,11 +15,10 @@ import { TbBrandAstro, TbBrandReactNative, TbBrandRedux   } from "react-icons/tb
 import { RiTailwindCssFill } from "react-icons/ri";
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaNodeJs } from "react-icons/fa6";
-import { FaReact, FaSpotify, FaJava  } from "react-icons/fa";
+import { FaReact, FaSpotify, FaJava, FaSwift   } from "react-icons/fa";
 import { SiSocketdotio, SiExpo, SiGmail,SiSemanticui, SiRedux,SiAssemblyscript, SiRaylib, SiDjango,SiDocker    } from "react-icons/si";
 import { MdNotificationsActive } from "react-icons/md";
 import { DiRedis } from "react-icons/di";
-
 
 export default {
     web: [
@@ -300,45 +300,76 @@ export default {
     watch: [
         {
             id: 8,
+            name: "Ruf - Customer Assistance App (iOS)",
+            video: null,
+            description:
+            "App designed for waiters, cooks, or event/restaurant hosts. It allows staff to be notified of customer requests via alerts (push notifications), and they can view and read those notifications.",
+            functionalities: [
+            "Calculates the delay time in reading a notification for analysis.",
+            "Multi-business system.",
+            "Push notifications.",
+            "Login with a unique one-time generated key (OTP).",
+            ],
+            image: rufWatch,
+            tags: [
+            {
+                name: "Swift",
+                color: "orange",
+                icon: <FaSwift />,
+            },
+            {
+                name: "APNs",
+                color: "red",
+            },
+            {
+                name: "NodeJS",
+                color: "green",
+                icon: <FaNodeJs />,
+            },
+            ],
+        },
+        {
+            id: 13,
             name: "Ruf - Customer Assistance App (Android)",
             video: null,
-            description: "App for waiters, cooks or hosts in a restaurant or event. Allows receiving and reading customer service requests via push alerts.",
+            description:
+            "App designed for waiters, cooks, or event/restaurant hosts. It allows staff to be notified of customer requests via alerts (push notifications), and they can view and read those notifications.",
             functionalities: [
-                'Time tracking to analyze response delay',
-                'Multi-company support',
-                'Push notifications',
-                'Login using single-use OTP keys',
+            "Calculates the delay time in reading a notification for analysis.",
+            "Multi-business system.",
+            "Push notifications.",
+            "Login with a unique one-time generated key (OTP).",
             ],
             image: rufWear,
             tags: [
-                {
-                    name: "React Native",
-                    color: "blue",
-                    icon: <TbBrandReactNative />
-                },
-                {
-                    name: "NodeJS",
-                    color: "green",
-                    icon: <FaNodeJs />
-                },
-                {
-                    name: "Socket.io",
-                    color: "emerald",
-                    icon: <SiSocketdotio />
-                },
-                {
-                    name: "Redux",
-                    color: 'purple',
-                    icon: <TbBrandRedux  />
-                },
-                {
-                    name: "ExpoGO",
-                    color: 'white',
-                    icon: <SiExpo />
-                },
-            ]
-        }
-    ],
+            {
+                name: "React Native",
+                color: "blue",
+                icon: <TbBrandReactNative />,
+            },
+            {
+                name: "NodeJS",
+                color: "green",
+                icon: <FaNodeJs />,
+            },
+            {
+                name: "Socket.io",
+                color: "emerald",
+                icon: <SiSocketdotio />,
+            },
+            {
+                name: "Redux",
+                color: "purple",
+                icon: <TbBrandRedux />,
+            },
+            {
+                name: "ExpoGO",
+                color: "white",
+                icon: <SiExpo />,
+            },
+            ],
+        },
+        ],
     desktop: [
         {
             id: 11,
