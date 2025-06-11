@@ -5,17 +5,20 @@ import erpWeb from './../assets/erp_geologistic_web.jpg';
 import ruf from './../assets/ruf_landing.png';
 import soundleWeb from './../assets/soundleimage.png'
 import rufWear from './../assets/ruf_wear.jpg';
+import rufWatch from './../assets/ruf_watch.jpg';
 import FlappyBird from './../assets/flappybird.png';
 import bakersGame from './../assets/bakersgame.png';
+import ejchat from './../assets/chat.png';
 
 import React from "react";
 import { TbBrandAstro, TbBrandReactNative, TbBrandRedux   } from "react-icons/tb";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaNodeJs } from "react-icons/fa6";
-import { FaReact, FaSpotify, FaJava  } from "react-icons/fa";
-import { SiSocketdotio, SiExpo, SiGmail,SiSemanticui, SiRedux,SiAssemblyscript, SiRaylib    } from "react-icons/si";
+import { FaReact, FaSpotify, FaJava, FaSwift   } from "react-icons/fa";
+import { SiSocketdotio, SiExpo, SiGmail,SiSemanticui, SiRedux,SiAssemblyscript, SiRaylib, SiDjango,SiDocker    } from "react-icons/si";
 import { MdNotificationsActive } from "react-icons/md";
+import { DiRedis } from "react-icons/di";
 
 
 export default {
@@ -126,6 +129,53 @@ export default {
                     name: "Redux",
                     color: 'purple',
                     icon: <TbBrandRedux  />
+                },
+
+            ]
+        },
+        {
+            id: 12,
+            name: "EJChat",
+            link: null,
+            github: "https://github.com/JesusM15/ejchat-api",
+            image: ejchat,
+            video: 'v=bE84aDT-ap8',
+            description: "EJChat es una aplicación de chat y publicaciones en tiempo real que permite a los usuarios enviar y recibir mensajes instantáneamente. Utiliza WebSockets para la comunicación en tiempo real, lo que garantiza una experiencia fluida y rápida.",
+            tags: [
+                {
+                    name: "ReactJS",
+                    color: "blue",
+                    icon: <FaReact />,
+                },
+                {
+                    name: "",
+                    color: "cyan",
+                    icon: <RiTailwindCssFill/>,
+                },
+                {
+                    name: "Django",
+                    color: "green",
+                    icon: <SiDjango />
+                },
+                {
+                    name: "Redis",
+                    color: "red",
+                    icon: <DiRedis />
+                },
+                {
+                    name: "Docker",
+                    color: "sky",
+                    icon: <SiDocker />
+                },
+                {
+                    name: "Socket.io",
+                    color: "emerald",
+                    icon: <SiSocketdotio />
+                },
+                {
+                    name: "Redux",
+                    color: "purple",
+                    icon: <TbBrandRedux />
                 },
 
             ]
@@ -254,6 +304,35 @@ export default {
     watch: [
         {
             id: 8,
+            name: "Ruf - App para Asistencia al Cliente (iOS)",
+            video: null,
+            description: "App para meseros, cocineros o host de algún evento o restaurante, permite notificar a los empleados las solicitudes de los clientes por medio de alertas(notificaciones) y se puede visualizar estas notificaciones asi como leer notificaciones.",
+            functionalities: [
+                'Calcúlo del tiempo de demora en leer notificación para analísis.',
+                'Sistema multiempresarial',
+                'Notificaciones push',
+                'Login con clave generada única de un solo uso (OTP)',
+            ],
+            image: rufWatch,
+            tags: [
+                {
+                    name: "Swift",
+                    color: "orange",
+                    icon: <FaSwift  />
+                },
+                {
+                    name: "Apn's",
+                    color: "red",
+                },
+                {
+                    name: "NodeJS",
+                    color: "green",
+                    icon: <FaNodeJs />
+                },
+            ]
+        },
+         {
+            id: 13,
             name: "Ruf - App para Asistencia al Cliente (Android)",
             video: null,
             description: "App para meseros, cocineros o host de algún evento o restaurante, permite notificar a los empleados las solicitudes de los clientes por medio de alertas(notificaciones) y se puede visualizar estas notificaciones asi como leer notificaciones.",

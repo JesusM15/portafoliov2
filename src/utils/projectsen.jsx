@@ -7,6 +7,7 @@ import soundleWeb from './../assets/soundleimage.png'
 import rufWear from './../assets/ruf_wear.jpg';
 import FlappyBird from './../assets/flappybird.png';
 import bakersGame from './../assets/bakersgame.png';
+import ejchat from './../assets/chat.png';
 
 import React from "react";
 import { TbBrandAstro, TbBrandReactNative, TbBrandRedux   } from "react-icons/tb";
@@ -14,8 +15,9 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaNodeJs } from "react-icons/fa6";
 import { FaReact, FaSpotify, FaJava  } from "react-icons/fa";
-import { SiSocketdotio, SiExpo, SiGmail,SiSemanticui, SiRedux,SiAssemblyscript, SiRaylib    } from "react-icons/si";
+import { SiSocketdotio, SiExpo, SiGmail,SiSemanticui, SiRedux,SiAssemblyscript, SiRaylib, SiDjango,SiDocker    } from "react-icons/si";
 import { MdNotificationsActive } from "react-icons/md";
+import { DiRedis } from "react-icons/di";
 
 
 export default {
@@ -128,6 +130,52 @@ export default {
                 },
             ]
         },
+        {
+            id: 12,
+            name: "EJChat",
+            link: null,
+            github: "https://github.com/JesusM15/ejchat-api",
+            image: ejchat,
+            video: 'v=bE84aDT-ap8',
+            description: "EJChat is a real-time chat and posting application that allows users to send and receive messages instantly. It uses WebSockets for real-time communication, ensuring a smooth and fast experience.",
+            tags: [
+                {
+                name: "ReactJS",
+                color: "blue",
+                icon: <FaReact />,
+                },
+                {
+                name: "",
+                color: "cyan",
+                icon: <RiTailwindCssFill />,
+                },
+                {
+                name: "Django",
+                color: "green",
+                icon: <SiDjango />
+                },
+                {
+                name: "Redis",
+                color: "red",
+                icon: <DiRedis />
+                },
+                {
+                name: "Docker",
+                color: "sky",
+                icon: <SiDocker />
+                },
+                {
+                name: "Socket.io",
+                color: "emerald",
+                icon: <SiSocketdotio />
+                },
+                {
+                name: "Redux",
+                color: "purple",
+                icon: <TbBrandRedux />
+                },
+            ]
+            },
         {
             id: 1,
             name: 'Tesla Landing',
