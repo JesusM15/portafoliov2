@@ -12,6 +12,7 @@ export default function AboutMeSection() {
             src={ilustration}
             alt="Foto de Jesus M"
             className="rounded-full w-64 h-64 object-cover mx-auto"
+            loading="lazy"
           />
         </div>
         <div className="md:w-2/3 md:pl-8">

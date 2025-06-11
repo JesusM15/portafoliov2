@@ -6,7 +6,7 @@ function WatchMockup({ project }) {
     <div className="flex md:flex-row flex-col items-center gap-6 p-5 rounded-2xl shadow-xl max-w-3xl 
                     bg-black/10  backdrop-blur-3xl border border-white/20">
       <div className="relative h-52 w-auto md:w-xl  rounded-full overflow-hidden shadow-lg border-4 border-gray-900">
-        <img src={project.image} alt={project.name} className="w-48 h-48 object-cover" />
+        <img src={project.image} alt={project.name} className="w-48 h-48 object-cover" loading="lazy"/>
       </div>
       <div className="flex flex-col text-center md:items-baseline items-center md:text-left text-white">
         <h3 className="text-2xl font-semibold mb-3">{project.name}</h3>

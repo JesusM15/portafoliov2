@@ -10,7 +10,7 @@ function MobileMockup({ project, onSelectProject }) {
                 <div className="absolute top-0 left-0 right-0 mx-auto bg-black h-4 w-20 rounded-b-2xl"></div>
                 <div className="absolute top-1 left-0 right-0 mx-auto bg-gray-900/90 h-1 w-10 rounded-full"></div>
 
-                <img src={project.image} alt={project.name} className="w-full h-full object-cover rounded-b-md" />
+                <img src={project.image} alt={project.name} className="w-full h-full object-cover rounded-b-md" loading="lazy" />
             </div>
 
             <div className="flex flex-col text-left text-white  lg:text-left">
