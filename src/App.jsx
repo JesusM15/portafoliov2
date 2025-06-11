@@ -5,6 +5,7 @@ import ProyectSection from "./components/ProyectSection";
 import ExperienceSection from "./components/ExperienceSection";
 import AboutMeSection from "./components/AboutMeSection";
 import './index.css'
+import { useTranslation } from "react-i18next";
 
 function App() {
   const heroRef = useRef(null);

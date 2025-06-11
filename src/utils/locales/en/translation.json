@@ -1,0 +1,20 @@
+{
+    "projects": "Projects",
+    "home": "Home",
+    "experience": "Experience",
+    "about_me": "About me",
+    "hero_section": {
+        "greet": "Hi, I'm "
+    },
+    "full_stack_developer": "Fullstack Developer",
+    "with_experience_in": "with experience in",
+    "and": "and",
+    "wearable_devices": "wearable devices",
+    "download_resume": "Download resume",
+    "now": "Now",
+    "about_me_section": {
+        "p1": "I’m Jesús Manuel Pérez Guerra. I started programming at the age of 15, and since then I decided to make programming my professional path. I currently work as a Fullstack Developer, creating web, mobile, and wearable device solutions. I also tutor at my university in subjects such as Structured Programming, OOP, Algorithms and Data Structures, mainly in Java for the last two subjects and in C.",
+        "p2": "Outside of programming, I enjoy music, video games, and I'm currently learning to play the piano.",
+        "p3": "My goal as a developer is to continue growing professionally, strengthening my skills and learning new ones when necessary. I enjoy solving problems and challenges through programming."
+    }
+}

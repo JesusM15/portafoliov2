@@ -1,13 +1,10 @@
 import React from "react";
-
+import { useTranslation } from "react-i18next";
 import './../App.css'
-/**
- * Datos de experiencia con información actualizada.
- * Reemplaza o ajusta los datos según necesites.
- */
-const experienceData = [
+
+const experienceDataES = [
   {
-    title: "Fullstack Developer",
+    title: "Desarrollador Full Stack",
     company: "Geologistic",
     date: "2023 - Actualidad",
     description:
@@ -21,7 +18,7 @@ const experienceData = [
       "Realicé proyectos a medida utilizando HTML, CSS, TailwindCSS y Django. Entre mis logros destaca la implementación de un sistema de suscripciones con PayPal y la integración de la API de Google Maps para mejorar la experiencia del usuario."
   },
   {
-    title: "Frontend Developer",
+    title: "Desarrollador Frontend",
     company: "CastSoft",
     date: "2023",
     description:
@@ -32,7 +29,7 @@ const experienceData = [
     company: "Universidad Autónoma de Baja California",
     date: "Actualidad",
     description:
-    "Imparto tutorías y ayudantías en la materia de Programación Estructurada en C y Programación Orientada a Objetos en Java, así como calificando trabajos y prácticas, y apoyando a los alumnos en su proceso de aprendizaje."
+    "Imparto tutorías y ayudantías en la materia de Programación Estructurada en C, Programación Orientada a Objetos, Algoritmos y Estructuras de Datos en Java así como calificando trabajos y prácticas, y apoyando a los alumnos en su proceso de aprendizaje."
   },
   {
     title: "Proyectos Personales",
@@ -50,12 +47,59 @@ const experienceData = [
   },
 ];
 
+const experienceDataEN = [
+  {
+    title: "Full Stack Developer",
+    company: "Geologistic",
+    date: "2023 - Now",
+    description:
+      "I developed a push notification system for multiple devices using Firebase with Expo, integrating mobile and watch apps through a single API. Later, I implemented a standalone Swift app for the watch, with login, real-time handling using sockets, and push notifications. I also collaborated on two projects (a business attendance app and an ERP), developing the API in Node.js with asynchronous tasks for sending reminders, Excel file processing, media handling, integration with Redux and JWT, SMTP connection, reporting systems, and calendars."
+  },
+  {
+    title: "Freelance Developer",
+    company: "Freelance",
+    date: "2022 - Now",
+    description:
+      "I completed custom projects using HTML, CSS, TailwindCSS, and Django. My achievements include implementing a subscription system with PayPal and integrating the Google Maps API to enhance user experience."
+  },
+  {
+    title: "Frontend Developer",
+    company: "CastSoft",
+    date: "2023",
+    description:
+      "I worked in a .NET environment using Razor, CSS, JavaScript, and Bootstrap, creating interactive user interfaces and visual experiences. I implemented animations with pure JavaScript and CSS, and developed landing pages, dashboards, and frontends for business management systems, including interactive charts."
+  },
+  {
+    title: "Programming Tutor in C and Java",
+    company: "Universidad Autónoma de Baja California",
+    date: "Now",
+    description:
+      "I provide tutoring and assistance in the subjects of Structured Programming in C, Object-Oriented Programming, and Data Structures and Algorithms in Java. I also grade assignments and practices, and support students in their learning process."
+  },
+  {
+    title: "Personal Projects",
+    company: "Self-taught / Personal",
+    date: "2019 - Now",
+    description:
+      "I have developed applications using Django, ReactJS, React Native, Astro, and more. My projects include secure APIs with JWT (for authentication via email or username), the use of Docker and Redis to work with WebSockets in Django and Node.js, and a social network demo with posts, likes, and real-time chat. I've also implemented library management systems, Stripe and PayPal payment systems, and I'm currently developing a multiplayer online socket-based game. I'm also experimenting with computer vision in Python, Arduino, and other technologies."
+  },
+  {
+    title: "Computer Engineering",
+    company: "Universidad Autónoma de Baja California",
+    date: "2022 - Now",
+    description: ""
+  }
+];
+
 
 export default function ExperienceSection() {
+  const { t, i18n } = useTranslation();
+  const experienceData =  i18n.language == "es" ? experienceDataES : experienceDataEN;
+  
   return (
     <section id="experience" className="py-12 px-4 text-white soft-background ">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8">Experiencia</h2>
+        <h2 className="text-3xl font-bold mb-8">{t("experience")}</h2>
 
         <div className="relative border-l border-gray-600 pl-8">
           {experienceData.map((item, index) => (

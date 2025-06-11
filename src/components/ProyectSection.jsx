@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import Card from "./Card/Card";
-import projects from "../utils/projects.jsx";
+import projectsES from "./../utils/projects.jsx";
+import projectsEN from "./../utils/projectsen.jsx";
+import { useTranslation } from "react-i18next";
 import MobileMockup from "./MobileMockup/MobileMockup";
 import WatchMockup from "./WatchMockup/WatchMockup";
 import './../App.css'
 
 function ProyectSection({ onSelectedProject }) {
+    const { i18n } = useTranslation();
+    const projects = i18n.language === "es" ? projectsES : projectsEN;
     const [selectedCategory, setSelectedCategory] = useState("web");
     const [currentIndex, setCurrentIndex] = useState(0);
 

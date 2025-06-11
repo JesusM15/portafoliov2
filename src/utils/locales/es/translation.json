@@ -1,0 +1,20 @@
+{
+    "projects": "Proyectos",
+    "home": "Inicio",
+    "experience": "Experiencia",
+    "about_me": "Acerca de mi",
+    "hero_section": {
+        "greet": "Hola, soy "
+    },
+    "full_stack_developer": "Desarrollador Fullstack",
+    "with_experience_in": "con experiencia en",
+    "and": "y",
+    "wearable_devices": "dispositivos wearables",
+    "download_resume": "Descargar CV",
+    "now": "Actualidad",
+    "about_me_section": {
+        "p1": "Soy Jesús Manuel Pérez Guerra. Comencé a programar a los 15 años y desde entonces decidí hacer de la programación mi camino profesional. Actualmente me desempeño como Desarrollador Fullstack, creando soluciones web, móviles y para dispositivos wearables. Además, imparto tutorías en mi universidad en materias como Programación Estructurada, POO, Algoritmos y Estructuras de Datos, en C y principalmente en Java para las últimas 2 materias.",
+        "p2": "Fuera de la programación disfruto de la música, los videojuegos y estoy aprendiendo a tocar el piano actualmente.",
+        "p3": "Mi objetivo como desarrollador es seguir creciendo profesionalmente, reforzando mis habilidades y aprendiendo nuevas cuando sea necesario. Disfruto de poder resolver problemas y retos mediante la programación."
+    }
+}
