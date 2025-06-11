@@ -1,12 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./../index.css";
 import { useTranslation } from "react-i18next";
+import mexicoFlag from './../assets/flag_mexico.png';
+import usaFlag from './../assets/flag_usa.png';
+import { FaArrowDown } from "react-icons/fa";
 
 export default function Header({ selected, setSelected, refs }) {
 
   const { t, i18n } = useTranslation();
   const [ language, setLanguage ] = useState(i18n?.language);
-  const [ selectorLenguageOpen, setSelectorLenguageOpen ] = useState(false);  
+  const [selectorOpen, setSelectorOpen] = useState(false);
+  const ref = useRef();
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (ref.current && !ref.current.contains(e.target)) {
+        setSelectorOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleSelect = (lang) => {
+    i18n.changeLanguage(lang);
+    setLanguage(lang);
+    setSelectorOpen(false);
+  };
 
   const [lastScrollPosition, setLastScrollPosition] = useState(0);
   const [showNav, setShowNav] = useState(false);
@@ -47,7 +67,7 @@ export default function Header({ selected, setSelected, refs }) {
     <nav
       className={`
         fixed top-0 left-0 w-full h-16 lg:px-6 px-0
-        flex md:flex-row flex-col-reverse  items-center lg:justify-between justify-center
+        flex lg:flex-row flex-col-reverse  items-center lg:justify-between justify-center
         text-white
         transition-transform duration-300
         z-50
@@ -58,36 +78,33 @@ export default function Header({ selected, setSelected, refs }) {
         backdropFilter: "blur(4px)",
       }}
     >
-      <div className="font-bold text-lg relative">
+    <div className="relative font-bold text-lg" ref={ref}>
         <button
-          onClick={() => setSelectorLenguageOpen((prev) => !prev)}
-          className="font-semibold text-base uppercase bg-purple-600/40 border-purple-900 border px-3 cursor-pointer"
+          onClick={() => setSelectorOpen((prev) => !prev)}
+          className="flex items-center gap-2 font-semibold text-base uppercase bg-purple-900/40 border border-purple-900 px-3 py-1 text-white"
         >
-          {language}
+          <img
+            src={language === "es" ? mexicoFlag : usaFlag}
+            alt="Flag"
+            className="h-5 w-5 object-cover"
+          />
+          {language} 
         </button>
 
-        {selectorLenguageOpen && (
-          <div className="absolute z-10 mt-2 w-24 rounded-md shadow-lg bg-black bg-opacity-90 ring-1 ring-white ring-opacity-20">
+        {selectorOpen && (
+          <div className="absolute z-10 mt-2 w-32 rounded-md shadow-lg bg-black bg-opacity-90 ring-1 ring-purple-600 ring-opacity-20">
             <ul className="py-1 text-sm text-white">
               <li
-                onClick={() => {
-                  i18n.changeLanguage('es');
-                  setLanguage('es');
-                  setSelectorLenguageOpen(false);
-                }}
-                className="px-4 py-2 hover:bg-gray-700 cursor-pointer"
+                onClick={() => handleSelect("es")}
+                className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700 cursor-pointer"
               >
-                Español
+                <img src={mexicoFlag} alt="Español" className="h-4 w-4 object-cover" /> ES
               </li>
               <li
-                onClick={() => {
-                  i18n.changeLanguage('en');
-                  setLanguage('en');
-                  setSelectorLenguageOpen(false);
-                }}
-                className="px-4 py-2 hover:bg-gray-700 cursor-pointer"
+                onClick={() => handleSelect("en")}
+                className="flex items-center gap-2 px-4 py-2 hover:bg-gray-700 cursor-pointer"
               >
-                English
+                <img src={usaFlag} alt="English" className="h-4 w-4 object-cover" /> EN
               </li>
             </ul>
           </div>
