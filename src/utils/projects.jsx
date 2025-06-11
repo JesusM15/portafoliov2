@@ -5,51 +5,59 @@ import erpWeb from './../assets/erp_geologistic_web.jpg';
 import ruf from './../assets/ruf_landing.png';
 import soundleWeb from './../assets/soundleimage.png'
 import rufWear from './../assets/ruf_wear.jpg';
+import FlappyBird from './../assets/flappybird.png';
+import bakersGame from './../assets/bakersgame.png';
 
 import React from "react";
 import { TbBrandAstro, TbBrandReactNative, TbBrandRedux   } from "react-icons/tb";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaNodeJs } from "react-icons/fa6";
-import { FaReact, FaSpotify } from "react-icons/fa";
-import { SiSocketdotio, SiExpo, SiGmail,SiSemanticui, SiRedux   } from "react-icons/si";
+import { FaReact, FaSpotify, FaJava  } from "react-icons/fa";
+import { SiSocketdotio, SiExpo, SiGmail,SiSemanticui, SiRedux,SiAssemblyscript, SiRaylib    } from "react-icons/si";
 import { MdNotificationsActive } from "react-icons/md";
 
 
 export default {
     web: [
         {
-        id: 1,
-        name: 'Tesla Landing',
-        link: 'https://64f2a7ff7209f032f9b91def--astonishing-choux-8a470f.netlify.app/',
-        github: 'https://github.com/JesusM15/tesla-landing', // GitHub link
-        image: teslaLanding,
-        video: null,
-        description: 'Clon de la landing page de Tesla',
-        tags: [
-            {
-              name: "TailwindCSS",
-              color: "cyan",
-              icon: <RiTailwindCssFill />,
-            },
-            {
-              name: "Astro",
-              color: "orange",
-              icon: <TbBrandAstro />,
-            },
-            {
-                name: "Javascript",
-                color: "amber",
-                icon: <IoLogoJavascript />
-            }
-        ]
+            id: 6,
+            name: "Soundle",
+            link: "https://soundle-one.vercel.app/",
+            github: "https://github.com/JesusM15/Soundle.git",
+            image: soundleWeb,
+            video: 'v=ECqYrCinL2s',
+            description: "Juego estilo Wordle musical. Se escucha un fragmento de alguna canción y el usuario debe adivinar cuál es. Cuenta con animaciones, sugerencias y feedback visual.",
+            tags: [
+                {
+                    name: "ReactJS",
+                    color: "blue",
+                    icon: <FaReact />,
+                },
+                {
+                    name: "Tailwindcss",
+                    color: "cyan",
+                    icon: <RiTailwindCssFill/>,
+                },
+                {
+                    name: "NodeJS",
+                    color: "green",
+                    icon: <FaNodeJs />
+                },
+                {
+                    name: "SpotifyAPI",
+                    color: "green",
+                    icon: <FaSpotify />
+                }
+
+            ]
         },
         {
             id: 4,
             name: "Geologistic ERP",
             link: "https://app.geologisticerp.com/",
             github: null,
-            video: null,
+            video: "v=CFPPgSKZ9DQ",
             image: erpWeb,
             description: "Sistema ERP (Planificación de Recursos Empresariales) con sistema multiroles, registros, dashboards con gráficas, sistemas de exportación a excel, envío de correos, etc.",
             tags: [
@@ -91,7 +99,7 @@ export default {
             link: "https://app.restec.mx/",
             github: null,
             image: ruf,
-            video: null,
+            video: "v=Dia5LyWaKGo",
             description: "Plataforma web para gestión de negocios en la App de Asistencia RUF.",
             tags: [
                 {
@@ -123,43 +131,37 @@ export default {
             ]
         },
         {
-            id: 6,
-            name: "Soundle",
-            link: "https://soundle-one.vercel.app/",
-            github: "https://github.com/JesusM15/Soundle.git",
-            image: soundleWeb,
-            video: 'dasd',
-            description: "Juego estilo Wordle musical. Se escucha un fragmento de alguna canción y el usuario debe adivinar cuál es. Cuenta con animaciones, sugerencias y feedback visual.",
-            tags: [
-                {
-                    name: "ReactJS",
-                    color: "blue",
-                    icon: <FaReact />,
-                },
-                {
-                    name: "Tailwindcss",
-                    color: "cyan",
-                    icon: <RiTailwindCssFill/>,
-                },
-                {
-                    name: "NodeJS",
-                    color: "green",
-                    icon: <FaNodeJs />
-                },
-                {
-                    name: "SpotifyAPI",
-                    color: "green",
-                    icon: <FaSpotify />
-                }
-
-            ]
-        }
+        id: 1,
+        name: 'Tesla Landing',
+        link: 'https://64f2a7ff7209f032f9b91def--astonishing-choux-8a470f.netlify.app/',
+        github: null,
+        image: teslaLanding,
+        video: null,
+        description: 'Clon de la landing page de Tesla',
+        tags: [
+            {
+              name: "TailwindCSS",
+              color: "cyan",
+              icon: <RiTailwindCssFill />,
+            },
+            {
+              name: "Astro",
+              color: "orange",
+              icon: <TbBrandAstro />,
+            },
+            {
+                name: "Javascript",
+                color: "amber",
+                icon: <IoLogoJavascript />
+            }
+        ]
+        },
     ],
     mobile: [
         {
             id: 2,
             name: "Ruf - App de Asistencia",
-            video: 'dasd',
+            video: 'v=xLxq1_c_n6s',
             description: "App para asistencia en restaurantes, plazas, gimnasios y eventos.",
             functionalities: [
                 'Geolocalización',
@@ -293,6 +295,47 @@ export default {
         
     ],
     desktop: [
-
+        {
+            id: 11,
+            name: "Baker's Game",
+            link: null,
+            github: null,
+            image: bakersGame,
+            video: null,
+            description: "Juego de cartas Baker's Game parecido al Free Cell.",
+            tags: [
+                {
+                    name: "Java",
+                    color: "orange",
+                    icon: <FaJava  />,
+                },
+            ]
+        },
+       {
+            id: 10,
+            name: "Flappy Bird",
+            link: null,
+            github: "https://github.com/JesusM15/flappy-bird-assembly",
+            image: FlappyBird,
+            video: 'v=ud_3ZKjDL-4',
+            description: "Flappy Bird hecho en el lenguaje de programación Assembly, con un diseño minimalista realizado en Raylib con C.",
+            tags: [
+                {
+                    name: "Ensamblador (MASM)",
+                    color: "fuchsia",
+                    icon: <SiAssemblyscript />,
+                },
+                {
+                    name: "",
+                    color: "cyan",
+                    icon: <h4>C</h4>
+                },
+                {
+                    name: "Raylib",
+                    color: "gray",
+                    icon: <SiRaylib />
+                },
+            ]
+        },
     ]
 };

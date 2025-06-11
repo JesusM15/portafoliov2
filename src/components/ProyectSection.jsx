@@ -46,7 +46,7 @@ function ProyectSection({ onSelectedProject }) {
             </div>
 
             <div className="flex justify-center flex-wrap gap-10 w-full relative lg:container p-2 lg:p-4">
-                {selectedCategory === "web" && 
+                {((selectedCategory === "web") || (selectedCategory === "desktop")) && 
                     projects[selectedCategory]?.map(project => (
                         <Card key={project.id} project={project} onSelectProject={() =>  handleSelectProject(project)} />
                     ))
