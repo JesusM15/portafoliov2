@@ -7,9 +7,10 @@ import nebulosa from './../assets/nebulosa.png';
 import astronaut from './../assets/astronaut.png';
 import { useTranslation } from 'react-i18next';
 import cv from './../assets/cv_jesus_2025.pdf';
+import encv from './../assets/english_cv_2025.pdf';
 
 export default function HeroSection({ ref }) {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
   return (
     <section className="w-full flex h-screen lg:flex-row flex-col lg:p-16 p-8 relative" id="home" ref={ref}>
@@ -33,7 +34,7 @@ style={{
             </p>
 
             <div className='flex gap-5 mt-6'>
-                <a href={cv} download="CV_JesusM.pdf">
+                <a href={i18n?.language == "es" ? cv : encv} download="CV_JesusM.pdf">
                     <button className="text-purple-400 py-2 px-4 rounded-lg hover:bg-purple-600/20 hover:text-purple-200 transition-all
                      ease-in-out duration-300 flex items-center gap-3 shadow-purple-600 shadow-sm  cursor-pointer">
                         <IoMdDownload className="text-2xl" />
