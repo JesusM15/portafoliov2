@@ -5,6 +5,7 @@ import ProyectSection from "./components/ProyectSection";
 import ExperienceSection from "./components/ExperienceSection";
 import AboutMeSection from "./components/AboutMeSection";
 import './index.css'
+import { useTranslation } from "react-i18next";
 
 function App() {
   const heroRef = useRef(null);
@@ -87,14 +88,14 @@ function App() {
             <div className="bg-black  rounded-lg p-6 max-w-lg w-full relative shadow-lg">
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-3 right-3 text-white duration-150 hover:text-red-400 transition-colors text-2xl cursor-pointer"
+                className="absolute top-3 right-3 text-white duration-150 hover:text-red-400 transition-colors text-3xl cursor-pointer"
               >
                 &times;
               </button>
               {selectedProject.video && (
                 <div className="mb-4 aspect-video w-full rounded overflow-hidden">
                   <iframe
-                    className="w-full h-full"
+                    className="w-full h-full p-4"
                     src={`https://www.youtube.com/embed/${selectedProject.video?.split("v=")[1]}`}
                     title={selectedProject.name}
                     frameBorder="0"

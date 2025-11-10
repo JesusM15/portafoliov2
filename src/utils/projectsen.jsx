@@ -20,7 +20,6 @@ import { SiSocketdotio, SiExpo, SiGmail,SiSemanticui, SiRedux,SiAssemblyscript, 
 import { MdNotificationsActive } from "react-icons/md";
 import { DiRedis } from "react-icons/di";
 
-
 export default {
     web: [
         {
@@ -30,7 +29,7 @@ export default {
             github: "https://github.com/JesusM15/Soundle.git",
             image: soundleWeb,
             video: 'v=ECqYrCinL2s',
-            description: "Juego estilo Wordle musical. Se escucha un fragmento de alguna canción y el usuario debe adivinar cuál es. Cuenta con animaciones, sugerencias y feedback visual.",
+            description: "Wordle-style music game. A snippet of a song is played, and the user must guess what it is. Includes animations, hints, and visual feedback.",
             tags: [
                 {
                     name: "ReactJS",
@@ -40,7 +39,7 @@ export default {
                 {
                     name: "Tailwindcss",
                     color: "cyan",
-                    icon: <RiTailwindCssFill/>,
+                    icon: <RiTailwindCssFill />,
                 },
                 {
                     name: "NodeJS",
@@ -52,7 +51,6 @@ export default {
                     color: "green",
                     icon: <FaSpotify />
                 }
-
             ]
         },
         {
@@ -62,7 +60,7 @@ export default {
             github: null,
             video: "v=CFPPgSKZ9DQ",
             image: erpWeb,
-            description: "Sistema ERP (Planificación de Recursos Empresariales) con sistema multiroles, registros, dashboards con gráficas, sistemas de exportación a excel, envío de correos, etc.",
+            description: "ERP system (Enterprise Resource Planning) with multi-role support, records, dashboards with charts, Excel export, email sending, etc.",
             tags: [
                 {
                     name: "ReactJS",
@@ -75,9 +73,9 @@ export default {
                     icon: <SiSemanticui />,
                 },
                 {
-                      name: "Javascript",
-                      color: "amber",
-                      icon: <IoLogoJavascript />
+                    name: "Javascript",
+                    color: "amber",
+                    icon: <IoLogoJavascript />
                 },
                 {
                     name: "NodeJS",
@@ -90,7 +88,7 @@ export default {
                     icon: <SiRedux />
                 },
                 {
-                    name: "SMPT",
+                    name: "SMTP",
                     color: 'red',
                     icon: <SiGmail />
                 }
@@ -98,12 +96,12 @@ export default {
         },
         {
             id: 5,
-            name: "RUF - Asistencia",
+            name: "RUF - Assistance",
             link: "https://app.restec.mx/",
             github: null,
             image: ruf,
             video: "v=Dia5LyWaKGo",
-            description: "Plataforma web para gestión de negocios en la App de Asistencia RUF.",
+            description: "Web platform for business management within the RUF Assistance App.",
             tags: [
                 {
                     name: "ReactJS",
@@ -130,7 +128,6 @@ export default {
                     color: 'purple',
                     icon: <TbBrandRedux  />
                 },
-
             ]
         },
         {
@@ -140,86 +137,85 @@ export default {
             github: "https://github.com/JesusM15/ejchat-api",
             image: ejchat,
             video: 'v=bE84aDT-ap8',
-            description: "EJChat es una aplicación de chat y publicaciones en tiempo real que permite a los usuarios enviar y recibir mensajes instantáneamente. Utiliza WebSockets para la comunicación en tiempo real, lo que garantiza una experiencia fluida y rápida.",
+            description: "EJChat is a real-time chat and posting application that allows users to send and receive messages instantly. It uses WebSockets for real-time communication, ensuring a smooth and fast experience.",
             tags: [
                 {
-                    name: "ReactJS",
-                    color: "blue",
-                    icon: <FaReact />,
+                name: "ReactJS",
+                color: "blue",
+                icon: <FaReact />,
                 },
                 {
-                    name: "",
-                    color: "cyan",
-                    icon: <RiTailwindCssFill/>,
+                name: "",
+                color: "cyan",
+                icon: <RiTailwindCssFill />,
                 },
                 {
-                    name: "Django",
-                    color: "green",
-                    icon: <SiDjango />
+                name: "Django",
+                color: "green",
+                icon: <SiDjango />
                 },
                 {
-                    name: "Redis",
-                    color: "red",
-                    icon: <DiRedis />
+                name: "Redis",
+                color: "red",
+                icon: <DiRedis />
                 },
                 {
-                    name: "Docker",
-                    color: "sky",
-                    icon: <SiDocker />
+                name: "Docker",
+                color: "sky",
+                icon: <SiDocker />
                 },
                 {
-                    name: "Socket.io",
-                    color: "emerald",
-                    icon: <SiSocketdotio />
+                name: "Socket.io",
+                color: "emerald",
+                icon: <SiSocketdotio />
                 },
                 {
-                    name: "Redux",
-                    color: "purple",
-                    icon: <TbBrandRedux />
+                name: "Redux",
+                color: "purple",
+                icon: <TbBrandRedux />
                 },
-
             ]
-        },
+            },
         {
-        id: 1,
-        name: 'Tesla Landing',
-        link: 'https://64f2a7ff7209f032f9b91def--astonishing-choux-8a470f.netlify.app/',
-        github: null,
-        image: teslaLanding,
-        video: null,
-        description: 'Clon de la landing page de Tesla',
-        tags: [
-            {
-              name: "TailwindCSS",
-              color: "cyan",
-              icon: <RiTailwindCssFill />,
-            },
-            {
-              name: "Astro",
-              color: "orange",
-              icon: <TbBrandAstro />,
-            },
-            {
-                name: "Javascript",
-                color: "amber",
-                icon: <IoLogoJavascript />
-            }
-        ]
+            id: 1,
+            name: 'Tesla Landing',
+            link: 'https://64f2a7ff7209f032f9b91def--astonishing-choux-8a470f.netlify.app/',
+            github: null,
+            image: teslaLanding,
+            video: null,
+            description: 'Tesla landing page clone.',
+            tags: [
+                {
+                    name: "TailwindCSS",
+                    color: "cyan",
+                    icon: <RiTailwindCssFill />,
+                },
+                {
+                    name: "Astro",
+                    color: "orange",
+                    icon: <TbBrandAstro />,
+                },
+                {
+                    name: "Javascript",
+                    color: "amber",
+                    icon: <IoLogoJavascript />
+                }
+            ]
         },
     ],
     mobile: [
         {
             id: 2,
-            name: "Ruf - App de Asistencia",
+            name: "Ruf - Assistance App",
             video: 'v=xLxq1_c_n6s',
-            description: "App para asistencia en restaurantes, plazas, gimnasios y eventos.",
+            description: "App for assistance in restaurants, malls, gyms, and events.",
             functionalities: [
-                'Geolocalización',
-                'Tareas asíncronas',
-                'Escaneo de QR para atención',
-                'Sistema multiempresarial',
-                'Gestión de pagos',
-                'Modo recoger'
+                'Geolocation',
+                'Asynchronous tasks',
+                'QR scanning for service',
+                'Multi-company system',
+                'Payment management',
+                'Pickup mode'
             ],
             image: rufMobile,
             tags: [
@@ -259,12 +255,12 @@ export default {
             id: 3,
             name: "Geologistic ERP",
             video: null,
-            description: "App de sistema ERP (Planificación de Recursos Empresariales) para transporte",
+            description: "Mobile ERP system for transportation companies.",
             functionalities: [
-                'Escaneo de QR',
-                'Sistema multiempresarial',
-                'Sistema de permisos',
-                'Roles(admin, cliente, proveedores, etc)',
+                'QR scanning',
+                'Multi-company system',
+                'Permission system',
+                'Roles (admin, client, suppliers, etc.)',
             ],
             image: erpMobile,
             tags: [
@@ -294,7 +290,7 @@ export default {
                     icon: <SiExpo />
                 },
                 {
-                    name: "SMPT",
+                    name: "SMTP",
                     color: 'red',
                     icon: <SiGmail />
                 }
@@ -304,75 +300,76 @@ export default {
     watch: [
         {
             id: 8,
-            name: "Ruf - App para Asistencia al Cliente (iOS)",
+            name: "Ruf - Customer Assistance App (iOS)",
             video: null,
-            description: "App para meseros, cocineros o host de algún evento o restaurante, permite notificar a los empleados las solicitudes de los clientes por medio de alertas(notificaciones) y se puede visualizar estas notificaciones asi como leer notificaciones.",
+            description:
+            "App designed for waiters, cooks, or event/restaurant hosts. It allows staff to be notified of customer requests via alerts (push notifications), and they can view and read those notifications.",
             functionalities: [
-                'Calcúlo del tiempo de demora en leer notificación para analísis.',
-                'Sistema multiempresarial',
-                'Notificaciones push',
-                'Login con clave generada única de un solo uso (OTP)',
+            "Calculates the delay time in reading a notification for analysis.",
+            "Multi-business system.",
+            "Push notifications.",
+            "Login with a unique one-time generated key (OTP).",
             ],
             image: rufWatch,
             tags: [
-                {
-                    name: "Swift",
-                    color: "orange",
-                    icon: <FaSwift  />
-                },
-                {
-                    name: "Apn's",
-                    color: "red",
-                },
-                {
-                    name: "NodeJS",
-                    color: "green",
-                    icon: <FaNodeJs />
-                },
-            ]
+            {
+                name: "Swift",
+                color: "orange",
+                icon: <FaSwift />,
+            },
+            {
+                name: "APNs",
+                color: "red",
+            },
+            {
+                name: "NodeJS",
+                color: "green",
+                icon: <FaNodeJs />,
+            },
+            ],
         },
-         {
+        {
             id: 13,
-            name: "Ruf - App para Asistencia al Cliente (Android)",
+            name: "Ruf - Customer Assistance App (Android)",
             video: null,
-            description: "App para meseros, cocineros o host de algún evento o restaurante, permite notificar a los empleados las solicitudes de los clientes por medio de alertas(notificaciones) y se puede visualizar estas notificaciones asi como leer notificaciones.",
+            description:
+            "App designed for waiters, cooks, or event/restaurant hosts. It allows staff to be notified of customer requests via alerts (push notifications), and they can view and read those notifications.",
             functionalities: [
-                'Calcúlo del tiempo de demora en leer notificación para analísis.',
-                'Sistema multiempresarial',
-                'Notificaciones push',
-                'Login con clave generada única de un solo uso (OTP)',
+            "Calculates the delay time in reading a notification for analysis.",
+            "Multi-business system.",
+            "Push notifications.",
+            "Login with a unique one-time generated key (OTP).",
             ],
             image: rufWear,
             tags: [
-                {
-                    name: "React Native",
-                    color: "blue",
-                    icon: <TbBrandReactNative />
-                },
-                {
-                    name: "NodeJS",
-                    color: "green",
-                    icon: <FaNodeJs />
-                },
-                {
-                    name: "Socket.io",
-                    color: "emerald",
-                    icon: <SiSocketdotio />
-                },
-                {
-                    name: "Redux",
-                    color: 'purple',
-                    icon: <TbBrandRedux  />
-                },
-                {
-                    name: "ExpoGO",
-                    color: 'white',
-                    icon: <SiExpo />
-                },
-            ]
-        }
-        
-    ],
+            {
+                name: "React Native",
+                color: "blue",
+                icon: <TbBrandReactNative />,
+            },
+            {
+                name: "NodeJS",
+                color: "green",
+                icon: <FaNodeJs />,
+            },
+            {
+                name: "Socket.io",
+                color: "emerald",
+                icon: <SiSocketdotio />,
+            },
+            {
+                name: "Redux",
+                color: "purple",
+                icon: <TbBrandRedux />,
+            },
+            {
+                name: "ExpoGO",
+                color: "white",
+                icon: <SiExpo />,
+            },
+            ],
+        },
+        ],
     desktop: [
         {
             id: 11,
@@ -381,7 +378,7 @@ export default {
             github: null,
             image: bakersGame,
             video: null,
-            description: "Juego de cartas Baker's Game parecido al Free Cell.",
+            description: "Baker's Game card game, similar to Free Cell.",
             tags: [
                 {
                     name: "Java",
@@ -390,22 +387,22 @@ export default {
                 },
             ]
         },
-       {
+        {
             id: 10,
             name: "Flappy Bird",
             link: null,
             github: "https://github.com/JesusM15/flappy-bird-assembly",
             image: FlappyBird,
             video: 'v=ud_3ZKjDL-4',
-            description: "Flappy Bird hecho en el lenguaje de programación Assembly, con un diseño minimalista realizado en Raylib con C.",
+            description: "Flappy Bird game created using Assembly language, with a minimalist design using Raylib and C.",
             tags: [
                 {
-                    name: "Ensamblador (MASM)",
+                    name: "Assembly (MASM)",
                     color: "fuchsia",
                     icon: <SiAssemblyscript />,
                 },
                 {
-                    name: "",
+                    name: "C",
                     color: "cyan",
                     icon: <h4>C</h4>
                 },

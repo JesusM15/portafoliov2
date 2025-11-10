@@ -1,8 +1,9 @@
 import React from "react";
 import ilustration from './../assets/3dilus.png';
 import './../App.css'
-
+import { useTranslation } from "react-i18next";
 export default function AboutMeSection() {
+  const { t } = useTranslation();
   return (
     <section id="about_me" className="py-12 px-4  text-white h-screen flex justify-items-center soft-background">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center">
@@ -11,6 +12,7 @@ export default function AboutMeSection() {
             src={ilustration}
             alt="Foto de Jesus M"
             className="rounded-full w-64 h-64 object-cover mx-auto"
+            loading="lazy"
           />
         </div>
         <div className="md:w-2/3 md:pl-8">

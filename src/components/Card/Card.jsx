@@ -14,6 +14,7 @@ export default function Card({ project, onSelectProject }) {
           src={project.image}
           className="h-64 w-full object-cover rounded-t-2xl"
           alt={`${project.name} hecho por JesusM15`}
+          loading='lazy'
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 transition-opacity duration-300 hover:opacity-80">
           <div className="flex gap-4">
