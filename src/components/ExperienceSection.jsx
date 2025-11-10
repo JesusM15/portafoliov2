@@ -11,11 +11,10 @@ const experienceDataES = [
       "Desarrollé un sistema de notificaciones push para múltiples dispositivos utilizando Firebase con Expo, integrando apps móviles y para reloj (Watch) mediante un único API. Luego, implementé una app independiente en Swift para el reloj, con login, manejo en tiempo real mediante sockets y notificaciones push. Además, colaboré en dos proyectos (una app de asistencia para negocios y un ERP), desarrollando el API en Node.js con tareas asíncronas para enviar recordatorios, procesamiento de archivos Excel, manejo multimedia, integración con Redux y JWT, conexión SMTP, sistemas de reportes y calendarios."
   },
   {
-    title: "Desarrollador Freelance",
-    company: "Freelance",
-    date: "2022 - Actualidad",
-    description:
-      "Realicé proyectos a medida utilizando HTML, CSS, TailwindCSS y Django. Entre mis logros destaca la implementación de un sistema de suscripciones con PayPal y la integración de la API de Google Maps para mejorar la experiencia del usuario."
+    title: "Desarrollador Full Stack Por Proyecto",
+    company: "Gruas GZ",
+    date: "2025",
+    description: "Fui contactado por la empresa Gruas GZ para desarrollar un sistema de control de inventario y gestion de vehiculos (CRM). Implementado como App móvil. Me encargue del desarrollo completo del proyecto, incluyendo diseño, interfaz, backend y despliegue. Implemente la API en un servidor linux con acceso FTP y configure la base de datos MySQL."
   },
   {
     title: "Desarrollador Frontend",
@@ -23,6 +22,13 @@ const experienceDataES = [
     date: "2023",
     description:
       "Trabajé en un entorno .NET utilizando Razor, CSS, JavaScript y Bootstrap, desarrollando interfaces de usuario interactivas y experiencias visuales. Implementé animaciones con JavaScript y CSS puro, y creé landing pages, dashboards y frontends para sistemas de gestión empresarial, incluyendo gráficos interactivos."
+  },
+  {
+    title: "Desarrollador Freelance",
+    company: "Freelance",
+    date: "2022 - Actualidad",
+    description:
+      "Realicé proyectos a medida utilizando HTML, CSS, TailwindCSS y Django. Entre mis logros destaca la implementación de un sistema de suscripciones con PayPal y la integración de la API de Google Maps para mejorar la experiencia del usuario."
   },
   {
     title: "Tutor de Programación en C y Java",
@@ -55,12 +61,11 @@ const experienceDataEN = [
     description:
       "I developed a push notification system for multiple devices using Firebase with Expo, integrating mobile and watch apps through a single API. Later, I implemented a standalone Swift app for the watch, with login, real-time handling using sockets, and push notifications. I also collaborated on two projects (a business attendance app and an ERP), developing the API in Node.js with asynchronous tasks for sending reminders, Excel file processing, media handling, integration with Redux and JWT, SMTP connection, reporting systems, and calendars."
   },
-  {
-    title: "Freelance Developer",
-    company: "Freelance",
-    date: "2022 - Now",
-    description:
-      "I completed custom projects using HTML, CSS, TailwindCSS, and Django. My achievements include implementing a subscription system with PayPal and integrating the Google Maps API to enhance user experience."
+    {
+    title: "Full Stack Developer on Project Basis",
+    company: "Gruas GZ",
+    date: "2025",
+    description: "I was hired by Gruas GZ to develop an inventory control and vehicle management system (CRM). Implemented as a mobile app. I was responsible for the complete development of the project, including design, interface, backend, and deployment. I implemented the API on a Linux server with FTP access and configured the MySQL database."
   },
   {
     title: "Frontend Developer",
@@ -68,6 +73,13 @@ const experienceDataEN = [
     date: "2023",
     description:
       "I worked in a .NET environment using Razor, CSS, JavaScript, and Bootstrap, creating interactive user interfaces and visual experiences. I implemented animations with pure JavaScript and CSS, and developed landing pages, dashboards, and frontends for business management systems, including interactive charts."
+  },
+    {
+    title: "Freelance Developer",
+    company: "Freelance",
+    date: "2022 - Now",
+    description:
+      "I completed custom projects using HTML, CSS, TailwindCSS, and Django. My achievements include implementing a subscription system with PayPal and integrating the Google Maps API to enhance user experience."
   },
   {
     title: "Programming Tutor in C and Java",

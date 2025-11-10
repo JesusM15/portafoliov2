@@ -28,7 +28,7 @@ function MobileMockup({ project, onSelectProject }) {
                         </button>
                     )}
                 </div>
-                <p className="text-lg text-gray-300 mb-3">{project.description}</p>
+                <p className="text-lg text-gray-300 mb-3 max-w-xl">{project.description}</p>
                 {project?.functionalities && (
                     <>
                         <ul className="flex flex-col gap-2 mb-4 text-md text-white opacity-80">

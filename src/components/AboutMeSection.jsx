@@ -16,12 +16,15 @@ export default function AboutMeSection() {
           />
         </div>
         <div className="md:w-2/3 md:pl-8">
-          <h2 className="text-3xl font-bold mb-4">Acerca de mí</h2>
-          <p className="text-gray-300 mb-4">
-            Soy un Desarrollador Fullstack apasionado por la tecnologia, especialmente por el desarrollo de software, comence a programar a mis 15 años lo que me hizo desarrollar una pasion por este mundo y la resolucion de problemas
+          <h2 className="text-2xl lg:text-3xl font-bold mb-4">{t("about_me")}</h2>
+          <p className="lg:text-base text-sm text-gray-300 mb-4">
+            {t("about_me_section.p1")}
           </p>
-          <p className="text-gray-300">
-            Mi objetivo como desarrollador es innovar o mejorar aspectos ya existentes.
+          <p className="lg:text-base text-sm text-gray-300 mb-4">
+            {t("about_me_section.p2")}
+          </p>
+          <p className="lg:text-base text-sm text-gray-300">
+            {t("about_me_section.p3")}
           </p>
         </div>
       </div>
