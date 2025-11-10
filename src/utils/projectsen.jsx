@@ -9,6 +9,7 @@ import rufWatch from './../assets/ruf_watch.jpg';
 import FlappyBird from './../assets/flappybird.png';
 import bakersGame from './../assets/bakersgame.png';
 import ejchat from './../assets/chat.png';
+import Gruasgz from './../assets/gruasgz_foto.jpg';
 
 import React from "react";
 import { TbBrandAstro, TbBrandReactNative, TbBrandRedux   } from "react-icons/tb";
@@ -18,7 +19,7 @@ import { FaNodeJs } from "react-icons/fa6";
 import { FaReact, FaSpotify, FaJava, FaSwift   } from "react-icons/fa";
 import { SiSocketdotio, SiExpo, SiGmail,SiSemanticui, SiRedux,SiAssemblyscript, SiRaylib, SiDjango,SiDocker    } from "react-icons/si";
 import { MdNotificationsActive } from "react-icons/md";
-import { DiRedis } from "react-icons/di";
+import { DiRedis, DiMysql } from "react-icons/di";
 
 export default {
     web: [
@@ -295,7 +296,43 @@ export default {
                     icon: <SiGmail />
                 }
             ]
+        },
+        {
+            id: 4,
+            name: "Gruas GZ - Inventory Management App",
+            video: null,
+            description: "Mobile CRM for vehicle inventory control in a towing company. Backend built with Node/Express + MySQL, deployed on a Linux server using PM2.",
+            image: Gruasgz,
+            functionalities: [
+                "JWT-based login",
+                "Multi-criteria search",
+                "Deployment with PM2 and logs",
+                "OTA updates",
+            ],
+            tags: [
+                {
+                    name: "React Native",
+                    color: "blue",
+                    icon: <TbBrandReactNative />
+                },
+                {
+                    name: "Expo",
+                    color: "gray",
+                    icon: <SiExpo />
+                },
+                {
+                    name: "NodeJS",
+                    color: "green",
+                    icon: <FaNodeJs />
+                },
+                {
+                    name: "MySQL",
+                    color: "orange",
+                    icon: <DiMysql />
+                }
+            ]
         }
+
     ],
     watch: [
         {
