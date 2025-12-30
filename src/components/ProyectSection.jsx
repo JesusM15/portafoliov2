@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import MobileMockup from "./MobileMockup/MobileMockup";
 import WatchMockup from "./WatchMockup/WatchMockup";
 import './../App.css'
+import HeroCard from "./Card/HeroCard.jsx";
 
 function ProyectSection({ onSelectedProject }) {
     const { i18n } = useTranslation();
@@ -28,12 +29,15 @@ function ProyectSection({ onSelectedProject }) {
     const handleSelectProject = (project) => {
         onSelectedProject(project)
     }
+        const list = projects[selectedCategory] || [];
+        const heroProjects = list.filter(p => p?.hero === true);
+        const normalProjects = list.filter(p => p?.hero !== true);
 
     return (
         <>
-        <section className="flex flex-col items-center w-full degradade relative" id="projects">
+        <section className="flex flex-col px-4 w-full degradade relative" id="projects">
 
-            <div className="grid grid-cols-2 lg:flex lg:w-auto w-full gap-6 mb-6 lg:p-0 px-6">
+            <div className="grid grid-cols-2 lg:flex lg:w-auto w-full gap-6 mb-6 px-4">
                 {Object.keys(projects).map(category => (
                     <button 
                         key={category} 
@@ -49,12 +53,36 @@ function ProyectSection({ onSelectedProject }) {
                 ))}
             </div>
 
+                {((selectedCategory === "web") || (selectedCategory === "desktop")) && (
+                <div className="w-full max-w-7xl mx-auto flex flex-col gap-10">
+                    {heroProjects.map((project, idx) => (
+                    <HeroCard
+                        key={project.id}
+                        project={project}
+                        type={selectedCategory}
+                        featured={!!project.featured}
+                        production={!!project.production}
+                        reverse={project.reverse ?? (idx % 2 === 1)}
+                        onSelectProject={() => handleSelectProject(project)}
+                    />
+                    ))}
+
+                    {normalProjects.length > 0 && (
+                    <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
+                        {normalProjects.map(project => (
+                        <Card
+                            key={project.id}
+                            project={project}
+                            onSelectProject={() => handleSelectProject(project)}
+                        />
+                        ))}
+                    </div>
+                    )}
+                </div>
+                )}
+
+
             <div className="flex justify-center flex-wrap gap-10 w-full relative lg:container p-2 lg:p-4">
-                {((selectedCategory === "web") || (selectedCategory === "desktop")) && 
-                    projects[selectedCategory]?.map(project => (
-                        <Card key={project.id} project={project} onSelectProject={() =>  handleSelectProject(project)} />
-                    ))
-                }
 
                 {selectedCategory === "mobile" && (
                 <div className="relative  flex items-center w-full max-w-6xl overflow-hidden rounded-xl">
