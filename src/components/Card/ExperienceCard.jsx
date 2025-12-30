@@ -47,7 +47,7 @@ export default function ExperienceCard({ item, align = "left" }) {
       <ul className="w-full mt-1 space-y-1.5 text-sm text-gray-200/85 leading-relaxed">
         {item.highlights.slice(0, 5).map((h, idx) => (
           <li key={idx} className="flex gap-2">
-            <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-purple-400/90 shrink-0" />
+            <span className="mt-[7px] w-1.5 h-1.5 rounded-full bg-gradient-to-b from-purple-500 via-purple-600 to-purple-800 shrink-0" />
             <span>{h}</span>
           </li>
         ))}

@@ -42,10 +42,10 @@ function ProyectSection({ onSelectedProject }) {
                     <button 
                         key={category} 
                         onClick={() => setSelectedCategory(category)}
-                        className={`px-4 py-1 text-lg font-medium rounded-lg transition-all duration-300 cursor-pointer border border-gray-100 lg:flex-initial flex-1
+                        className={`px-4 py-1 text-lg font-medium rounded-lg transition-all duration-100 cursor-pointer border border-gray-100 lg:flex-initial flex-1
                             ${selectedCategory === category 
-                                ? "text-white bg-purple-800/30 border border-purple-500 shadow-lg scale-100"
-                                : "text-gray-400 hover:bg-purple-800/30 hover:border hover:border-purple-500 hover:text-white hover:scale-100 transition-all"
+                                ? "text-white bg-gradient-to-r from-indigo-600 via-purple-600 to-purple-700 border border-purple-500 shadow-lg scale-100"
+                                : "text-gray-400 hover:bg-gradient-to-r hover:from-indigo-600/50 hover:via-purple-600/50 hover:to-purple-700/50 hover:border hover:border-purple-500 hover:text-white hover:scale-100 transition-all"
                             }`}
                     >
                         {category.charAt(0).toUpperCase() + category.slice(1)}

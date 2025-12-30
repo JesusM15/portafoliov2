@@ -55,7 +55,6 @@ export default function HeroCard({
           reverse ? "lg:[&>*:first-child]:order-2" : "",
         ].join(" ")}
       >
-        {/* Media */}
         <div className="relative lg:col-span-7 min-h-[320px] sm:min-h-[380px] lg:min-h-[460px]">
           <img
             src={project.image}
@@ -64,14 +63,12 @@ export default function HeroCard({
             loading="lazy"
           />
 
-          {/* overlay más pro */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/20 to-black/20" />
           <div className="absolute inset-0 ring-1 ring-white/10" />
 
-          {/* Badges top-left */}
           <div className="absolute top-5 left-5 flex gap-2 flex-wrap">
             {featured && (
-              <span className="inline-flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-purple-600/90 text-white">
+              <span className="inline-flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-purple-700 text-white">
                 <FaStar /> Destacado
               </span>
             )}

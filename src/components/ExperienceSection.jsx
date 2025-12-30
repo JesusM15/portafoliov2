@@ -218,7 +218,6 @@ export default function ExperienceSection() {
 
         </div>
 
-        {/* Timeline wrapper */}
         <div className="relative">
           {/* Línea central (solo desktop) */}
           <div className="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 h-full w-px bg-white/10" />
@@ -231,7 +230,7 @@ export default function ExperienceSection() {
                 <div key={index} className="relative">
                   {/* Punto en la línea central (desktop) */}
                   <div className="hidden md:block absolute left-1/2 top-6 -translate-x-1/2">
-                    <span className="block w-3.5 h-3.5 rounded-full bg-purple-500 shadow-[0_0_0_6px_rgba(168,85,247,0.12)]" />
+                    <span className="block w-3.5 h-3.5 rounded-full bg-gradient-to-b from-indigo-500 via-purple-600 to-purple-800 shadow-[0_0_0_6px_rgba(168,85,247,0.12)]" />
                   </div>
 
                   {/* Layout: 2 columnas desktop / 1 columna mobile */}
@@ -250,7 +249,7 @@ export default function ExperienceSection() {
                   {/* Versión mobile: card única con punto a la izquierda */}
                   <div className="md:hidden mt-4">
                     <div className="relative pl-6">
-                      <span className="absolute left-0 top-4 w-2.5 h-2.5 rounded-full bg-purple-500 shadow-[0_0_0_6px_rgba(168,85,247,0.12)]" />
+                      {/* <span className="absolute left-0 top-4 w-2.5 h-2.5 rounded-full bg-purple-500 shadow-[0_0_0_6px_rgba(168,85,247,0.12)]" /> */}
                       <ExperienceCard item={item} align="left" />
                     </div>
                   </div>

@@ -61,7 +61,7 @@ export default function Card({ project, onSelectProject }) {
           {project?.tags?.map((tag, index) => (
             <li
               key={index}
-              className={`flex items-center gap-2 px-3 py-1 rounded-full cursor-pointer transition-all duration-300 border ${colorClasses[tag.color] || "border-gray-500 text-gray-300 bg-gray-600/20 hover:bg-gray-600/40"}`}              >
+              className={`flex text-xs items-center gap-2 px-3 py-1 rounded-full cursor-pointer transition-all duration-300 border ${colorClasses[tag.color] || "border-gray-500 text-gray-300 bg-gray-600/20 hover:bg-gray-600/40"}`}              >
               {tag.icon}
               {tag.name}
             </li>

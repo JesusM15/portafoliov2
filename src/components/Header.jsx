@@ -112,7 +112,7 @@ export default function Header({ selected, setSelected, refs }) {
         )}
       </div>
 
-      <ul className="text-lg font-normal flex gap-3 lg:gap-4">
+      <ul className="text-md font-normal flex gap-3 lg:gap-4">
         <li
           className={`cursor-pointer text-lg font-normal px-2 py-1 ${
             selected === "Inicio"
@@ -150,7 +150,9 @@ export default function Header({ selected, setSelected, refs }) {
           </a>
         </li>
         <li
-          className={`cursor-pointer font-normal border bg-purple-700/40  text-md flex items-center py-1 px-2 rounded-full ${
+          className={`cursor-pointer font-normal 
+            border border-gray-600
+            bg-gradient-to-r from-indigo-500/40 via-purple-600/40 to-purple-700/40 text-md flex items-center py-1 px-3 rounded-full ${
             selected === "Contactame"
               ? "text-glow selected-li"
               : "text-purple-100 hover:text-white"
