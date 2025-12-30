@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import mexicoFlag from './../assets/flag_mexico.png';
 import usaFlag from './../assets/flag_usa.png';
 import { FaArrowDown } from "react-icons/fa";
+import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 
 export default function Header({ selected, setSelected, refs }) {
 
@@ -58,7 +59,7 @@ export default function Header({ selected, setSelected, refs }) {
       refs.projectRef.current.scrollIntoView({ behavior: "smooth" });
     } else if (section === "Experiencia" && refs.experienceRef.current) {
       refs.experienceRef.current.scrollIntoView({ behavior: "smooth" });
-    } else if (section === "Acerca de mi" && refs.aboutRef.current) {
+    } else if (section === "Contactame" && refs.aboutRef.current) {
       refs.aboutRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
@@ -81,18 +82,18 @@ export default function Header({ selected, setSelected, refs }) {
     <div className="relative font-bold text-lg" ref={ref}>
         <button
           onClick={() => setSelectorOpen((prev) => !prev)}
-          className="flex items-center gap-2 font-semibold text-base uppercase bg-purple-900/40 border border-purple-900 px-3 py-1 text-white"
+          className="flex items-center gap-2 font-semibold text-base uppercase cursor-pointer px-3 py-1 text-white hover:bg-gray-700 transition-all"
         >
           <img
             src={language === "es" ? mexicoFlag : usaFlag}
             alt="Flag"
             className="h-5 w-5 object-cover"
           />
-          {language} 
+         {!selectorOpen ? <IoMdArrowDropdown /> : <IoMdArrowDropup />}
         </button>
 
         {selectorOpen && (
-          <div className="absolute z-10 mt-2 w-32 rounded-md shadow-lg bg-black bg-opacity-90 ring-1 ring-purple-600 ring-opacity-20">
+          <div className="absolute z-10 mt-2 w-32 rounded-md shadow-lg bg-black bg-opacity-90  ring-opacity-20">
             <ul className="py-1 text-sm text-white">
               <li
                 onClick={() => handleSelect("es")}
@@ -113,7 +114,7 @@ export default function Header({ selected, setSelected, refs }) {
 
       <ul className="text-lg font-normal flex gap-3 lg:gap-4">
         <li
-          className={`cursor-pointer text-lg font-normal ${
+          className={`cursor-pointer text-lg font-normal px-2 py-1 ${
             selected === "Inicio"
               ? "text-glow selected-li"
               : "text-gray-400 hover:text-white"
@@ -125,7 +126,7 @@ export default function Header({ selected, setSelected, refs }) {
           </a>
         </li>
         <li
-          className={`cursor-pointer text-lg font-normal ${
+          className={`cursor-pointer text-lg font-normal px-2 py-1 ${
             selected === "Proyectos"
               ? "text-glow selected-li"
               : "text-gray-400 hover:text-white"
@@ -137,7 +138,7 @@ export default function Header({ selected, setSelected, refs }) {
           </a>
         </li>
         <li
-          className={`cursor-pointer text-lg font-normal ${
+          className={`cursor-pointer text-lg font-normal px-2 py-1 ${
             selected === "Experiencia"
               ? "text-glow selected-li"
               : "text-gray-400 hover:text-white"
@@ -149,15 +150,15 @@ export default function Header({ selected, setSelected, refs }) {
           </a>
         </li>
         <li
-          className={`cursor-pointer text-lg font-normal ${
-            selected === "Acerca de mi"
+          className={`cursor-pointer font-normal border bg-purple-700/40  text-md flex items-center py-1 px-2 rounded-full ${
+            selected === "Contactame"
               ? "text-glow selected-li"
-              : "text-gray-400 hover:text-white"
+              : "text-purple-100 hover:text-white"
           }`}
-          onClick={() => setSelected("Acerca de mi")}
+          onClick={() => setSelected("Contactame")}
         >
-          <a href="#about_me">
-            {t("about_me")}
+          <a href="#contact_me">
+            {t("contact_me")}
           </a>
         </li>
       </ul>

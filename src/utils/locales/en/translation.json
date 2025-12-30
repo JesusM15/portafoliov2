@@ -4,8 +4,14 @@
     "experience": "Experience",
     "about_me": "About me",
     "hero_section": {
-        "greet": "Hi, I'm "
+        "greet": "Hi, I'm ",
+        "subtitle": "Fullstack developer with experience in enterprise platforms, real-time systems, and scalable web, mobile, and wearable applications.",
+        "years_experience": "Years of experience",
+        "completed_projects": "Completed projects"
     },
+    "contact_me": "Contact me",
+    "my_projects": "My Projects",
+    "work_together": "Let's work together",
     "full_stack_developer": "Fullstack Developer",
     "with_experience_in": "with experience in",
     "and": "and",
