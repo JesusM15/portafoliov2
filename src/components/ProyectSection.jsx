@@ -42,7 +42,7 @@ function ProyectSection({ onSelectedProject }) {
                     <button 
                         key={category} 
                         onClick={() => setSelectedCategory(category)}
-                        className={`px-4 py-1 text-lg font-medium rounded-lg transition-all duration-100 cursor-pointer border border-gray-100 lg:flex-initial flex-1
+                        className={`px-4 py-1 text-lg font-medium rounded-lg transition-all duration-100 cursor-pointer border border-gray-100 lg:flex-1 flex-1
                             ${selectedCategory === category 
                                 ? "text-white bg-gradient-to-r from-indigo-600/70 via-purple-600/70 to-purple-700/70 border border-purple-500 shadow-lg scale-100"
                                 : "text-gray-400 hover:bg-gradient-to-r hover:from-indigo-600/50 hover:via-purple-600/50 hover:to-purple-700/50 hover:border hover:border-purple-500 hover:text-white hover:scale-100 transition-all"
@@ -55,17 +55,20 @@ function ProyectSection({ onSelectedProject }) {
 
                 {((selectedCategory === "web") || (selectedCategory === "desktop")) && (
                 <div className="w-full max-w-7xl mx-auto flex flex-col gap-10">
-                    {heroProjects.map((project, idx) => (
-                    <HeroCard
-                        key={project.id}
-                        project={project}
-                        type={selectedCategory}
-                        featured={!!project.featured}
-                        production={!!project.production}
-                        reverse={project.reverse ?? (idx % 2 === 1)}
-                        onSelectProject={() => handleSelectProject(project)}
-                    />
-                    ))}
+                    <div className="flex flex-col gap-10 max-w-6xl items-center justify-center w-full m-auto">
+                        {heroProjects.map((project, idx) => (
+                        <HeroCard
+                            key={project.id}
+                            project={project}
+                            type={selectedCategory}
+                            featured={!!project.featured}
+                            production={!!project.production}
+                            reverse={project.reverse ?? (idx % 2 === 1)}
+                            onSelectProject={() => handleSelectProject(project)}
+                        />
+                        ))}
+                    </div>
+
 
                     {normalProjects.length > 0 && (
                     <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">

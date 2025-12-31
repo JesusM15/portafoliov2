@@ -9,6 +9,12 @@
         ,"years_experience": "Años de experiencia",
         "completed_projects": "Proyectos completados"
     },
+    "outstanding": "Destacado",
+    "production": "En Producción",
+    "contact_section": {
+        "title": "Trabajemos Juntos",
+        "subtitle": "Estoy abierto a nuevos proyectos, ideas o colaboraciones. Escríbeme y lo vemos."
+    },
     "contact_me": "Contactame",
     "my_projects": "Mis Proyectos",
     "work_together": "Trabajemos Juntos",

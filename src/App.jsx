@@ -6,6 +6,7 @@ import ExperienceSection from "./components/ExperienceSection";
 import AboutMeSection from "./components/AboutMeSection";
 import './index.css'
 import { useTranslation } from "react-i18next";
+import ContactSection from "./components/ContactSection";
 
 function App() {
   const heroRef = useRef(null);
@@ -34,7 +35,7 @@ function App() {
           } else if (entry.target === experienceRef.current) {
             setSelected("Experiencia");
           } else if (entry.target === aboutRef.current) {
-            setSelected("Acerca de mi");
+            setSelected("Contactame");
           }
         }
       });
@@ -80,7 +81,7 @@ function App() {
           <ExperienceSection />
         </div>
         <div ref={aboutRef}>
-          <AboutMeSection />
+          <ContactSection />
         </div>
 
         {selectedProject && (

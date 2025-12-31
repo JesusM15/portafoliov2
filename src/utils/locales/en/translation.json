@@ -9,6 +9,12 @@
         "years_experience": "Years of experience",
         "completed_projects": "Completed projects"
     },
+    "outstanding": "Outstanding",
+    "production": "On Production",
+    "contact_section": {
+        "title": "Let's work together",
+        "subtitle": "Open to new projects, ideas or collaborations. Feel free to reach out."
+    },
     "contact_me": "Contact me",
     "my_projects": "My Projects",
     "work_together": "Let's work together",

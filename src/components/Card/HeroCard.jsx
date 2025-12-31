@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa";
 import { IoWatch } from "react-icons/io5";
 import colorClasses from "./../../gradients";
+import { useTranslation } from "react-i18next";
 
 const TYPE_META = {
   web: { label: "Web", icon: <FaDesktop /> },
@@ -35,6 +36,7 @@ export default function HeroCard({
   maxBullets = 5,
   showActions = true,
 }) {
+  const { t } = useTranslation();
   const bullets = getBullets(project).slice(0, maxBullets);
   const typeInfo = type ? TYPE_META[type] : null;
 
@@ -69,12 +71,12 @@ export default function HeroCard({
           <div className="absolute top-5 left-5 flex gap-2 flex-wrap">
             {featured && (
               <span className="inline-flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-gradient-to-r from-indigo-600 via-purple-600 to-purple-700 text-white">
-                <FaStar /> Destacado
+                <FaStar /> {t('outstanding')}
               </span>
             )}
             {production && (
-              <span className="inline-flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-green-600/90 text-white">
-                <FaRocket /> En producción
+              <span className="inline-flex items-center gap-2 px-3 py-1 text-xs rounded-full bg-green-600/50 border border-green-600 text-white">
+                <FaRocket /> {t('production')}
               </span>
             )}
           </div>
