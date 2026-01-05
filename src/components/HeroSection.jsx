@@ -75,7 +75,7 @@ style={{
                 </p> */}
                 <div className='flex gap-4 pb-2'>
 
-                    <a className='no-underline opacity-100'>
+                    <a className='no-underline opacity-100' href="#contact_me">
                         <button className="py-2 px-4 rounded-lg bg-gradient-to-br from-indigo-500 via-purple-500 to-purple-700 transition-all
                         ease-in-out duration-300 flex items-center gap-3 shadow-indigo-600 shadow-sm  cursor-pointer hover:text-white hover:brightness-90">
                             {t('work_together')}
@@ -83,7 +83,7 @@ style={{
                         </button>
                     </a>
 
-                    <a className='no-underline opacity-100'>
+                    <a className='no-underline opacity-100' href='#projects'>
                         <button className="text-purple-400 py-2 px-4 rounded-lg hover:bg-purple-600/20 hover:text-purple-200 transition-all
                         ease-in-out duration-300 flex items-center gap-3 shadow-purple-600 shadow-sm  cursor-pointer">
                             {t('my_projects')}
