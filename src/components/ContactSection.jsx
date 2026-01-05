@@ -16,6 +16,7 @@ export default function ContactSection(){
     const onSubmit = async (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
+        formData.append("access_key", "1d01e2b8-3dc7-4f63-928c-8a915c0ecc49");
         const company = formData.get('company');
 
         if(company){
