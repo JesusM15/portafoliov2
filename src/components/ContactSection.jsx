@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import { useTranslation } from "react-i18next";
 
 import './../App.css'
@@ -11,7 +11,7 @@ import { FiPhone } from "react-icons/fi";
 
 export default function ContactSection(){
     const { t } = useTranslation();
-    const [ result, setResult ] = useState();
+    const [ result, setResult ] = useState(null);
 
     const onSubmit = async (event) => {
         event.preventDefault();
