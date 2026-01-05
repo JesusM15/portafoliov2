@@ -84,7 +84,7 @@ export default function ContactSection() {
         {t("contact_section.subtitle")}
       </p>
 
-      <section className="flex gap-4 px-4 pt-6">
+      <section className="flex gap-12 px-4 pt-6 lg:flex-row flex-col">
         <form
           onSubmit={onSubmit}
           className="flex-1 flex flex-col gap-4 bg-slate-900/80 rounded-sm border border-slate-700 p-6 pt-8 w-full"

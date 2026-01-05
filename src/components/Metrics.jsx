@@ -9,10 +9,10 @@ export default function Metrics({
 }){
 
     return <div>
-        <b className="flex items-center text-3xl font-bold">
-            {number} <FaPlus className="text-xl" />
+        <b className="flex items-center text-xl md:text-3xl font-bold">
+            {number} <FaPlus className="md:text-xl text-sm" />
         </b>
-        <p className="text-sm opacity-80 text-gray-100">
+        <p className="text-xs md:text-sm opacity-80 text-gray-100">
             {label}
         </p>
     </div>

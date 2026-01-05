@@ -248,7 +248,7 @@ export default function ExperienceSection() {
 
                   {/* Versión mobile: card única con punto a la izquierda */}
                   <div className="md:hidden mt-4">
-                    <div className="relative pl-6">
+                    <div className="relative pl-0">
                       {/* <span className="absolute left-0 top-4 w-2.5 h-2.5 rounded-full bg-purple-500 shadow-[0_0_0_6px_rgba(168,85,247,0.12)]" /> */}
                       <ExperienceCard item={item} align="left" />
                     </div>
