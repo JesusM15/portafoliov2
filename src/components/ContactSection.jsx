@@ -9,6 +9,8 @@ import { AiOutlineMail } from "react-icons/ai";
 import { LuMapPin } from "react-icons/lu";
 import { FiPhone } from "react-icons/fi";
 import { IoClose } from "react-icons/io5"; // <-- NUEVO
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+
 
 export default function ContactSection() {
   const { t } = useTranslation();
@@ -141,11 +143,11 @@ export default function ContactSection() {
               info={"guerrajesusm72@gmail.com"}
               Icon={<AiOutlineMail className="text-purple-400" />}
             />
-            <ContactCard
+            {/* <ContactCard
               title={"Teléfono"}
               info={"XXX XXX XXXX"}
               Icon={<FiPhone className="text-purple-400" />}
-            />
+            /> */}
             <ContactCard
               title={"Ubicación"}
               info={"Mexicali, Baja California, México."}
@@ -155,12 +157,23 @@ export default function ContactSection() {
 
           <section>
             <h6 className="text-xl font-bold pb-2 pt-4">Redes sociales</h6>
-            <div>{/* ... */}</div>
+            <div className="flex gap-5 mt-6 items-center justify-center">
+                <a href="https://github.com/JesusM15" target="_blank" rel="noopener noreferrer">
+                    <FaGithub className="text-4xl text-purple-400 hover:text-purple-600 hover:scale-110 
+                    transition-all ease-in-out duration-300 cursor-pointer"
+                    style={{ filter: 'drop-shadow(0px 0px 6px rgba(128, 0, 128, 0.6))' }} />
+                </a>
+
+                <a href="https://www.linkedin.com/in/jesus-manuel-perez-guerra-235260229" target="_blank" rel="noopener noreferrer">
+                    <FaLinkedin className="text-4xl text-purple-400 hover:text-purple-600 hover:scale-110 
+                    transition-all ease-in-out duration-300 cursor-pointer"
+                    style={{ filter: 'drop-shadow(0px 0px 6px rgba(128, 0, 128, 0.6))' }} />
+                </a>
+            </div>
           </section>
         </section>
       </section>
 
-      {/* TOAST (abajo derecha) */}
       {toast && (
         <div className="fixed bottom-6 right-6 z-[9999]">
           <div
@@ -220,7 +233,6 @@ export default function ContactSection() {
         </div>
       )}
 
-      {/* Animación para la barra */}
       <style>{`
         @keyframes shrink {
           from { transform: translateX(0%); }
