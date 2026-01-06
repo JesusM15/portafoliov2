@@ -2,59 +2,135 @@ import React from "react";
 import gradientColors from './../../gradients';
 import { FaYoutube } from "react-icons/fa6";
 import './../../index.css';
+import { useTranslation } from "react-i18next";
 
 function MobileMockup({ project, onSelectProject }) {
-    return (
-        <div className="flex flex-col lg:flex-row items-center justify-center lg:items-start gap-6 p-5 rounded-2xl relative max-w-3xl m-auto lg:max-w-full bg-[#0e0e0e] bg-transparent lg:px-16">
-            <div className="relative h-[32rem] bg-gray-900 rounded-2xl overflow-hidden shadow-lg border-[8px] border-black">
-                <div className="absolute top-0 left-0 right-0 mx-auto bg-black h-4 w-20 rounded-b-2xl"></div>
-                <div className="absolute top-1 left-0 right-0 mx-auto bg-gray-900/90 h-1 w-10 rounded-full"></div>
+    const {t} = useTranslation();
 
-                <img src={project.image} alt={project.name} className="w-full h-full object-cover rounded-b-md" loading="lazy" />
+    return (
+        <>
+        
+            <div className="flex lg:hidden flex-col text-center lg:text-left text-white w-full lg:flex-1 lg:max-w-2xl px-4 sm:px-0">
+
+
+            <div className="flex flex-col sm:flex-row lg:flex-row justify-between items-center lg:items-start gap-3 sm:gap-4 mb-4 sm:mb-5 w-full">
+                <h3 className="text-lg md:text-xl lg:text-4xl font-bold leading-tight text-wrap">
+                    {project.name}
+                </h3>
+                
+                {project.video && (
+                    <button
+                        onClick={onSelectProject}
+                        className="flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 text-sm sm:text-base font-medium text-white border-2 border-purple-500 rounded-full hover:bg-purple-500/20 hover:border-purple-400 active:scale-95 transition-all shadow-lg shadow-purple-500/20 flex-shrink-0"
+                        type="button"
+                        aria-label="Ver demo del proyecto"
+                    >
+                        <FaYoutube className="text-lg sm:text-xl" /> 
+                        <span className="hidden sm:inline">Ver demo</span>
+                        <span className="sm:hidden">Demo</span>
+                    </button>
+                )}
             </div>
 
-            <div className="flex flex-col text-left text-white  lg:text-left">
-                <div className="flex lg:flex-row flex-col justify-between items-start">
-                    <h3 className=" text-2xl lg:text-3xl font-semibold mb-3">{project.name}</h3>
-                    {project.video && (
-                        <button
-                            onClick={onSelectProject}
-                            className=" flex items-center gap-2 mb-4 lg:mb-0 cursor-pointer  w-fit px-4 py-2 text-md font-medium text-white border border-purple-500 rounded-full hover:bg-purple-500/10 transition"
-                        >
-                            <FaYoutube className="text-md" size={24} /> 
-                            <p>
-                                Ver demo
-                            </p>
-                        </button>
+            </div>
+            <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center gap-8 sm:gap-10 lg:gap-12 p-4 sm:p-6 lg:p-8 rounded-2xl relative w-full max-w-6xl mx-auto bg-transparent">
+
+
+
+                <div className="relative flex-shrink-0 flex justify-center lg:justify-start w-full lg:w-auto">
+                    <div className="relative h-[28rem] sm:h-[32rem] lg:h-[36rem] w-[14rem] sm:w-[16rem] lg:w-[18rem] bg-gray-900 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-black/50 border-[10px] sm:border-[12px] border-black">
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 bg-black h-5 sm:h-6 w-24 sm:w-28 rounded-b-3xl z-10"></div>
+                        <div className="absolute top-1.5 sm:top-2 left-1/2 -translate-x-1/2 bg-gray-800/80 h-1 sm:h-1.5 w-12 sm:w-14 rounded-full z-20"></div>
+
+                    <div className="w-full h-full overflow-hidden rounded-[1.5rem]">
+                            <img 
+                                src={project.image} 
+                                alt={`${project.name} mobile app screenshot`} 
+                                className="w-full h-full object-cover" 
+                                loading="lazy" 
+                            />
+                        </div>
+
+                        {/* Reflection effect */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent pointer-events-none rounded-[1.5rem]"></div>
+                    </div>
+
+                    <div className="absolute inset-0 -z-10 blur-2xl opacity-30 bg-gradient-to-br from-purple-500 via-indigo-500 to-purple-700 rounded-full lg:scale-95 md:scale-30 scale-10"></div>
+                </div>
+
+                <div className="hidden lg:flex flex-col text-center lg:text-left text-white w-full lg:flex-1 lg:max-w-2xl px-4 sm:px-0">
+
+
+                    <div className="flex flex-col sm:flex-row lg:flex-row justify-between items-center lg:items-start gap-3 sm:gap-4 mb-4 sm:mb-5 w-full">
+                        <h3 className="text-2xl sm:text-2xl lg:text-3xl font-bold leading-tight">
+                            {project.name}
+                        </h3>
+                        
+                        {project.video && (
+                            <button
+                                onClick={onSelectProject}
+                                className="flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 text-sm sm:text-base font-medium text-white border-2 border-purple-500 rounded-full hover:bg-purple-500/20 hover:border-purple-400 active:scale-95 transition-all shadow-lg shadow-purple-500/20 flex-shrink-0"
+                                type="button"
+                                aria-label="Ver demo del proyecto"
+                            >
+                                <FaYoutube className="text-lg sm:text-xl" /> 
+                                <span className="hidden sm:inline">{t("watch_demo")}</span>
+                                <span className="sm:hidden">Demo</span>
+                            </button>
+                        )}
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-base sm:text-md text-gray-300 mb-5 sm:mb-6 leading-relaxed">
+                        {project.description}
+                    </p>
+
+                    {project?.functionalities && project.functionalities.length > 0 && (
+                        <div className="mb-6 sm:mb-7 w-full">
+                            <h4 className="text-lg sm:text-xl font-semibold mb-3 text-purple-300">
+                                {t('features')}
+                            </h4>
+                            <ul 
+                                style={{
+                                    maxWidth: 'fit-content'
+                                }}
+                            className=" grid grid-cols-1 grid-rows-5 lg:justify-normal justify-center m-auto lg:flex  lg:flex-col gap-2.5 sm:gap-3 text-sm sm:text-base text-white/90 text-left max-w-xl mx-auto lg:mx-0">
+                                {project.functionalities.map((functionality, index) => (
+                                    <li key={index} className="relative pl-5 sm:pl-6 leading-relaxed">
+                                        <div className=" hidden lg:absolute top-[0.6rem] left-0 h-2 w-2 rounded-full bg-purple-400 shadow-sm shadow-purple-400/50"></div>
+                                        <span>{functionality}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+
+                    {project?.tags && project.tags.length > 0 && (
+                        <div className="w-full lg:block hidden">
+                            {/* <h4 className="text-base sm:text-lg font-semibold mb-3 text-purple-300">
+                                Tecnologías
+                            </h4> */}
+                            <div className="flex flex-wrap gap-2 sm:gap-2.5 justify-center lg:justify-start">
+                                {project.tags.map(tag => (
+                                    <span
+                                        key={tag.name}
+                                        className={`inline-flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full border text-xs sm:text-sm font-medium transition-all hover:scale-105 ${
+                                            gradientColors[tag?.color] || 
+                                            'border-gray-500 text-gray-300 bg-gray-600/20 hover:bg-gray-600/40'
+                                        }`}
+                                    >
+                                        <span className="text-sm sm:text-base">{tag.icon}</span>
+                                        <span>{tag.name}</span>
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
                     )}
                 </div>
-                <p className="text-lg text-gray-300 mb-3 max-w-xl">{project.description}</p>
-                {project?.functionalities && (
-                    <>
-                        <ul className="flex flex-col gap-2 mb-4 text-md text-white opacity-80">
-                            {project?.functionalities?.map((functionality, index) => (
-                                <li key={index} className="relative">
-                                    <div className="absolute top-1 left-0 md:left-auto md:right-full h-2 w-2 rounded-full bg-purple-400/70"></div>
-                                    <p className="pl-4">{functionality}</p>
-                                </li>
-                            ))}
-                        </ul>
-                    </>
-                )}
-                
-
-                <div className="flex hide-scrollbar lg:flex-row  flex-col w-full lg:h-auto h-12 lg:overflow-x-auto lg:overflow-y-auto overflow-y-hidden overflow-x-auto flex-wrap justify-between lg:justify-start gap-2 mt-3   lg:max-w-3/4">
-                    {project?.tags?.map(tag => (
-                        <span
-                            key={tag.name}
-                            className={`cursor-pointer flex lg:flex-none flex-1 text-nowrap items-center  gap-2 px-3 py-1 rounded-full border shadow-md ${gradientColors[tag?.color]}`}
-                        >
-                            {tag.icon} {tag.name}
-                        </span>
-                    ))}
-                </div>
             </div>
-        </div>
+
+        </>
+
     );
 }
 

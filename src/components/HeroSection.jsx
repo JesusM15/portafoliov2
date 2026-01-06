@@ -12,20 +12,16 @@ import Metrics from "./Metrics";
 
 export default function HeroSection({ ref }) {
   const { t, i18n } = useTranslation();
+  
+  const cvLink = i18n.language === "es" ? cv : encv;
 
   return (
     <section
       id="home"
       ref={ref}
-      className={[
-        "w-full flex relative",
-        "min-h-[100svh]",
-        "lg:flex-row flex-col",
-        "lg:p-16 p-6 sm:p-8",
-        "pt-12 sm:pt-16 lg:pt-16",
-        "gap-10 lg:gap-0",
-      ].join(" ")}
+      className="w-full flex relative min-h-[100svh] md:flex-row flex-col md:p-16 p-6 sm:p-8 pt-16 sm:pt-20 md:pt-16 gap-8 md:gap-0"
     >
+      {/* Background */}
       <div
         className="absolute inset-0 bg-no-repeat bg-cover bg-center opacity-10 blur-md pointer-events-none"
         style={{ backgroundImage: `url(${nebulosa})` }}
@@ -53,189 +49,97 @@ export default function HeroSection({ ref }) {
         ))}
       </div>
 
-      {/* Left: Text content */}
-      <article className="relative z-10 lg:flex-initial flex justify-center items-center lg:items-start flex-col w-full lg:max-w-[720px]">
-        {/* Title */}
-        <h1
-          className={[
-            "text-white font-extrabold tracking-tight pb-2",
-            // ✅ fluid typography (better for big phones)
-            "text-[clamp(2.2rem,6vw,4.5rem)]",
-            "text-center lg:text-left",
-          ].join(" ")}
-        >
+      {/* LEFT CONTENT */}
+      <article className="relative z-10 flex flex-col items-center md:items-start w-full md:max-w-[720px]">
+        {/* Título */}
+        <h1 className="text-white font-extrabold tracking-tight pb-2 text-[clamp(2rem,6vw,4.5rem)] text-center md:text-left leading-tight">
           {t("hero_section.greet")}
         </h1>
 
-        <span
-          className={[
-            "bg-gradient-to-r from-rose-400 via-purple-500 to-purple-700",
-            "inline-block text-transparent bg-clip-text font-extrabold",
-            "text-[clamp(2.6rem,7vw,4.75rem)]",
-            "text-center lg:text-left",
-          ].join(" ")}
-        >
+        {/* Nombre con gradiente */}
+        <span className="bg-gradient-to-r from-rose-400 via-purple-500 to-purple-700 inline-block text-transparent bg-clip-text font-extrabold text-[clamp(2.5rem,7vw,4.75rem)] text-center md:text-left leading-tight">
           Jesús
         </span>
 
-        <p className="text-purple-300 text-sm sm:text-base md:text-xl py-3 purple-glow text-center lg:text-left">
+        {/* Rol */}
+        <p className="text-purple-300 text-sm sm:text-base md:text-xl py-3 sm:py-4 purple-glow text-center md:text-left">
           {t("full_stack_developer")}
         </p>
 
-        <p
-          className={[
-            "text-gray-50 w-full",
-            // ✅ readable line length on large phones
-            "max-w-[46ch] lg:max-w-xl",
-            "text-center lg:text-left",
-            "text-sm sm:text-base md:text-lg",
-            "leading-relaxed",
-          ].join(" ")}
-        >
-          <span>{t("hero_section.subtitle")}</span>
+        {/* Descripción */}
+        <p className="text-gray-50 w-full max-w-[46ch] md:max-w-xl text-center md:text-left text-sm sm:text-base md:text-lg leading-relaxed mb-6 md:mb-0">
+          {t("hero_section.subtitle")}
         </p>
 
-        {/* Desktop / Tablet layout */}
-        <div className="hidden md:block w-full">
-          <section className="flex gap-6 pb-6 pt-6 justify-center lg:justify-start">
-            <Metrics number={3} label={t("hero_section.years_experience")} />
-            <Metrics number={10} label={t("hero_section.completed_projects")} />
-          </section>
+        {/* Métricas */}
+        <section className="flex gap-4 sm:gap-6 pb-4 sm:pb-6 pt-6 justify-center md:justify-start w-full">
+          <Metrics number={3} label={t("hero_section.years_experience")} />
+          <Metrics number={10} label={t("hero_section.completed_projects")} />
+        </section>
 
-          <div className="flex gap-4 pb-2 justify-center lg:justify-start">
-            <a className="no-underline opacity-100" href="#contact_me">
-              <button
-                className={[
-                  "justify-between py-2 px-4 rounded-lg",
-                  "bg-gradient-to-br from-indigo-500 via-purple-500 to-purple-700",
-                  "transition-all ease-in-out duration-300",
-                  "flex items-center gap-3 shadow-indigo-600 shadow-sm cursor-pointer",
-                  "hover:text-white hover:brightness-90",
-                ].join(" ")}
-              >
-                {t("work_together")}
-                <FaArrowRight />
-              </button>
-            </a>
-
-            <a className="no-underline opacity-100" href="#projects">
-              <button
-                className={[
-                  "text-purple-400 py-2 px-4 rounded-lg",
-                  "hover:bg-purple-600/20 hover:text-purple-200",
-                  "transition-all ease-in-out duration-300",
-                  "flex items-center gap-3 shadow-purple-600 shadow-sm cursor-pointer",
-                ].join(" ")}
-              >
-                {t("my_projects")}
-              </button>
-            </a>
-          </div>
-
-          <div className="flex gap-5 mt-6 justify-center lg:justify-start">
-            <a
-              href={i18n?.language === "es" ? cv : encv}
-              download="CV_JesusM.pdf"
-              title={t("download_resume")}
-            >
-              <IoMdDownload
-                className="text-4xl text-purple-400 hover:text-purple-600 hover:scale-110 transition-all ease-in-out duration-300 cursor-pointer"
-                style={{ filter: "drop-shadow(0px 0px 6px rgba(128, 0, 128, 0.6))" }}
-              />
-            </a>
-
-            <a href="https://github.com/JesusM15" target="_blank" rel="noopener noreferrer">
-              <FaGithub
-                className="text-4xl text-purple-400 hover:text-purple-600 hover:scale-110 transition-all ease-in-out duration-300 cursor-pointer"
-                style={{ filter: "drop-shadow(0px 0px 6px rgba(128, 0, 128, 0.6))" }}
-              />
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/jesus-manuel-perez-guerra-235260229"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin
-                className="text-4xl text-purple-400 hover:text-purple-600 hover:scale-110 transition-all ease-in-out duration-300 cursor-pointer"
-                style={{ filter: "drop-shadow(0px 0px 6px rgba(128, 0, 128, 0.6))" }}
-              />
-            </a>
-          </div>
+        {/* Astronauta solo en móvil */}
+        <div className="md:hidden flex justify-center py-6 w-full">
+          <img
+            src={astronaut}
+            className="h-40 sm:h-52 w-auto floatRotateForward astronaut-glow glow"
+            alt="Astronaut"
+          />
         </div>
 
-        {/* Mobile layout */}
-        <div className="md:hidden block w-full">
-          <section className="flex gap-6 pb-4 pt-6 justify-center">
-            <Metrics number={3} label={t("hero_section.years_experience")} />
-            <Metrics number={10} label={t("hero_section.completed_projects")} />
-          </section>
+        {/* Botones de acción */}
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pb-4 sm:pb-6 w-full sm:w-auto">
+          <a href="#contact_me" className="w-full sm:w-auto">
+            <button className="w-full sm:w-auto justify-center sm:justify-between py-2.5 sm:py-2 px-4 rounded-lg bg-gradient-to-br from-indigo-500 via-purple-500 to-purple-700 flex items-center gap-3 hover:brightness-90 transition-all">
+              {t("work_together")}
+              <FaArrowRight />
+            </button>
+          </a>
 
-          {/* ✅ astronaut: no absolute, scales better on big phones */}
-          <article className="flex justify-center items-center w-full py-6">
-            <img
-              src={astronaut}
-              className="h-40 sm:h-48 floatRotateForward astronaut-glow glow"
-              alt="Astronaut"
-            />
-          </article>
+          <a href="#projects" className="w-full sm:w-auto">
+            <button className="w-full sm:w-auto text-purple-400 py-2.5 sm:py-2 px-4 rounded-lg hover:bg-purple-600/20 hover:text-purple-200 transition-all">
+              {t("my_projects")}
+            </button>
+          </a>
+        </div>
 
-          <div className="flex gap-3 pb-2 flex-col text-sm w-full">
-            <a className="no-underline opacity-100 w-full" href="#contact_me">
-              <button
-                className={[
-                  "w-full justify-between py-2.5 px-4 rounded-lg",
-                  "bg-gradient-to-br from-indigo-500 via-purple-500 to-purple-700",
-                  "transition-all ease-in-out duration-300",
-                  "flex items-center gap-3 shadow-indigo-600 shadow-sm cursor-pointer",
-                  "hover:text-white hover:brightness-90",
-                ].join(" ")}
-              >
-                {t("work_together")}
-                <FaArrowRight />
-              </button>
-            </a>
-          </div>
-
-          <div className="flex gap-5 mt-5 justify-center">
-            <a
-              href={i18n?.language === "es" ? cv : encv}
-              download="CV_JesusM.pdf"
-              title={t("download_resume")}
-            >
-              <IoMdDownload
-                className="text-2xl text-purple-400 hover:text-purple-600 hover:scale-110 transition-all ease-in-out duration-300 cursor-pointer"
-                style={{ filter: "drop-shadow(0px 0px 6px rgba(128, 0, 128, 0.6))" }}
-              />
-            </a>
-
-            <a href="https://github.com/JesusM15" target="_blank" rel="noopener noreferrer">
-              <FaGithub
-                className="text-2xl text-purple-400 hover:text-purple-600 hover:scale-110 transition-all ease-in-out duration-300 cursor-pointer"
-                style={{ filter: "drop-shadow(0px 0px 6px rgba(128, 0, 128, 0.6))" }}
-              />
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/jesus-manuel-perez-guerra-235260229"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin
-                className="text-2xl text-purple-400 hover:text-purple-600 hover:scale-110 transition-all ease-in-out duration-300 cursor-pointer"
-                style={{ filter: "drop-shadow(0px 0px 6px rgba(128, 0, 128, 0.6))" }}
-              />
-            </a>
-          </div>
+        {/* Iconos sociales */}
+        <div className="flex gap-5 sm:gap-6 justify-center md:justify-start w-full">
+          <a 
+            href={cvLink} 
+            download
+            className="transform hover:scale-110 transition-transform"
+            aria-label="Download CV"
+          >
+            <IoMdDownload className="text-3xl sm:text-4xl text-purple-400 hover:text-purple-300" />
+          </a>
+          
+          <a 
+            href="https://github.com/JesusM15" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="transform hover:scale-110 transition-transform"
+            aria-label="GitHub Profile"
+          >
+            <FaGithub className="text-3xl sm:text-4xl text-purple-400 hover:text-purple-300" />
+          </a>
+          
+          <a 
+            href="https://www.linkedin.com/in/jesus-manuel-perez-guerra-235260229" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transform hover:scale-110 transition-transform"
+            aria-label="LinkedIn Profile"
+          >
+            <FaLinkedin className="text-3xl sm:text-4xl text-purple-400 hover:text-purple-300" />
+          </a>
         </div>
       </article>
 
-      {/* Right: astronaut only on md+ */}
-      <article className="relative z-10 flex-1 md:flex justify-center items-center hidden">
+      {/* RIGHT ASTRONAUT (tablet y desktop) */}
+      <article className="relative z-10 flex-1 hidden md:flex justify-center items-center">
         <img
           src={astronaut}
-          className="h-64 absolute floatRotateForward astronaut-glow glow"
-          style={{ top: "50%", transform: "translateY(-50%)" }}
+          className="h-48 lg:h-64 w-auto floatRotateForward astronaut-glow glow"
           alt="Astronaut"
         />
       </article>

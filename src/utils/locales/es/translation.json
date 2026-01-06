@@ -2,6 +2,7 @@
     "projects": "Proyectos",
     "home": "Inicio",
     "experience": "Experiencia",
+    "watch_demo": "Ver demo",
     "about_me": "Acerca de mi",
     "hero_section": {
         "greet": "Hola, soy ",
@@ -9,12 +10,28 @@
         ,"years_experience": "Años de experiencia",
         "completed_projects": "Proyectos completados"
     },
+    "features": "Funcionalidades",
     "outstanding": "Destacado",
     "production": "En Producción",
     "contact_section": {
         "title": "Trabajemos Juntos",
-        "subtitle": "Estoy abierto a nuevos proyectos, ideas o colaboraciones. Escríbeme y lo vemos."
+        "subtitle": "Estoy abierto a nuevos proyectos, ideas o colaboraciones. Escríbeme y lo vemos.",
+        "information": "Información de contacto",
+        "social_networks": "Redes sociales",
+        "send_message": "Enviar mensaje",
+        "sending": "Enviando",
+        "name": "Nombre",
+        "name_placeholder": "Escribe tu nombre aquí",
+        "message": "Mensaje",
+        "message_placeholder": "Escribe tu mensaje aquí",
+        "company": "Empresa/Organización",
+        "company_placeholder": "Nombre de tu empresa (opcional)",
+        "success": "¡Mensaje enviado! Te responderé pronto",
+        "error_tryag": "No se pudo enviar. Intenta de nuevo en unos segundos",
+        "ready": "Listo"
     },
+    "location": "Ubicación",
+    "more_projects": "Más proyectos",
     "contact_me": "Contactame",
     "my_projects": "Mis Proyectos",
     "work_together": "Trabajemos Juntos",
