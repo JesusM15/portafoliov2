@@ -234,7 +234,7 @@ export default function ExperienceSection() {
                   </div>
 
                   {/* Layout: 2 columnas desktop / 1 columna mobile */}
-                  <div className="grid md:grid-cols-2 gap-6 md:gap-10 items-start">
+                  <div className="md:grid md:grid-cols-2 gap-6 md:gap-10 items-start hidden">
                     {/* Columna izquierda */}
                     <div className={isLeft ? "md:pr-10" : "md:pr-10 md:opacity-0 md:pointer-events-none"}>
                       {isLeft && <ExperienceCard item={item} align="right" />}
