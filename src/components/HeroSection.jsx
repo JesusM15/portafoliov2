@@ -50,7 +50,7 @@ export default function HeroSection({ ref }) {
       </div>
 
       {/* LEFT CONTENT */}
-      <article className="relative z-10 flex flex-col items-center md:items-start w-full md:max-w-[720px]">
+      <article className="relative z-10 flex flex-col items-center md:justify-center md:items-start w-full md:max-w-[720px]">
         {/* Título */}
         <h1 className="text-white font-extrabold tracking-tight pb-2 text-[clamp(2rem,6vw,4.5rem)] text-center md:text-left leading-tight">
           {t("hero_section.greet")}
