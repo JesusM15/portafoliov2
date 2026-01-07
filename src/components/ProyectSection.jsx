@@ -37,11 +37,10 @@ function ProyectSection({ onSelectedProject }) {
     const heroProjects = list.filter(p => p?.hero === true);
     const normalProjects = list.filter(p => p?.hero !== true);
 
-    // Carousel para cards normales
     const getVisibleCards = () => {
-        if (window.innerWidth >= 1200) return 3; // lg
-        if (window.innerWidth >= 768) return 2;  // md
-        return 1; // mobile
+        if (window.innerWidth >= 1200) return 3; 
+        if (window.innerWidth >= 768) return 2;  
+        return 1; 
     };
 
     const [visibleCards, setVisibleCards] = useState(getVisibleCards());
@@ -49,7 +48,7 @@ function ProyectSection({ onSelectedProject }) {
     useEffect(() => {
         const handleResize = () => {
             setVisibleCards(getVisibleCards());
-            setCarouselIndex(0); // Reset al cambiar tamaño
+            setCarouselIndex(0);
         };
 
         window.addEventListener('resize', handleResize);
@@ -57,7 +56,7 @@ function ProyectSection({ onSelectedProject }) {
     }, []);
 
     useEffect(() => {
-        setCarouselIndex(0); // Reset al cambiar categoría
+        setCarouselIndex(0); 
     }, [selectedCategory]);
 
     const maxCarouselIndex = Math.max(0, normalProjects.length - visibleCards);
@@ -76,14 +75,12 @@ function ProyectSection({ onSelectedProject }) {
 
     return (
         <section className="flex flex-col px-4 sm:px-6 lg:px-8 w-full py-12 sm:py-16 lg:py-20 degradade relative" id="projects">
-            {/* Título de sección */}
             <div className="text-center mb-8 sm:mb-10 lg:mb-12">
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3">
                     {t('projects') || 'Proyectos'}
                 </h2>
             </div>
 
-            {/* Filtros de categoría */}
             <div className="grid grid-cols-2 lg:flex lg:w-auto w-full max-w-2xl mx-auto gap-3 sm:gap-4 lg:gap-6 mb-8 sm:mb-10 lg:mb-12">
                 {Object.keys(projects).map(category => (
                     <button 
@@ -147,7 +144,6 @@ function ProyectSection({ onSelectedProject }) {
                                 )}
                             </div>
 
-                            {/* Carousel Container */}
                             <div className="relative overflow-hidden">
                                 <div 
                                     ref={carouselRef}
@@ -172,7 +168,6 @@ function ProyectSection({ onSelectedProject }) {
                                     ))}
                                 </div>
 
-                                {/* Controles overlay - Mobile */}
                                 {normalProjects.length > visibleCards && (
                                     <>
                                         <button
@@ -193,7 +188,6 @@ function ProyectSection({ onSelectedProject }) {
                                 )}
                             </div>
 
-                            {/* Indicadores de posición */}
                             {normalProjects.length > visibleCards && (
                                 <div className="flex justify-center gap-2 mt-6">
                                     {Array.from({ length: maxCarouselIndex + 1 }).map((_, idx) => (
@@ -263,9 +257,8 @@ function ProyectSection({ onSelectedProject }) {
                 
             )}
 
-            {/* Watch Projects */}
             {selectedCategory === "watch" && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 max-w-6xl mx-auto w-full">
+                <div className="max-w-6xl flex  flex-wrap  gap-12 m-auto justify-center">
                     {projects[selectedCategory]?.map(project => (
                         <WatchMockup key={project.id} project={project} />
                     ))}
