@@ -9,6 +9,8 @@ import { useTranslation } from "react-i18next";
 import cv from "./../assets/cv_jesus_2025.pdf";
 import encv from "./../assets/english_cv_2025.pdf";
 import Metrics from "./Metrics";
+import OrbitingCards from "./OrbitingCards";
+import SunSphere from "./SunSphere";
 
 export default function HeroSection({ ref }) {
   const { t, i18n } = useTranslation();
@@ -21,7 +23,6 @@ export default function HeroSection({ ref }) {
       ref={ref}
       className="w-full flex relative min-h-[100svh] md:flex-row flex-col md:p-16 p-6 sm:p-8 pt-16 sm:pt-20 md:pt-16 gap-8 md:gap-0"
     >
-      {/* Background */}
       <div
         className="absolute inset-0 bg-no-repeat bg-cover bg-center opacity-10 blur-md pointer-events-none"
         style={{ backgroundImage: `url(${nebulosa})` }}
@@ -34,7 +35,6 @@ export default function HeroSection({ ref }) {
         }}
       />
 
-      {/* Particles */}
       <div className="absolute w-full h-full overflow-hidden pointer-events-none z-0">
         {[...Array(30)].map((_, i) => (
           <div
@@ -49,36 +49,29 @@ export default function HeroSection({ ref }) {
         ))}
       </div>
 
-      {/* LEFT CONTENT */}
-      <article className="relative z-10 flex flex-col items-center md:justify-center md:items-start w-full md:max-w-[720px]">
-        {/* Título */}
-        <h1 className="text-white font-extrabold tracking-tight pb-2 text-[clamp(2rem,6vw,4.5rem)] text-center md:text-left leading-tight">
+      <article className="relative z-10 flex flex-col items-center lg:justify-center lg:items-start w-full lg:max-w-[720px]">
+        <h1 className="text-white font-extrabold tracking-tight pb-2 text-[clamp(2rem,6vw,4.5rem)] text-center lg:text-left leading-tight">
           {t("hero_section.greet")}
         </h1>
 
-        {/* Nombre con gradiente */}
-        <span className="bg-gradient-to-r from-rose-400 via-purple-500 to-purple-700 inline-block text-transparent bg-clip-text font-extrabold text-[clamp(2.5rem,7vw,4.75rem)] text-center md:text-left leading-tight">
+        <span className="bg-gradient-to-r from-rose-400 via-purple-500 to-purple-700 inline-block text-transparent bg-clip-text font-extrabold text-[clamp(2.5rem,7vw,4.75rem)] text-center lg:text-left leading-tight">
           Jesús
         </span>
 
-        {/* Rol */}
-        <p className="text-purple-300 text-sm sm:text-base md:text-xl py-3 sm:py-4 purple-glow text-center md:text-left">
+        <p className="text-purple-300 text-sm sm:text-base md:text-xl py-3 sm:py-4 purple-glow text-center lg:text-left">
           {t("full_stack_developer")}
         </p>
 
-        {/* Descripción */}
-        <p className="text-gray-50 w-full max-w-[46ch] md:max-w-xl text-center md:text-left text-sm sm:text-base md:text-lg leading-relaxed mb-6 md:mb-0">
+        <p className="text-gray-50 w-full max-w-[46ch] lg:max-w-xl text-center lg:text-left text-sm sm:text-base md:text-lg leading-relaxed mb-6 lg:mb-0">
           {t("hero_section.subtitle")}
         </p>
 
-        {/* Métricas */}
-        <section className="flex gap-4 sm:gap-6 pb-4 sm:pb-6 pt-6 justify-center md:justify-start w-full">
+        <section className="flex gap-4 sm:gap-6 pb-4 sm:pb-6 pt-6 justify-center lg:justify-start w-full">
           <Metrics number={3} label={t("hero_section.years_experience")} />
           <Metrics number={10} label={t("hero_section.completed_projects")} />
         </section>
 
-        {/* Astronauta solo en móvil */}
-        <div className="md:hidden flex justify-center py-6 w-full">
+        <div className="lg:hidden flex justify-center py-6 w-full">
           <img
             src={astronaut}
             className="h-40 sm:h-52 w-auto floatRotateForward astronaut-glow glow"
@@ -102,8 +95,7 @@ export default function HeroSection({ ref }) {
           </a>
         </div>
 
-        {/* Iconos sociales */}
-        <div className="flex gap-5 sm:gap-6 justify-center md:justify-start w-full">
+        <div className="flex gap-5 sm:gap-6 justify-center lg:justify-start w-full">
           <a 
             href={cvLink} 
             download
@@ -135,13 +127,18 @@ export default function HeroSection({ ref }) {
         </div>
       </article>
 
-      {/* RIGHT ASTRONAUT (tablet y desktop) */}
-      <article className="relative z-10 flex-1 hidden md:flex justify-center items-center">
-        <img
-          src={astronaut}
-          className="h-48 lg:h-64 w-auto floatRotateForward astronaut-glow glow"
-          alt="Astronaut"
-        />
+      <article className="relative z-10 flex-1 hidden lg:flex justify-center items-center">
+        <div className="relative">
+          {/* Cards orbitando con sol incluido */}
+          <OrbitingCards />
+          
+          {/* Astronauta - Oculto en desktop/tablet, visible en mobile */}
+          <img
+            src={astronaut}
+            className="h-48 lg:h-64 w-auto floatRotateForward astronaut-glow glow relative z-10 md:hidden"
+            alt="Astronaut"
+          />
+        </div>
       </article>
     </section>
   );

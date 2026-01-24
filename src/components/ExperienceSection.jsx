@@ -210,64 +210,134 @@ export default function ExperienceSection() {
   const { t, i18n } = useTranslation();
   const experienceData =  i18n.language == "es" ? experienceDataES : experienceDataEN;
   
- return (
-    <section id="experience" className="py-14 px-4 text-white soft-background">
-      <div className="max-w-6xl mx-auto">
+  return (
+    <section id="experience" className="py-14 px-4 text-white relative overflow-hidden">
+      {/* Fondo con transición suave - empieza y termina con #0c0b0b */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0c0b0b] via-purple-950/15 to-[#0c0b0b] pointer-events-none" />
+      
+      {/* Estrellas sutiles en el fondo */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(25)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute bg-white rounded-full"
+            style={{
+              width: `${Math.random() * 2 + 0.5}px`,
+              height: `${Math.random() * 2 + 0.5}px`,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              opacity: Math.random() * 0.3 + 0.1,
+              animation: `twinkle ${Math.random() * 3 + 2}s infinite`,
+              animationDelay: `${Math.random() * 3}s`
+            }}
+          />
+        ))}
+      </div>
+      
+      <div className="max-w-6xl mx-auto relative z-10">
         <div className="flex items-end justify-between gap-4 mb-10">
           <h2 className="text-3xl font-bold tracking-tight">{t("experience")}</h2>
-
         </div>
 
         <div className="relative">
-          {/* Línea central (solo desktop) */}
-          <div className="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 h-full w-px bg-white/10" />
+          {/* Línea temporal espacial (desktop) */}
+          <div className="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 h-full w-px bg-gradient-to-b from-purple-900/15 via-purple-900/10 to-transparent" />
+          
+          {/* Estrellitas de conexión espacial */}
+          <div className="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 h-full">
+            {[...Array(experienceData.length)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute -translate-x-1/2"
+                style={{ top: `${(i / (experienceData.length - 1)) * 100}%` }}
+              >
+                {/* Estrellita con 4 puntas */}
+                <div className="relative w-4 h-4">
+                  <div className="absolute inset-0 bg-gradient-to-b from-purple-900 to-purple-950 rounded-full shadow-[0_0_0_4px_rgba(88,28,135,0.15)]" />
+                  {/* Punta superior */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 h-1 bg-purple-900 -translate-y-0.5" />
+                  {/* Punta inferior */}
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 h-1 bg-purple-900 translate-y-0.5" />
+                  {/* Punta izquierda */}
+                  <div className="absolute top-1/2 left-0 w-1 h-0.5 bg-purple-900 -translate-y-0.5 -translate-x-0.5" />
+                  {/* Punta derecha */}
+                  <div className="absolute top-1/2 right-0 w-1 h-0.5 bg-purple-900 -translate-y-0.5 translate-x-0.5" />
+                  {/* Brillo pulsante */}
+                  <div className="absolute inset-0 bg-purple-900 animate-ping opacity-15" />
+                </div>
+              </div>
+            ))}
+          </div>
 
           <div className="space-y-8">
             {experienceData.map((item, index) => {
               const isLeft = index % 2 === 0;
 
               return (
-                <div key={index} className="relative">
-                  {/* Punto en la línea central (desktop) */}
-                  <div className="hidden md:block absolute left-1/2 top-6 -translate-x-1/2">
-                    <span className="block w-3.5 h-3.5 rounded-full bg-gradient-to-b from-indigo-500 via-purple-600 to-purple-800 shadow-[0_0_0_6px_rgba(168,85,247,0.12)]" />
-                  </div>
+                <div key={index} className="relative group">
+                  {/* Conector espacial a la línea (desktop) */}
+                  <div className="hidden md:block absolute left-1/2 top-6 -translate-x-1/2 w-12 h-px bg-gradient-to-r from-transparent via-purple-900/15 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
 
-                  {/* Layout: 2 columnas desktop / 1 columna mobile */}
                   <div className="md:grid md:grid-cols-2 gap-6 md:gap-10 items-start hidden">
                     {/* Columna izquierda */}
                     <div className={isLeft ? "md:pr-10" : "md:pr-10 md:opacity-0 md:pointer-events-none"}>
-                      {isLeft && <ExperienceCard item={item} align="right" />}
+                      {isLeft && (
+                        <div className="relative">
+                          <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-900/8 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                          <ExperienceCard item={item} align="right" />
+                        </div>
+                      )}
                     </div>
 
                     {/* Columna derecha */}
                     <div className={!isLeft ? "md:pl-10" : "md:pl-10 md:opacity-0 md:pointer-events-none"}>
-                      {!isLeft && <ExperienceCard item={item} align="left" />}
+                      {!isLeft && (
+                        <div className="relative">
+                          <div className="absolute -inset-0.5 bg-gradient-to-l from-purple-900/8 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                          <ExperienceCard item={item} align="left" />
+                        </div>
+                      )}
                     </div>
                   </div>
 
-                  {/* Versión mobile: card única con punto a la izquierda */}
+                  {/* Versión mobile con estrellita espacial lateral */}
                   <div className="md:hidden mt-4">
-                    <div className="relative pl-0">
-                      {/* <span className="absolute left-0 top-4 w-2.5 h-2.5 rounded-full bg-purple-500 shadow-[0_0_0_6px_rgba(168,85,247,0.12)]" /> */}
-                      <ExperienceCard item={item} align="left" />
+                    <div className="relative pl-8">
+                      <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-purple-900/15 via-purple-900/10 to-transparent" />
+                      <div className="absolute left-0 top-6 -translate-x-1/2">
+                        {/* Estrellita pequeña para mobile */}
+                        <div className="relative w-3 h-3">
+                          <div className="absolute inset-0 bg-gradient-to-b from-purple-900 to-purple-950 rounded-full shadow-[0_0_0_3px_rgba(88,28,135,0.15)]" />
+                          {/* 4 puntas pequeñas */}
+                          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 h-0.5 bg-purple-900 -translate-y-0.5" />
+                          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 h-0.5 bg-purple-900 translate-y-0.5" />
+                          <div className="absolute top-1/2 left-0 w-0.5 h-0.5 bg-purple-900 -translate-y-0.5 -translate-x-0.5" />
+                          <div className="absolute top-1/2 right-0 w-0.5 h-0.5 bg-purple-900 -translate-y-0.5 translate-x-0.5" />
+                          <div className="absolute inset-0 bg-purple-900 animate-ping opacity-15" />
+                        </div>
+                      </div>
+                      <div className="relative">
+                        <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-900/8 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <ExperienceCard item={item} align="left" />
+                      </div>
                     </div>
                   </div>
                 </div>
               );
             })}
           </div>
-
-          {/* Línea lateral (solo mobile) */}
-          <div className="md:hidden absolute left-0 top-0 h-full w-px bg-white/10" />
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes twinkle {
+          0%, 100% { opacity: 0.1; transform: scale(1); }
+          50% { opacity: 0.4; transform: scale(1.2); }
+        }
+      `}</style>
     </section>
   );
 }
-
-
-
 
 
 
