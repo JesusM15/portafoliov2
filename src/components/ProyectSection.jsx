@@ -9,13 +9,98 @@ import './../App.css'
 import HeroCard from "./Card/HeroCard.jsx";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
+// Componente optimizado para imágenes con lazy loading
+const LazyImage = ({ src, alt, className, style, onLoad }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const [imageSrc, setImageSrc] = useState(null);
+  const imgRef = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (isInView && src) {
+      if (typeof src === 'function') {
+        src().then(module => setImageSrc(module.default));
+      } else {
+        setImageSrc(src);
+      }
+    }
+  }, [isInView, src]);
+
+  const handleLoad = () => {
+    setIsLoaded(true);
+    if (onLoad) onLoad();
+  };
+
+  return (
+    <div ref={imgRef} className={className} style={style}>
+      {isInView && imageSrc && (
+        <img
+          src={imageSrc}
+          alt={alt}
+          loading="lazy"
+          onLoad={handleLoad}
+          style={{
+            opacity: isLoaded ? 1 : 0,
+            transition: 'opacity 0.5s ease-in-out',
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover'
+          }}
+        />
+      )}
+      {!isLoaded && (
+        <div className="w-full h-full bg-purple-500/10 animate-pulse" />
+      )}
+    </div>
+  );
+};
+
 function ProyectSection({ onSelectedProject }) {
     const { i18n, t } = useTranslation();
     const projects = i18n.language === "es" ? projectsES : projectsEN;
     const [selectedCategory, setSelectedCategory] = useState("web");
     const [currentIndex, setCurrentIndex] = useState(0);
     const [carouselIndex, setCarouselIndex] = useState(0);
+    const [isVisible, setIsVisible] = useState(false);
     const carouselRef = useRef(null);
+    const sectionRef = useRef(null);
+
+    // Intersection Observer para optimizar carga
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
 
     const handleNext = () => {
         setCurrentIndex(prev => 
@@ -73,8 +158,24 @@ function ProyectSection({ onSelectedProject }) {
         );
     };
 
+    // Loading state mientras no es visible
+    if (!isVisible) {
+        return (
+            <section ref={sectionRef} className="flex flex-col px-4 sm:px-6 lg:px-8 w-full py-12 sm:py-16 lg:py-20 degradade relative" id="projects">
+                <div className="min-h-[400px] flex items-center justify-center">
+                    <div className="relative">
+                        <div className="w-16 h-16 border-2 border-purple-500/20 border-t-purple-500 rounded-full animate-spin"></div>
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="w-8 h-8 bg-purple-500/30 rounded-full animate-pulse"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        );
+    }
+
     return (
-        <section className="flex flex-col px-4 sm:px-6 lg:px-8 w-full py-12 sm:py-16 lg:py-20 degradade relative" id="projects">
+        <section ref={sectionRef} className="flex flex-col px-4 sm:px-6 lg:px-8 w-full py-12 sm:py-16 lg:py-20 degradade relative" id="projects">
             <div className="text-center mb-8 sm:mb-10 lg:mb-12">
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3">
                     {t('projects') || 'Proyectos'}

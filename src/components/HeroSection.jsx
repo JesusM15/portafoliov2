@@ -1,10 +1,8 @@
 // HeroSection.jsx
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaArrowRight, FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoMdDownload } from "react-icons/io";
 import "./HeroSection.css";
-import nebulosa from "./../assets/nebulosa.png";
-import astronaut from "./../assets/astronaut.png";
 import { useTranslation } from "react-i18next";
 import cv from "./../assets/cv_jesus_2025.pdf";
 import encv from "./../assets/english_cv_2025.pdf";
@@ -12,8 +10,79 @@ import Metrics from "./Metrics";
 import OrbitingCards from "./OrbitingCards";
 import SunSphere from "./SunSphere";
 
+// Importación normal de nebulosa (sin optimizar)
+import nebulosa from "./../assets/nebulosa.png";
+
+// Importación lazy de astronauta para optimizar
+const astronaut = import("./../assets/astronaut.png");
+
+// Componente optimizado para imágenes con lazy loading y transiciones suaves
+const LazyImage = ({ src, alt, className, style, onLoad }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const [imageSrc, setImageSrc] = useState(null);
+  const imgRef = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (isInView && src) {
+      if (typeof src === 'function') {
+        src().then(module => setImageSrc(module.default));
+      } else {
+        setImageSrc(src);
+      }
+    }
+  }, [isInView, src]);
+
+  const handleLoad = () => {
+    setIsLoaded(true);
+    if (onLoad) onLoad();
+  };
+
+  return (
+    <div ref={imgRef} className={className} style={style}>
+      {isInView && imageSrc && (
+        <img
+          src={imageSrc}
+          alt={alt}
+          loading="lazy"
+          onLoad={handleLoad}
+          style={{
+            opacity: isLoaded ? 1 : 0,
+            transition: 'opacity 0.5s ease-in-out',
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover'
+          }}
+        />
+      )}
+      {!isLoaded && (
+        <div className="w-full h-full bg-purple-500/10 animate-pulse" />
+      )}
+    </div>
+  );
+};
+
 export default function HeroSection({ ref }) {
   const { t, i18n } = useTranslation();
+  const [astronautLoaded, setAstronautLoaded] = useState(false);
   
   const cvLink = i18n.language === "es" ? cv : encv;
 
@@ -36,7 +105,7 @@ export default function HeroSection({ ref }) {
       />
 
       <div className="absolute w-full h-full overflow-hidden pointer-events-none z-0">
-        {[...Array(30)].map((_, i) => (
+        {[...Array(24)].map((_, i) => (
           <div
             key={i}
             className="particle"
@@ -72,14 +141,14 @@ export default function HeroSection({ ref }) {
         </section>
 
         <div className="lg:hidden flex justify-center py-6 w-full">
-          <img
+          <LazyImage
             src={astronaut}
-            className="h-40 sm:h-52 w-auto floatRotateForward astronaut-glow glow"
             alt="Astronaut"
+            className="h-40 sm:h-52 w-auto floatRotateForward astronaut-glow glow"
+            onLoad={() => setAstronautLoaded(true)}
           />
         </div>
 
-        {/* Botones de acción */}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pb-4 sm:pb-6 w-full sm:w-auto">
           <a href="#contact_me" className="w-full sm:w-auto">
             <button className="w-full sm:w-auto justify-center sm:justify-between py-2.5 sm:py-2 px-4 rounded-lg bg-gradient-to-br from-indigo-500 via-purple-500 to-purple-700 flex items-center gap-3 hover:brightness-90 transition-all">
@@ -129,14 +198,13 @@ export default function HeroSection({ ref }) {
 
       <article className="relative z-10 flex-1 hidden lg:flex justify-center items-center">
         <div className="relative">
-          {/* Cards orbitando con sol incluido */}
           <OrbitingCards />
           
-          {/* Astronauta - Oculto en desktop/tablet, visible en mobile */}
-          <img
+          <LazyImage
             src={astronaut}
-            className="h-48 lg:h-64 w-auto floatRotateForward astronaut-glow glow relative z-10 md:hidden"
             alt="Astronaut"
+            className="h-48 lg:h-64 w-auto floatRotateForward astronaut-glow glow relative z-10 md:hidden"
+            onLoad={() => setAstronautLoaded(true)}
           />
         </div>
       </article>

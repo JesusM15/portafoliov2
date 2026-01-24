@@ -1,24 +1,35 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { Suspense, lazy } from "react";
 import Header from "./components/Header";
-import HeroSection from "./components/HeroSection";
-import ProyectSection from "./components/ProyectSection";
-import ExperienceSection from "./components/ExperienceSection";
-import AboutMeSection from "./components/AboutMeSection";
 import './index.css'
-import { useTranslation } from "react-i18next";
-import ContactSection from "./components/ContactSection";
+
+// Lazy loading de componentes para mejor rendimiento
+const HeroSection = lazy(() => import("./components/HeroSection"));
+const ProyectSection = lazy(() => import("./components/ProyectSection"));
+const ExperienceSection = lazy(() => import("./components/ExperienceSection"));
+const ContactSection = lazy(() => import("./components/ContactSection"));
+
+// Componente de loading optimizado
+const SectionLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-[#0c0a0c]">
+    <div className="relative">
+      <div className="w-16 h-16 border-2 border-purple-500/20 border-t-purple-500 rounded-full animate-spin"></div>
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="w-8 h-8 bg-purple-500/30 rounded-full animate-pulse"></div>
+      </div>
+    </div>
+  </div>
+);
 
 function App() {
-  const heroRef = useRef(null);
-  const projectRef = useRef(null);
-  const experienceRef = useRef(null);
-  const aboutRef = useRef(null);
+  const heroRef = React.useRef(null);
+  const projectRef = React.useRef(null);
+  const experienceRef = React.useRef(null);
+  const aboutRef = React.useRef(null);
 
-  const [ selectedProject, setSelectedProject ] = useState(null);
+  const [selectedProject, setSelectedProject] = React.useState(null);
+  const [selected, setSelected] = React.useState("Inicio");
 
-  const [selected, setSelected] = useState("Inicio");
-
-  useEffect(() => {
+  React.useEffect(() => {
     const options = {
       root: null,
       rootMargin: "0px",
@@ -51,7 +62,7 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (selectedProject) {
       projectRef.current?.scrollIntoView({ behavior: "smooth" });
       document.body.style.overflow = "hidden";
@@ -66,27 +77,41 @@ function App() {
 
   return (
     <>
-      <div className=" text-white overflow-x-hidden relative overflow-y-auto background">
+      <div className="text-white overflow-x-hidden relative overflow-y-auto background">
         <Header selected={selected} setSelected={setSelected} refs={{ heroRef, projectRef, experienceRef, aboutRef }} />
 
+        {/* HeroSection - carga inmediata (first paint) */}
         <div ref={heroRef}>
-          <HeroSection />
-        </div>
-        <div ref={projectRef}>
-          <ProyectSection onSelectedProject={(project) => {
-            setSelectedProject(project);
-          }} />
-        </div>
-        <div ref={experienceRef}>
-          <ExperienceSection />
-        </div>
-        <div ref={aboutRef}>
-          <ContactSection />
+          <Suspense fallback={<SectionLoader />}>
+            <HeroSection />
+          </Suspense>
         </div>
 
+        {/* Lazy loading para el resto de secciones */}
+        <div ref={projectRef}>
+          <Suspense fallback={<SectionLoader />}>
+            <ProyectSection onSelectedProject={(project) => {
+              setSelectedProject(project);
+            }} />
+          </Suspense>
+        </div>
+
+        <div ref={experienceRef}>
+          <Suspense fallback={<SectionLoader />}>
+            <ExperienceSection />
+          </Suspense>
+        </div>
+
+        <div ref={aboutRef}>
+          <Suspense fallback={<SectionLoader />}>
+            <ContactSection />
+          </Suspense>
+        </div>
+
+        {/* Modal optimizado */}
         {selectedProject && (
           <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center">
-            <div className="bg-black  rounded-lg p-6 max-w-lg w-full relative shadow-lg">
+            <div className="bg-black rounded-lg p-6 max-w-lg w-full relative shadow-lg">
               <button
                 onClick={() => setSelectedProject(null)}
                 className="absolute top-3 right-3 text-white duration-150 hover:text-red-400 transition-colors text-3xl cursor-pointer"
@@ -102,6 +127,7 @@ function App() {
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
+                    loading="lazy"
                   ></iframe>
                 </div>
               )}
@@ -110,11 +136,8 @@ function App() {
             </div>
           </div>
         )}
-
       </div>
     </>
-
-    
   );
 }
 
