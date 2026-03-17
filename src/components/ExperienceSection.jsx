@@ -329,7 +329,7 @@ export default function ExperienceSection() {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes twinkle {
           0%, 100% { opacity: 0.1; transform: scale(1); }
           50% { opacity: 0.4; transform: scale(1.2); }

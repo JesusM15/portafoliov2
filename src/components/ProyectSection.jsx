@@ -1,7 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 import Card from "./Card/Card";
-import projectsES from "./../utils/projects.jsx";
-import projectsEN from "./../utils/projectsen.jsx";
+import allProjects from "./../utils/projects.jsx";
 import { useTranslation } from "react-i18next";
 import MobileMockup from "./MobileMockup/MobileMockup";
 import WatchMockup from "./WatchMockup/WatchMockup";
@@ -74,8 +73,28 @@ const LazyImage = ({ src, alt, className, style, onLoad }) => {
 };
 
 function ProyectSection({ onSelectedProject }) {
-    const { i18n, t } = useTranslation();
-    const projects = i18n.language === "es" ? projectsES : projectsEN;
+    const { t } = useTranslation();
+
+    // Resuelve los campos de texto de un proyecto usando las claves i18n
+    const resolveProject = useMemo(() => (project) => ({
+        ...project,
+        name: project.nameKey ? t(project.nameKey) : project.name,
+        description: project.descriptionKey ? t(project.descriptionKey) : project.description,
+        functionalities: project.highlightsKey
+            ? t(project.highlightsKey, { returnObjects: true })
+            : (project.functionalities || []),
+        highlights: project.highlightsKey
+            ? t(project.highlightsKey, { returnObjects: true })
+            : (project.highlights || []),
+    }), [t]);
+
+    const projects = useMemo(() => {
+        const resolved = {};
+        for (const cat of Object.keys(allProjects)) {
+            resolved[cat] = allProjects[cat].map(resolveProject);
+        }
+        return resolved;
+    }, [resolveProject]);
     const [selectedCategory, setSelectedCategory] = useState("web");
     const [currentIndex, setCurrentIndex] = useState(0);
     const [carouselIndex, setCarouselIndex] = useState(0);

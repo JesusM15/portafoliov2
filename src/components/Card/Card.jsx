@@ -15,6 +15,8 @@ export default function Card({ project, onSelectProject }) {
           className="h-48 sm:h-56 md:h-64 w-full object-cover"
           alt={`${project.name} proyecto por JesusM15`}
           loading='lazy'
+          width="400"
+          height="256"
         />
         
         {/* Gradient overlay */}
