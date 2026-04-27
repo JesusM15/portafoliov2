@@ -6,8 +6,8 @@
     "about_me": "Acerca de mi",
     "hero_section": {
         "greet": "Hola, soy ",
-        "subtitle": "Fullstack con experiencia en plataformas empresariales, sistemas en tiempo real y aplicaciones web, móviles y wearables que escalan."
-        ,"years_experience": "Años de experiencia",
+        "subtitle": "Fullstack con experiencia en plataformas empresariales, sistemas en tiempo real y aplicaciones web, móviles y wearables que escalan.",
+        "years_experience": "Años de experiencia",
         "completed_projects": "Proyectos completados"
     },
     "features": "Funcionalidades",
@@ -45,5 +45,60 @@
         "p1": "Soy Jesús Manuel Pérez Guerra. Comencé a programar a los 15 años y desde entonces decidí hacer de la programación mi camino profesional. Actualmente me desempeño como Desarrollador Fullstack, creando soluciones web, móviles y para dispositivos wearables. Además, imparto tutorías en mi universidad en materias como Programación Estructurada, POO, Algoritmos y Estructuras de Datos, en C y principalmente en Java para las últimas 2 materias.",
         "p2": "Fuera de la programación disfruto de la música, los videojuegos y estoy aprendiendo a tocar el piano actualmente.",
         "p3": "Mi objetivo como desarrollador es seguir creciendo profesionalmente, reforzando mis habilidades y aprendiendo nuevas cuando sea necesario. Disfruto de poder resolver problemas y retos mediante la programación."
+    },
+    "p": {
+        "1": {
+            "name": "Tesla Landing",
+            "description": "Clon de la landing page de Tesla"
+        },
+        "2": {
+            "name": "Ruf - App de Asistencia",
+            "description": "App para asistencia en restaurantes, plazas, gimnasios y eventos.",
+            "functionalities": ["Geolocalización", "Tareas asíncronas", "Escaneo de QR para atención", "Sistema multiempresarial", "Gestión de pagos", "Modo recoger"]
+        },
+        "3": {
+            "name": "Geologistic ERP",
+            "description": "App de sistema ERP (Planificación de Recursos Empresariales) para transporte",
+            "functionalities": ["Escaneo de QR", "Sistema multiempresarial", "Sistema de permisos", "Roles (admin, cliente, proveedores, etc)"]
+        },
+        "4": {
+            "name": "Geologistic ERP",
+            "description": "Sistema ERP (Planificación de Recursos Empresariales) con sistema multiroles, registros, dashboards con gráficas, sistemas de exportación a excel, envío de correos, etc."
+        },
+        "5": {
+            "name": "RUF - Asistencia",
+            "description": "Plataforma web para gestión de negocios en la App de Asistencia RUF."
+        },
+        "6": {
+            "name": "Soundle",
+            "description": "Juego estilo Wordle musical. Se escucha un fragmento de alguna canción y el usuario debe adivinar cuál es. Cuenta con animaciones, sugerencias y feedback visual."
+        },
+        "8": {
+            "name": "Ruf - App para Asistencia al Cliente (iOS)",
+            "description": "App para meseros, cocineros o host de algún evento o restaurante, permite notificar a los empleados las solicitudes de los clientes por medio de alertas y se puede visualizar estas notificaciones así como leerlas.",
+            "functionalities": ["Cálculo del tiempo de demora en leer notificación para análisis.", "Sistema multiempresarial", "Notificaciones push", "Login con clave generada única de un solo uso (OTP)"]
+        },
+        "10": {
+            "name": "Flappy Bird",
+            "description": "Flappy Bird hecho en el lenguaje de programación Assembly, con un diseño minimalista realizado en Raylib con C."
+        },
+        "11": {
+            "name": "Baker's Game",
+            "description": "Juego de cartas Baker's Game parecido al Free Cell."
+        },
+        "12": {
+            "name": "EJChat",
+            "description": "EJChat es una aplicación de chat y publicaciones en tiempo real que permite a los usuarios enviar y recibir mensajes instantáneamente. Utiliza WebSockets para la comunicación en tiempo real."
+        },
+        "13": {
+            "name": "Ruf - App para Asistencia al Cliente (Android)",
+            "description": "App para meseros, cocineros o host de algún evento o restaurante, permite notificar a los empleados las solicitudes de los clientes por medio de alertas y se puede visualizar estas notificaciones así como leerlas.",
+            "functionalities": ["Cálculo del tiempo de demora en leer notificación para análisis.", "Sistema multiempresarial", "Notificaciones push", "Login con clave generada única de un solo uso (OTP)"]
+        },
+        "m4": {
+            "name": "Gruas GZ - App de Gestión de inventarios",
+            "description": "CRM móvil para control de inventarios vehiculares en una empresa de grúas. Backend Node/Express + MySQL desplegado en servidor Linux con PM2.",
+            "functionalities": ["Inicio de sesión con JWT", "Buscador multicriterio", "Despliegue con PM2 y logs", "Actualizaciones OTA"]
+        }
     }
 }

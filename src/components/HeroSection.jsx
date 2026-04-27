@@ -1,5 +1,5 @@
 // HeroSection.jsx
-import React, { useState, useEffect, useRef } from "react";
+import React, { useMemo } from "react";
 import { FaArrowRight, FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoMdDownload } from "react-icons/io";
 import "./HeroSection.css";
@@ -8,83 +8,25 @@ import cv from "./../assets/cv_jesus_2025.pdf";
 import encv from "./../assets/english_cv_2025.pdf";
 import Metrics from "./Metrics";
 import OrbitingCards from "./OrbitingCards";
-import SunSphere from "./SunSphere";
-
-// Importación normal de nebulosa (sin optimizar)
 import nebulosa from "./../assets/nebulosa.png";
-
-// Importación lazy de astronauta para optimizar
-const astronaut = import("./../assets/astronaut.png");
-
-// Componente optimizado para imágenes con lazy loading y transiciones suaves
-const LazyImage = ({ src, alt, className, style, onLoad }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(false);
-  const [imageSrc, setImageSrc] = useState(null);
-  const imgRef = useRef();
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (isInView && src) {
-      if (typeof src === 'function') {
-        src().then(module => setImageSrc(module.default));
-      } else {
-        setImageSrc(src);
-      }
-    }
-  }, [isInView, src]);
-
-  const handleLoad = () => {
-    setIsLoaded(true);
-    if (onLoad) onLoad();
-  };
-
-  return (
-    <div ref={imgRef} className={className} style={style}>
-      {isInView && imageSrc && (
-        <img
-          src={imageSrc}
-          alt={alt}
-          loading="lazy"
-          onLoad={handleLoad}
-          style={{
-            opacity: isLoaded ? 1 : 0,
-            transition: 'opacity 0.5s ease-in-out',
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover'
-          }}
-        />
-      )}
-      {!isLoaded && (
-        <div className="w-full h-full bg-purple-500/10 animate-pulse" />
-      )}
-    </div>
-  );
-};
+import astronaut from "./../assets/astronaut.png";
 
 export default function HeroSection({ ref }) {
   const { t, i18n } = useTranslation();
-  const [astronautLoaded, setAstronautLoaded] = useState(false);
   
   const cvLink = i18n.language === "es" ? cv : encv;
+
+  // Memoize particle styles — Math.random() corre solo al montar, no en cada render
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 24 }, (_, i) => ({
+        id: i,
+        left: `${Math.random() * 100}%`,
+        delay: `${Math.random() * 10}s`,
+        duration: `${3 + Math.random() * 5}s`,
+      })),
+    []
+  );
 
   return (
     <section
@@ -104,15 +46,16 @@ export default function HeroSection({ ref }) {
         }}
       />
 
+      {/* Partículas — memoizadas, sin recálculo en re-renders */}
       <div className="absolute w-full h-full overflow-hidden pointer-events-none z-0">
-        {[...Array(24)].map((_, i) => (
+        {particles.map((p) => (
           <div
-            key={i}
+            key={p.id}
             className="particle"
             style={{
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 10}s`,
-              animationDuration: `${3 + Math.random() * 5}s`,
+              left: p.left,
+              animationDelay: p.delay,
+              animationDuration: p.duration,
             }}
           />
         ))}
@@ -140,12 +83,14 @@ export default function HeroSection({ ref }) {
           <Metrics number={10} label={t("hero_section.completed_projects")} />
         </section>
 
+        {/* Astronauta solo en móvil/tablet */}
         <div className="lg:hidden flex justify-center py-6 w-full">
-          <LazyImage
+          <img
             src={astronaut}
-            alt="Astronaut"
             className="h-40 sm:h-52 w-auto floatRotateForward astronaut-glow glow"
-            onLoad={() => setAstronautLoaded(true)}
+            alt="Astronaut"
+            width="160"
+            height="180"
           />
         </div>
 
@@ -196,17 +141,9 @@ export default function HeroSection({ ref }) {
         </div>
       </article>
 
+      {/* OrbitingCards (tablet y desktop) */}
       <article className="relative z-10 flex-1 hidden lg:flex justify-center items-center">
-        <div className="relative">
-          <OrbitingCards />
-          
-          <LazyImage
-            src={astronaut}
-            alt="Astronaut"
-            className="h-48 lg:h-64 w-auto floatRotateForward astronaut-glow glow relative z-10 md:hidden"
-            onLoad={() => setAstronautLoaded(true)}
-          />
-        </div>
+        <OrbitingCards />
       </article>
     </section>
   );

@@ -1,9 +1,9 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useRef, useState, useEffect } from "react";
 import Header from "./components/Header";
+import HeroSection from "./components/HeroSection";
 import './index.css'
 
-// Lazy loading de componentes para mejor rendimiento
-const HeroSection = lazy(() => import("./components/HeroSection"));
+// Lazy load solo las secciones below-the-fold
 const ProyectSection = lazy(() => import("./components/ProyectSection"));
 const ExperienceSection = lazy(() => import("./components/ExperienceSection"));
 const ContactSection = lazy(() => import("./components/ContactSection"));
@@ -21,15 +21,15 @@ const SectionLoader = () => (
 );
 
 function App() {
-  const heroRef = React.useRef(null);
-  const projectRef = React.useRef(null);
-  const experienceRef = React.useRef(null);
-  const aboutRef = React.useRef(null);
+  const heroRef = useRef(null);
+  const projectRef = useRef(null);
+  const experienceRef = useRef(null);
+  const aboutRef = useRef(null);
 
-  const [selectedProject, setSelectedProject] = React.useState(null);
-  const [selected, setSelected] = React.useState("Inicio");
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [selected, setSelected] = useState("Inicio");
 
-  React.useEffect(() => {
+  useEffect(() => {
     const options = {
       root: null,
       rootMargin: "0px",
@@ -62,7 +62,7 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (selectedProject) {
       projectRef.current?.scrollIntoView({ behavior: "smooth" });
       document.body.style.overflow = "hidden";
@@ -80,11 +80,9 @@ function App() {
       <div className="text-white overflow-x-hidden relative overflow-y-auto background">
         <Header selected={selected} setSelected={setSelected} refs={{ heroRef, projectRef, experienceRef, aboutRef }} />
 
-        {/* HeroSection - carga inmediata (first paint) */}
+        {/* HeroSection — carga inmediata, NO lazy (above the fold) */}
         <div ref={heroRef}>
-          <Suspense fallback={<SectionLoader />}>
-            <HeroSection />
-          </Suspense>
+          <HeroSection />
         </div>
 
         {/* Lazy loading para el resto de secciones */}

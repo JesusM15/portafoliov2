@@ -255,14 +255,7 @@
   }
 }
 
-@keyframes rayRotate {
-  from {
-    transform: translate(-50%, -50%) rotate(calc(var(--ray-index) * 45deg));
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(calc(var(--ray-index) * 45deg + 360deg));
-  }
-}
+
 
 /* Card Gradient Background - Glassmorphism Effect */
 .card-gradient {

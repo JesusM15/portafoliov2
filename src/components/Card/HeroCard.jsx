@@ -63,6 +63,8 @@ export default function HeroCard({
             alt={project.name}
             className="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
+            width="800"
+            height="460"
           />
 
           <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/20 to-black/20" />
