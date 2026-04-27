@@ -79,7 +79,7 @@ export default function HeroSection({ ref }) {
         </p>
 
         <section className="flex gap-4 sm:gap-6 pb-4 sm:pb-6 pt-6 justify-center lg:justify-start w-full">
-          <Metrics number={3} label={t("hero_section.years_experience")} />
+          <Metrics number={6} label={t("hero_section.years_experience")} />
           <Metrics number={10} label={t("hero_section.completed_projects")} />
         </section>
 

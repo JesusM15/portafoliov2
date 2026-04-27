@@ -18,6 +18,7 @@ const TYPE_META = {
   mobile: { label: "Mobile", icon: <FaMobileAlt /> },
   watch: { label: "Wearable", icon: <IoWatch /> },
   desktop: { label: "Desktop", icon: <FaDesktop /> },
+  iot: { label: "IoT / Hardware", icon: <span>🔌</span> },
 };
 
 function getBullets(project) {
@@ -58,14 +59,20 @@ export default function HeroCard({
         ].join(" ")}
       >
         <div className="relative lg:col-span-7 min-h-[320px] sm:min-h-[380px] lg:min-h-[460px]">
-          <img
-            src={project.image}
-            alt={project.name}
-            className="absolute inset-0 w-full h-full object-cover"
-            loading="lazy"
-            width="800"
-            height="460"
-          />
+          {project.image ? (
+            <img
+              src={project.image}
+              alt={project.name}
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              width="800"
+              height="460"
+            />
+          ) : (
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-950/60 via-indigo-950/40 to-teal-950/30 flex items-center justify-center">
+              <span className="text-6xl opacity-40">🔌</span>
+            </div>
+          )}
 
           <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/20 to-black/20" />
           <div className="absolute inset-0 ring-1 ring-white/10" />

@@ -5,100 +5,88 @@ import ExperienceCard from "./Card/ExperienceCard";
 
 const experienceDataES = [
   {
-    title: "Desarrollador Full Stack",
+    title: "Full Stack Developer & IoT",
     company: "Geologistic",
-    date: "2023 - Actualidad",
+    date: "Octubre 2023 - Actualidad",
     description:
-      "Desarrollé y mantuve plataformas empresariales tipo SaaS, integrando aplicaciones web, móviles y wearables bajo una arquitectura centralizada.",
+      "Desarrollo de plataformas empresariales SaaS (Web, Móvil, Wearable). Diseñé e implementé arquitecturas críticas de seguridad y herramientas de diagnóstico que protegen el modelo de negocio.",
     highlights: [
-      "Desarrollo de API en Node.js con tareas asíncronas: envío de correos (SMTP), recordatorios automáticos, procesamiento de archivos Excel y manejo multimedia.",
-      "Sistema de impersonación (superadmin) para soporte: acceso controlado a cuentas sin solicitar contraseñas.",
-      "Control de sesiones por dispositivo (SaaS): una cuenta activa por dispositivo para evitar uso compartido no rentable, con modo soporte tipo “mirror” sin expulsar usuarios."
+      "Protección de ingresos: Diseñé un sistema de control de sesiones concurrentes (1 web + 1 móvil por cuenta), previniendo el uso compartido de cuentas y asegurando el modelo de monetización del ERP.",
+      "Herramientas de diagnóstico: Implementé un sistema de 'Impersonación' segura para soporte y QA: replica errores en cuentas reales sin comprometer credenciales.",
+      "Entorno de staging: Diseñé y desplegué un ambiente de QA completo con clonación de bases de datos y APIs propietarias para replicar bugs de producción.",
+      "Tiempo real: Implementé WebSockets para datos en tiempo real y sistemas de notificaciones push personalizadas (Expo + Firebase).",
+      "Encabecé el rediseño UI/UX de las plataformas principales mejorando retención de usuarios con dashboards dinámicos.",
+      "Integré servicios AWS para gestión masiva de documentos y APIs de terceros para pipelines de datos.",
     ]
   },
-{
-  title: "Desarrollador Full Stack (RUF)",
-  company: "Geologistic / RUF",
-  date: "2023 - Actualidad",
-  description:
-    "Desarrollo de funcionalidades clave para RUF, una app de asistencia y operación diaria para negocios y eventos.",
-  highlights: [
-    "Sistema de notificaciones push multi-dispositivo (Expo + Firebase) para apps móviles y Apple Watch bajo un solo API.",
-      "App standalone en Swift para Apple Watch con login, sockets en tiempo real y notificaciones push.",
-    "Sistema de reservaciones para restaurantes y eventos con gestión de estados (confirmar, cancelar).",
-    "Flujo de pickup estilo Walmart: pedidos listos para recoger sin interacción directa.",
-    "Integración de códigos QR para atención, validación de pedidos y acciones rápidas.",
-    "Recordatorios diarios y notificaciones automáticas para usuarios y negocios.",
-    "Geolocalización y mapas para detectar negocios cercanos y mejorar la experiencia del usuario."
-  ]
-},
+  {
+    title: "Desarrollador Full Stack (RUF)",
+    company: "Geologistic / RUF",
+    date: "2023 - Actualidad",
+    description:
+      "Desarrollo del marketplace y plataforma de gestión RUF (Web, Móvil y Wearable), un sistema de pedidos y asistencia para restaurantes, malls, gimnasios y eventos.",
+    highlights: [
+      "App standalone en Swift para Apple Watch con login OTP, sockets en tiempo real y notificaciones push (APNs).",
+      "Flujo de pickup estilo Walmart: pedidos listos para recoger sin interacción directa del personal.",
+      "Integración de códigos QR para atención, validación de pedidos y acciones rápidas.",
+      "Sistema de notificaciones push multi-dispositivo (Expo + Firebase) bajo un solo API.",
+      "Geolocalización y mapas para detectar negocios cercanos.",
+      "Paneles analíticos para toma de decisiones empresariales en tiempo real."
+    ]
+  },
   {
     title: "Desarrollador Full Stack Por Proyecto",
     company: "Gruas GZ",
     date: "2025",
     description:
-      "Fui contactado para desarrollar un sistema de control de inventario y gestión vehicular (CRM) implementado como aplicación móvil.",
+      "Desarrollo completo de un CRM móvil para control de inventarios vehiculares: diseño, backend y despliegue en servidor Linux.",
     highlights: [
-      "Desarrollo completo del proyecto: diseño, interfaz, backend y despliegue.",
-      "Implementación de API en servidor Linux con acceso FTP.",
+      "Backend Node/Express + MySQL desplegado en servidor Linux con PM2.",
+      "Autenticación JWT, búsqueda multicriterio y actualizaciones OTA.",
       "Configuración y administración de base de datos MySQL en entorno productivo."
     ]
   },
   {
-    title: "Desarrollador Frontend",
+    title: "Desarrollador Frontend (Becario)",
     company: "CastSoft",
-    date: "2023",
+    date: "Julio 2023 - Octubre 2023",
     description:
-      "Trabajé en un entorno .NET utilizando Razor, CSS, JavaScript y Bootstrap.",
+      "Desarrollo de interfaces empresariales bajo metodologías ágiles (Scrum) en entorno .NET.",
     highlights: [
-      "Desarrollo de interfaces interactivas y experiencias visuales.",
-      "Animaciones con JavaScript y CSS puro.",
-      "Creación de landing pages, dashboards y frontends empresariales con gráficos interactivos."
+      "Interfaces con Razor, CSS, JavaScript y Bootstrap.",
+      "Landing pages, dashboards y frontends con gráficos interactivos."
     ]
   },
   {
-    title: "Desarrollador Freelance",
-    company: "Freelance",
+    title: "Tutor de Programación",
+    company: "Freelance: Universidad Autónoma de Baja California",
     date: "2022 - Actualidad",
     description:
-      "Desarrollé soluciones a medida para distintos clientes.",
-    highlights: [
-      "Proyectos con HTML, CSS, TailwindCSS y Django.",
-      "Sistema de suscripciones con PayPal.",
-      "Integración de Google Maps API para mejorar la experiencia del usuario."
-    ]
-  },
-  {
-    title: "Tutor de Programación en C y Java",
-    company: "Universidad Autónoma de Baja California",
-    date: "Actualidad",
-    description:
-      "Apoyo académico a estudiantes universitarios en materias base de programación.",
+      "Asesoría especializada a estudiantes de ingeniería en estructuras de datos, algoritmos y POO.",
     highlights: [
       "Tutorías en Programación Estructurada en C.",
       "Programación Orientada a Objetos y Estructuras de Datos en Java.",
-      "Calificación de prácticas y acompañamiento en el proceso de aprendizaje."
+      "Calificación de prácticas y mentoría en el proceso de aprendizaje."
     ]
   },
   {
-    title: "Proyectos Personales",
-    company: "Autodidacta / Personal",
-    date: "2019 - Actualidad",
+    title: "Proyectos Personales / Open Source",
+    company: "Autodidacta",
+    date: "2020 - Actualidad",
     description:
-      "Desarrollo constante de proyectos experimentales y productos personales.",
+      "Proyectos experimentales que abarcan fullstack, hardware/IoT y librerías open-source.",
     highlights: [
-      "Aplicaciones con Django, ReactJS, React Native y Astro.",
-      "APIs seguras con JWT (email/username).",
-      "Uso de Docker y Redis para WebSockets en Django y Node.js.",
-      "Demo de red social con publicaciones, likes y chat en tiempo real.",
-      "Pagos con Stripe y PayPal, y desarrollo de juego online multijugador con sockets.",
-      "Experimentación con visión artificial en Python y proyectos con Arduino."
+      "Robot de navegación autónoma: algoritmos PID desde cero, telemetría LoRa +200m y monitoreo 3D con Three.js.",
+      "Librerías open-source: django-pulse y pulse-rn, motores de sincronización offline-first con LWW.",
+      "PWA académica con arquitectura offline-first (IndexedDB + LWW), orquestada con Docker.",
+      "Red social EJChat con WebSockets, carga progresiva y Redis para escalabilidad.",
+      "Experimentación con ESP32, Arduino, I2C, MQTT y comunicación Serial."
     ]
   },
   {
     title: "Ingeniería en Computación",
     company: "Universidad Autónoma de Baja California",
-    date: "2022 - Actualidad",
+    date: "2022 - Graduación prevista: Nov 2026",
     description: ""
   }
 ];
@@ -106,75 +94,64 @@ const experienceDataES = [
 
 const experienceDataEN = [
   {
-    title: "Full Stack Developer",
+    title: "Full Stack Developer & IoT",
     company: "Geologistic",
-    date: "2023 - Now",
+    date: "October 2023 - Present",
     description:
-      "Developed and maintained enterprise SaaS platforms integrating web, mobile, and wearable applications under a centralized architecture.",
+      "Development of SaaS enterprise platforms (Web, Mobile, Wearable). Designed and implemented critical security architectures and diagnostic tools that protect the business model.",
     highlights: [
-      "Node.js API with asynchronous jobs: email delivery (SMTP), automated reminders, Excel file processing, and media handling.",
-      "Support impersonation system (superadmin) for controlled account access without requesting passwords.",
-      "Device-bound session control (SaaS): one active account per device, including a support “mirror mode” without kicking end users."
+      "🔒 Revenue Protection: Designed a concurrent session control system (1 web + 1 mobile per account), preventing account sharing and securing the ERP monetization model.",
+      "🛠️ Diagnostic Tools: Implemented a secure 'Impersonation' system for support & QA: replicates real account errors without compromising credentials.",
+      "📦 Staging Environment: Designed and deployed a complete QA environment with database cloning and proprietary APIs to replicate production bugs in isolation.",
+      "⚡ Real-time: Implemented WebSockets for live data and custom push notification systems (Expo + Firebase).",
+      "📊 Led UI/UX redesign of main platforms, improving user retention with dynamic dashboards.",
+      "☁️ Integrated AWS services for bulk document management and third-party APIs for data pipelines.",
     ]
   },
-{
-  title: "Full Stack Developer (RUF)",
-  company: "Geologistic / RUF",
-  date: "2024 - 2025",
-  description:
-    "Development of core features for RUF, an assistance and daily-operations app for businesses and events.",
-  highlights: [
-     "Multi-device push notification system (Expo + Firebase) for mobile apps and Apple Watch through a single API.",
-      "Standalone Swift Apple Watch app with login, real-time sockets, and push notifications.",
-    "Reservation system for restaurants and events with status management (confirm, cancel).",
-    "Walmart-style pickup flow: orders ready for pickup without direct staff interaction.",
-    "QR code integration for service access, order validation, and quick actions.",
-    "Daily reminders and automated notification system for users and businesses.",
-    "Geolocation and maps integration to detect nearby businesses and enhance user experience."
-  ]
-},
+  {
+    title: "Full Stack Developer (RUF)",
+    company: "Geologistic / RUF",
+    date: "2023 - Present",
+    description:
+      "Development of the RUF marketplace and management platform (Web, Mobile & Wearable), an order and assistance system for restaurants, malls, gyms, and events.",
+    highlights: [
+      "🏗️ Standalone Swift Apple Watch app with OTP login, real-time sockets, and APNs push notifications.",
+      "Walmart-style pickup flow: orders ready for pickup without direct staff interaction.",
+      "QR code integration for service access, order validation, and quick actions.",
+      "Multi-device push notification system (Expo + Firebase) via a single API.",
+      "Geolocation and maps to detect nearby businesses.",
+      "Real-time analytics dashboards for business decision-making."
+    ]
+  },
   {
     title: "Full Stack Developer on Project Basis",
     company: "Gruas GZ",
     date: "2025",
     description:
-      "Hired to develop an inventory and vehicle management CRM implemented as a mobile application.",
+      "End-to-end development of a mobile CRM for vehicle inventory control: UI design, backend, and Linux server deployment.",
     highlights: [
-      "End-to-end development: UI design, backend, and deployment.",
-      "API deployed on a Linux server with FTP access.",
-      "MySQL database configuration and production setup."
+      "Node/Express + MySQL backend deployed on Linux server with PM2.",
+      "JWT authentication, multi-criteria search, and OTA updates.",
+      "MySQL database configuration and production environment setup."
     ]
   },
   {
-    title: "Frontend Developer",
+    title: "Frontend Developer (Intern)",
     company: "CastSoft",
-    date: "2023",
+    date: "July 2023 - October 2023",
     description:
-      "Worked in a .NET environment using Razor, CSS, JavaScript, and Bootstrap.",
+      "Development of enterprise UIs using Agile/Scrum in a .NET environment.",
     highlights: [
-      "Developed interactive user interfaces and visual experiences.",
-      "Implemented animations with pure JavaScript and CSS.",
-      "Built landing pages, dashboards, and enterprise frontends with interactive charts."
+      "Interfaces built with Razor, CSS, JavaScript, and Bootstrap.",
+      "Landing pages, dashboards, and enterprise frontends with interactive charts."
     ]
   },
   {
-    title: "Freelance Developer",
-    company: "Freelance",
-    date: "2022 - Now",
+    title: "Programming Tutor",
+    company: "Freelance: Universidad Autónoma de Baja California",
+    date: "2022 - Present",
     description:
-      "Delivered custom solutions for multiple clients.",
-    highlights: [
-      "Projects using HTML, CSS, TailwindCSS, and Django.",
-      "Subscription systems integrated with PayPal.",
-      "Google Maps API integration to enhance user experience."
-    ]
-  },
-  {
-    title: "Programming Tutor in C and Java",
-    company: "Universidad Autónoma de Baja California",
-    date: "Now",
-    description:
-      "Academic support for university students in core programming subjects.",
+      "Specialized tutoring for engineering students in data structures, algorithms, and OOP.",
     highlights: [
       "Tutoring in Structured Programming in C.",
       "Object-Oriented Programming and Data Structures in Java.",
@@ -182,24 +159,23 @@ const experienceDataEN = [
     ]
   },
   {
-    title: "Personal Projects",
-    company: "Self-taught / Personal",
-    date: "2019 - Now",
+    title: "Personal Projects / Open Source",
+    company: "Self-taught",
+    date: "2020 - Present",
     description:
-      "Continuous development of experimental and personal products.",
+      "Experimental projects spanning fullstack, hardware/IoT, and open-source libraries.",
     highlights: [
-      "Applications built with Django, ReactJS, React Native, and Astro.",
-      "Secure APIs with JWT (email/username authentication).",
-      "Docker and Redis usage for WebSockets in Django and Node.js.",
-      "Social network demo with posts, likes, and real-time chat.",
-      "Stripe and PayPal payments, and a multiplayer online socket-based game.",
-      "Experiments with computer vision in Python and Arduino projects."
+      "Autonomous navigation robot: PID algorithms from scratch, LoRa telemetry +200m, 3D monitoring with Three.js.",
+      "Open-source: django-pulse and pulse-rn, offline-first sync engines with LWW conflict resolution.",
+      "Academic PWA with offline-first architecture (IndexedDB + LWW), orchestrated with Docker.",
+      "EJChat social network with WebSockets, progressive loading, and Redis for scalability.",
+      "Experimentation with ESP32, Arduino, I2C, MQTT, and Serial communication."
     ]
   },
   {
     title: "Computer Engineering",
     company: "Universidad Autónoma de Baja California",
-    date: "2022 - Now",
+    date: "2022 - Expected graduation: Nov 2026",
     description: ""
   }
 ];
@@ -208,13 +184,13 @@ const experienceDataEN = [
 
 export default function ExperienceSection() {
   const { t, i18n } = useTranslation();
-  const experienceData =  i18n.language == "es" ? experienceDataES : experienceDataEN;
-  
+  const experienceData = i18n.language == "es" ? experienceDataES : experienceDataEN;
+
   return (
     <section id="experience" className="py-14 px-4 text-white relative overflow-hidden">
       {/* Fondo con transición suave - empieza y termina con #0c0b0b */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0c0b0b] via-purple-950/15 to-[#0c0b0b] pointer-events-none" />
-      
+
       {/* Estrellas sutiles en el fondo */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(25)].map((_, i) => (
@@ -233,7 +209,7 @@ export default function ExperienceSection() {
           />
         ))}
       </div>
-      
+
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="flex items-end justify-between gap-4 mb-10">
           <h2 className="text-3xl font-bold tracking-tight">{t("experience")}</h2>
@@ -242,7 +218,7 @@ export default function ExperienceSection() {
         <div className="relative">
           {/* Línea temporal espacial (desktop) */}
           <div className="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 h-full w-px bg-gradient-to-b from-purple-900/15 via-purple-900/10 to-transparent" />
-          
+
           {/* Estrellitas de conexión espacial */}
           <div className="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 h-full">
             {[...Array(experienceData.length)].map((_, i) => (

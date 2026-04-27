@@ -217,7 +217,7 @@ function ProyectSection({ onSelectedProject }) {
                 ))}
             </div>
 
-            {((selectedCategory === "web") || (selectedCategory === "desktop")) && (
+            {((selectedCategory === "web") || (selectedCategory === "desktop") || (selectedCategory === "iot")) && (
                 <div className="w-full max-w-7xl mx-auto flex flex-col gap-10 sm:gap-12 lg:gap-16">
                     {heroProjects.length > 0 && (
                         <div className="flex flex-col gap-8 sm:gap-10 lg:gap-12 w-full">

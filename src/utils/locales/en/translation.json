@@ -4,9 +4,10 @@
     "experience": "Experience",
     "about_me": "About me",
     "watch_demo": "Watch demo",
+    "achievements": "Achievements",
     "hero_section": {
         "greet": "Hi, I'm ",
-        "subtitle": "Fullstack developer with experience in enterprise platforms, real-time systems, and scalable web, mobile, and wearable applications.",
+        "subtitle": "Software Engineer & IoT Integrator. I build scalable fullstack systems and bridge hardware with software: from session control architectures to autonomous robots with LoRa telemetry.",
         "years_experience": "Years of experience",
         "completed_projects": "Completed projects"
     },
@@ -35,16 +36,16 @@
     "contact_me": "Contact me",
     "my_projects": "My Projects",
     "work_together": "Let's work together",
-    "full_stack_developer": "Fullstack Developer",
+    "full_stack_developer": "Software Engineer & IoT Integrator",
     "with_experience_in": "with experience in",
     "and": "and",
     "wearable_devices": "wearable devices",
     "download_resume": "Download resume",
     "now": "Now",
     "about_me_section": {
-        "p1": "I'm Jesús Manuel Pérez Guerra. I started programming at the age of 15, and since then I decided to make programming my professional path. I currently work as a Fullstack Developer, creating web, mobile, and wearable device solutions. I also tutor at my university in subjects such as Structured Programming, OOP, Algorithms and Data Structures, mainly in Java for the last two subjects and in C.",
-        "p2": "Outside of programming, I enjoy music, video games, and I'm currently learning to play the piano.",
-        "p3": "My goal as a developer is to continue growing professionally, strengthening my skills and learning new ones when necessary. I enjoy solving problems and challenges through programming."
+        "p1": "I'm Jesús Manuel Pérez Guerra, Software Engineer & IoT Integrator. My technical journey started in 2020, and since 2023 I've been building production-grade systems at Geologistic: from concurrent session control architectures that protect revenue, to secure impersonation tools for QA and support teams.",
+        "p2": "I specialize in fullstack development (React, Node.js, Django) while also bridging the physical world, designing systems with ESP32, Raspberry Pi, LoRa telemetry, MQTT, and custom PID algorithms. I enjoy solving critical business problems through scalable, offline-first architectures.",
+        "p3": "My goal is to keep growing across the full stack of engineering: software, hardware, and everything in between. I also tutor university students in Data Structures, Algorithms, and OOP (Java/C)."
     },
     "p": {
         "1": {
@@ -53,21 +54,21 @@
         },
         "2": {
             "name": "Ruf - Assistance App",
-            "description": "App for assistance in restaurants, malls, gyms, and events.",
-            "functionalities": ["Geolocation", "Asynchronous tasks", "QR scanning for service", "Multi-company system", "Payment management", "Pickup mode"]
+            "description": "Multiplataform app (mobile & wearable) for service assistance in restaurants, malls, gyms, and events. Features a Walmart-style pickup flow, QR integration, and multi-device push notifications via a single API.",
+            "functionalities": ["Geolocation", "Asynchronous tasks", "QR scanning for service", "Multi-company system", "Payment management", "Walmart-style pickup mode", "Real-time WebSockets"]
         },
         "3": {
-            "name": "Geologistic ERP",
-            "description": "Mobile ERP system for transportation companies.",
-            "functionalities": ["QR scanning", "Multi-company system", "Permission system", "Roles (admin, client, suppliers, etc.)"]
+            "name": "Geologistic ERP (Mobile)",
+            "description": "Mobile ERP for logistics companies with concurrent session control, QR workflows, and multi-role permission systems. Integrates real-time data via WebSockets.",
+            "functionalities": ["QR scanning", "Multi-company system", "Concurrent session control per device", "Roles (admin, client, suppliers)"]
         },
         "4": {
             "name": "Geologistic ERP",
-            "description": "ERP system (Enterprise Resource Planning) with multi-role support, records, dashboards with charts, Excel export, email sending, etc."
+            "description": "Enterprise-grade ERP (Web & Mobile) with security architecture for concurrent device sessions: limiting to 1 web + 1 mobile active session to protect the SaaS monetization model. Integrates AWS for document management and third-party APIs for data pipelines."
         },
         "5": {
-            "name": "RUF - Assistance",
-            "description": "Web platform for business management within the RUF Assistance App."
+            "name": "RUF - Assistance Platform",
+            "description": "Web management platform for RUF. Features real-time analytics dashboards, business operations management, and QR-driven pickup logistics. Built with WebSockets for live data synchronization."
         },
         "6": {
             "name": "Soundle",
@@ -75,12 +76,12 @@
         },
         "8": {
             "name": "Ruf - Customer Assistance App (iOS)",
-            "description": "App for waiters, cooks, or event/restaurant hosts. Notifies staff of customer requests via alerts and allows reading those notifications.",
-            "functionalities": ["Calculates notification read delay for analytics.", "Multi-business system.", "Push notifications.", "Login with a unique one-time generated key (OTP)."]
+            "description": "Standalone Swift app for Apple Watch that notifies staff of customer requests in real time. Features OTP login, real-time sockets, push notifications via APNs, and read-delay analytics for business intelligence.",
+            "functionalities": ["Calculates notification read delay for analytics.", "Multi-business system.", "Push notifications via APNs.", "Login with OTP (one-time generated key)."]
         },
         "10": {
             "name": "Flappy Bird",
-            "description": "Flappy Bird game created using Assembly language, with a minimalist design using Raylib and C."
+            "description": "Flappy Bird game built in x86 Assembly language, with minimalist graphics via Raylib and C."
         },
         "11": {
             "name": "Baker's Game",
@@ -88,17 +89,32 @@
         },
         "12": {
             "name": "EJChat",
-            "description": "EJChat is a real-time chat and posting application that allows users to send and receive messages instantly. It uses WebSockets for real-time communication."
+            "description": "Real-time social network with multimedia support and WebSocket communication. Implements progressive loading strategies and Docker/Redis infrastructure for scalable real-time messaging."
         },
         "13": {
-            "name": "Ruf - Customer Assistance App (Android)",
-            "description": "App for waiters, cooks, or event/restaurant hosts. Notifies staff of customer requests via alerts and allows viewing and reading those notifications.",
-            "functionalities": ["Calculates notification read delay for analytics.", "Multi-business system.", "Push notifications.", "Login with a unique one-time generated key (OTP)."]
+            "name": "Ruf - Customer Assistance App (Android/WearOS)",
+            "description": "React Native wearable app for WearOS. Notifies staff of customer requests with real-time alerts, OTP login, push notifications, and read-delay tracking for analytics.",
+            "functionalities": ["Read delay analytics.", "Multi-business system.", "Push notifications.", "OTP login."]
         },
         "m4": {
             "name": "Gruas GZ - Inventory Management App",
             "description": "Mobile CRM for vehicle inventory control in a towing company. Backend built with Node/Express + MySQL, deployed on a Linux server using PM2.",
             "functionalities": ["JWT-based login", "Multi-criteria search", "Deployment with PM2 and logs", "OTA updates"]
+        },
+        "peerreview": {
+            "name": "Peer-Review PWA",
+            "description": "Academic peer-review platform designed with an offline-first architecture using IndexedDB and LWW (Last-Write-Wins) conflict resolution. Containerized with Docker, managing hybrid MongoDB/MariaDB databases and a REST API.",
+            "functionalities": ["Offline-first with IndexedDB + LWW sync", "Containerized with Docker", "Hybrid MongoDB/MariaDB architecture", "Scrum Master & Architect role"]
+        },
+        "robot": {
+            "name": "Autonomous Navigation Robot",
+            "description": "Robot featuring speed, position, and orientation control via GPS waypoints. Integrates long-range LoRa telemetry with a monitoring dashboard that visualizes real-time 3D movement and current route on a map.",
+            "functionalities": ["Waypoint-based navigation with high-precision GPS", "LoRa telemetry: ESP32 emitter to receiver", "Real-time 3D dashboard (Three.js) via Serial", "Live route and location tracking on map (Leaflet)", "PID control algorithms developed from scratch"]
+        },
+        "djangopulse": {
+            "name": "django-pulse & pulse-rn",
+            "description": "Open-source library pair for automating offline-first data sync engines in Django and React Native. Reduces technical boilerplate for data synchronization in mobile apps, enabling faster development of LWW-based sync patterns.",
+            "functionalities": ["Automated sync engine scaffolding", "LWW conflict resolution", "React Native & Django integration", "Published open-source packages"]
         }
     }
 }

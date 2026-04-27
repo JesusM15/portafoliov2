@@ -6,6 +6,7 @@ import './index.css'
 // Lazy load solo las secciones below-the-fold
 const ProyectSection = lazy(() => import("./components/ProyectSection"));
 const ExperienceSection = lazy(() => import("./components/ExperienceSection"));
+const AchievementsSection = lazy(() => import("./components/AchievementsSection"));
 const ContactSection = lazy(() => import("./components/ContactSection"));
 
 // Componente de loading optimizado
@@ -24,6 +25,7 @@ function App() {
   const heroRef = useRef(null);
   const projectRef = useRef(null);
   const experienceRef = useRef(null);
+  const achievementsRef = useRef(null);
   const aboutRef = useRef(null);
 
   const [selectedProject, setSelectedProject] = useState(null);
@@ -57,6 +59,7 @@ function App() {
     if (heroRef.current) observer.observe(heroRef.current);
     if (projectRef.current) observer.observe(projectRef.current);
     if (experienceRef.current) observer.observe(experienceRef.current);
+    if (achievementsRef.current) observer.observe(achievementsRef.current);
     if (aboutRef.current) observer.observe(aboutRef.current);
 
     return () => observer.disconnect();
@@ -97,6 +100,12 @@ function App() {
         <div ref={experienceRef}>
           <Suspense fallback={<SectionLoader />}>
             <ExperienceSection />
+          </Suspense>
+        </div>
+
+        <div ref={achievementsRef}>
+          <Suspense fallback={<SectionLoader />}>
+            <AchievementsSection />
           </Suspense>
         </div>
 

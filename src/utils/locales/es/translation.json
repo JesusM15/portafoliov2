@@ -4,15 +4,17 @@
     "experience": "Experiencia",
     "watch_demo": "Ver demo",
     "about_me": "Acerca de mi",
+    "achievements": "Logros",
     "hero_section": {
         "greet": "Hola, soy ",
-        "subtitle": "Fullstack con experiencia en plataformas empresariales, sistemas en tiempo real y aplicaciones web, móviles y wearables que escalan.",
+        "subtitle": "Software Engineer & IoT Integrator. Diseño sistemas fullstack escalables y conecto hardware con software: desde arquitecturas de control de sesiones hasta robots autónomos con telemetría LoRa.",
         "years_experience": "Años de experiencia",
         "completed_projects": "Proyectos completados"
     },
     "features": "Funcionalidades",
     "outstanding": "Destacado",
     "production": "En Producción",
+    "more_projects": "Más proyectos",
     "contact_section": {
         "title": "Trabajemos Juntos",
         "subtitle": "Estoy abierto a nuevos proyectos, ideas o colaboraciones. Escríbeme y lo vemos.",
@@ -31,20 +33,19 @@
         "ready": "Listo"
     },
     "location": "Ubicación",
-    "more_projects": "Más proyectos",
     "contact_me": "Contactame",
     "my_projects": "Mis Proyectos",
     "work_together": "Trabajemos Juntos",
-    "full_stack_developer": "Desarrollador Fullstack",
+    "full_stack_developer": "Software Engineer & IoT Integrator",
     "with_experience_in": "con experiencia en",
     "and": "y",
     "wearable_devices": "dispositivos wearables",
     "download_resume": "Descargar CV",
     "now": "Actualidad",
     "about_me_section": {
-        "p1": "Soy Jesús Manuel Pérez Guerra. Comencé a programar a los 15 años y desde entonces decidí hacer de la programación mi camino profesional. Actualmente me desempeño como Desarrollador Fullstack, creando soluciones web, móviles y para dispositivos wearables. Además, imparto tutorías en mi universidad en materias como Programación Estructurada, POO, Algoritmos y Estructuras de Datos, en C y principalmente en Java para las últimas 2 materias.",
-        "p2": "Fuera de la programación disfruto de la música, los videojuegos y estoy aprendiendo a tocar el piano actualmente.",
-        "p3": "Mi objetivo como desarrollador es seguir creciendo profesionalmente, reforzando mis habilidades y aprendiendo nuevas cuando sea necesario. Disfruto de poder resolver problemas y retos mediante la programación."
+        "p1": "Soy Jesús Manuel Pérez Guerra, Software Engineer & IoT Integrator. Mi trayectoria técnica inicia en 2020, y desde 2023 construyo sistemas de producción en Geologistic: desde arquitecturas de control de sesiones concurrentes que protegen el modelo de ingresos, hasta herramientas de impersonación segura para equipos de QA y soporte.",
+        "p2": "Me especializo en desarrollo fullstack (React, Node.js, Django) pero también conecto el mundo físico, diseñando sistemas con ESP32, Raspberry Pi, telemetría LoRa, MQTT y algoritmos PID propios. Disfruto resolver problemas críticos de negocio mediante arquitecturas escalables y offline-first.",
+        "p3": "Mi objetivo es seguir creciendo en todo el stack de la ingeniería: software, hardware y todo lo que hay en medio. También imparto tutorías a universitarios en Estructuras de Datos, Algoritmos y POO (Java/C)."
     },
     "p": {
         "1": {
@@ -53,21 +54,21 @@
         },
         "2": {
             "name": "Ruf - App de Asistencia",
-            "description": "App para asistencia en restaurantes, plazas, gimnasios y eventos.",
-            "functionalities": ["Geolocalización", "Tareas asíncronas", "Escaneo de QR para atención", "Sistema multiempresarial", "Gestión de pagos", "Modo recoger"]
+            "description": "App multiplataforma (móvil y wearable) para asistencia en restaurantes, plazas, gimnasios y eventos. Incluye flujo de pickup estilo Walmart, integración QR y notificaciones push multi-dispositivo desde un único API.",
+            "functionalities": ["Geolocalización", "Tareas asíncronas", "Escaneo de QR para atención", "Sistema multiempresarial", "Gestión de pagos", "Modo pickup estilo Walmart", "WebSockets en tiempo real"]
         },
         "3": {
-            "name": "Geologistic ERP",
-            "description": "App de sistema ERP (Planificación de Recursos Empresariales) para transporte",
-            "functionalities": ["Escaneo de QR", "Sistema multiempresarial", "Sistema de permisos", "Roles (admin, cliente, proveedores, etc)"]
+            "name": "Geologistic ERP (Móvil)",
+            "description": "ERP móvil para empresas de logística con control de sesiones concurrentes, flujos QR y sistema de permisos multirol. Integra datos en tiempo real vía WebSockets.",
+            "functionalities": ["Escaneo de QR", "Sistema multiempresarial", "Control de sesiones concurrentes por dispositivo", "Roles (admin, cliente, proveedores)"]
         },
         "4": {
             "name": "Geologistic ERP",
-            "description": "Sistema ERP (Planificación de Recursos Empresariales) con sistema multiroles, registros, dashboards con gráficas, sistemas de exportación a excel, envío de correos, etc."
+            "description": "ERP empresarial (Web & Móvil) con arquitectura de seguridad para sesiones concurrentes: limitado a 1 web + 1 móvil activa para proteger el modelo de monetización SaaS. Integra AWS para gestión de documentos y APIs de terceros para pipelines de datos."
         },
         "5": {
-            "name": "RUF - Asistencia",
-            "description": "Plataforma web para gestión de negocios en la App de Asistencia RUF."
+            "name": "RUF - Plataforma de Asistencia",
+            "description": "Plataforma web de gestión para RUF. Incluye dashboards analíticos en tiempo real, gestión de operaciones de negocios y logística de pickup dirigida por QR. Construida con WebSockets para sincronización de datos en vivo."
         },
         "6": {
             "name": "Soundle",
@@ -75,12 +76,12 @@
         },
         "8": {
             "name": "Ruf - App para Asistencia al Cliente (iOS)",
-            "description": "App para meseros, cocineros o host de algún evento o restaurante, permite notificar a los empleados las solicitudes de los clientes por medio de alertas y se puede visualizar estas notificaciones así como leerlas.",
-            "functionalities": ["Cálculo del tiempo de demora en leer notificación para análisis.", "Sistema multiempresarial", "Notificaciones push", "Login con clave generada única de un solo uso (OTP)"]
+            "description": "App standalone en Swift para Apple Watch que notifica al personal de solicitudes de clientes en tiempo real. Incluye login OTP, sockets en tiempo real, notificaciones push vía APNs y analíticas de tiempo de lectura.",
+            "functionalities": ["Analítica de demora en lectura de notificaciones.", "Sistema multiempresarial.", "Notificaciones push vía APNs.", "Login con clave OTP de un solo uso."]
         },
         "10": {
             "name": "Flappy Bird",
-            "description": "Flappy Bird hecho en el lenguaje de programación Assembly, con un diseño minimalista realizado en Raylib con C."
+            "description": "Flappy Bird hecho en lenguaje Assembly x86, con gráficos minimalistas usando Raylib y C."
         },
         "11": {
             "name": "Baker's Game",
@@ -88,17 +89,32 @@
         },
         "12": {
             "name": "EJChat",
-            "description": "EJChat es una aplicación de chat y publicaciones en tiempo real que permite a los usuarios enviar y recibir mensajes instantáneamente. Utiliza WebSockets para la comunicación en tiempo real."
+            "description": "Red social en tiempo real con soporte multimedia y comunicación WebSocket. Implementa estrategias de carga progresiva e infraestructura Docker/Redis para mensajería escalable en tiempo real."
         },
         "13": {
-            "name": "Ruf - App para Asistencia al Cliente (Android)",
-            "description": "App para meseros, cocineros o host de algún evento o restaurante, permite notificar a los empleados las solicitudes de los clientes por medio de alertas y se puede visualizar estas notificaciones así como leerlas.",
-            "functionalities": ["Cálculo del tiempo de demora en leer notificación para análisis.", "Sistema multiempresarial", "Notificaciones push", "Login con clave generada única de un solo uso (OTP)"]
+            "name": "Ruf - App para Asistencia al Cliente (WearOS)",
+            "description": "App wearable en React Native para WearOS. Notifica al personal con alertas en tiempo real, login OTP, notificaciones push y seguimiento de tiempo de lectura para analíticas.",
+            "functionalities": ["Analítica de tiempo de lectura.", "Sistema multiempresarial.", "Notificaciones push.", "Login OTP."]
         },
         "m4": {
             "name": "Gruas GZ - App de Gestión de inventarios",
             "description": "CRM móvil para control de inventarios vehiculares en una empresa de grúas. Backend Node/Express + MySQL desplegado en servidor Linux con PM2.",
             "functionalities": ["Inicio de sesión con JWT", "Buscador multicriterio", "Despliegue con PM2 y logs", "Actualizaciones OTA"]
+        },
+        "peerreview": {
+            "name": "Peer-Review PWA",
+            "description": "Plataforma académica de revisión por pares con arquitectura offline-first usando IndexedDB y resolución de conflictos LWW (Last-Write-Wins). Orquestada con Docker, gestionando bases de datos híbridas MongoDB/MariaDB y una REST API.",
+            "functionalities": ["Offline-first con IndexedDB + sincronización LWW", "Contenedorizada con Docker", "Arquitectura híbrida MongoDB/MariaDB", "Rol de Scrum Master & Arquitecto"]
+        },
+        "robot": {
+            "name": "Robot de Navegación Autónoma",
+            "description": "Robot con control de velocidad, posición y orientación mediante waypoints por GPS. Integra telemetría LoRa de largo alcance con un dashboard de monitoreo que visualiza el movimiento en 3D y la ruta en un mapa dinámico.",
+            "functionalities": ["Navegación por waypoints con GPS de alta precisión", "Telemetría LoRa: ESP32 emisor a receptor", "Dashboard 3D en tiempo real (Three.js) vía Serial", "Seguimiento de ruta y ubicación actual en mapa (Leaflet)", "Algoritmos PID de control desarrollados desde cero"]
+        },
+        "djangopulse": {
+            "name": "django-pulse & pulse-rn",
+            "description": "Par de librerías open-source para automatizar motores de sincronización de datos offline-first en Django y React Native. Reduce el boilerplate técnico para sincronización de datos en apps móviles, facilitando patrones de sincronización basados en LWW.",
+            "functionalities": ["Scaffolding automático de motor de sincronización", "Resolución de conflictos LWW", "Integración React Native & Django", "Paquetes open-source publicados"]
         }
     }
 }

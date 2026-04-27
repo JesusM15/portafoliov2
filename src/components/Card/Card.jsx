@@ -10,14 +10,20 @@ export default function Card({ project, onSelectProject }) {
     >
       {/* Imagen con overlay de iconos */}
       <div className="relative group">
-        <img
-          src={project.image}
-          className="h-48 sm:h-56 md:h-64 w-full object-cover"
-          alt={`${project.name} proyecto por JesusM15`}
-          loading='lazy'
-          width="400"
-          height="256"
-        />
+        {project.image ? (
+          <img
+            src={project.image}
+            className="h-48 sm:h-56 md:h-64 w-full object-cover"
+            alt={`${project.name} proyecto por JesusM15`}
+            loading='lazy'
+            width="400"
+            height="256"
+          />
+        ) : (
+          <div className="h-48 sm:h-56 md:h-64 w-full bg-gradient-to-br from-purple-950/60 via-indigo-950/40 to-teal-950/30 flex items-center justify-center">
+            <span className="text-5xl opacity-30">🔌</span>
+          </div>
+        )}
         
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />

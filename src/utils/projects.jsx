@@ -16,14 +16,18 @@ import ejchat from './../assets/chat.png';
 import Gruasgz from './../assets/gruasgz_foto.jpg';
 
 import React from "react";
-import { TbBrandAstro, TbBrandReactNative, TbBrandRedux } from "react-icons/tb";
+import { TbBrandAstro, TbBrandReactNative, TbBrandRedux, TbBox } from "react-icons/tb";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { IoLogoJavascript } from "react-icons/io5";
-import { FaNodeJs } from "react-icons/fa6";
-import { FaReact, FaSpotify, FaJava, FaSwift } from "react-icons/fa";
-import { SiSocketdotio, SiExpo, SiGmail, SiSemanticui, SiRedux, SiAssemblyscript, SiRaylib, SiDjango, SiDocker } from "react-icons/si";
+import { FaNodeJs, FaNetworkWired } from "react-icons/fa6";
+import { FaReact, FaSpotify, FaJava, FaSwift, FaPython, FaDatabase } from "react-icons/fa";
+import { SiSocketdotio, SiExpo, SiGmail, SiSemanticui, SiRedux, SiAssemblyscript, SiRaylib, SiDjango, SiDocker, SiMongodb, SiMariadb } from "react-icons/si";
 import { MdNotificationsActive } from "react-icons/md";
 import { DiRedis, DiMysql } from "react-icons/di";
+import { GiProcessor } from "react-icons/gi";
+import { BsWifi } from "react-icons/bs";
+import { SiLeaflet } from "react-icons/si";
+import { MdGpsFixed } from "react-icons/md";
 
 // Tags son los mismos en ambos idiomas (nombres de tecnologías no se traducen)
 const TAGS = {
@@ -52,26 +56,22 @@ const TAGS = {
   assembly: { name: "Assembly (MASM)", color: "fuchsia", icon: <SiAssemblyscript /> },
   c: { name: "C", color: "cyan", icon: <h4>C</h4> },
   raylib: { name: "Raylib", color: "gray", icon: <SiRaylib /> },
+  python: { name: "Python", color: "yellow", icon: <FaPython /> },
+  mqtt: { name: "MQTT", color: "purple", icon: <FaNetworkWired /> },
+  esp32: { name: "ESP32", color: "teal", icon: <GiProcessor /> },
+  lora: { name: "LoRa", color: "indigo", icon: <BsWifi /> },
+  threejs: { name: "Three.js", color: "white", icon: <TbBox /> },
+  indexeddb: { name: "IndexedDB", color: "amber", icon: <FaDatabase /> },
+  mongodb: { name: "MongoDB", color: "green", icon: <SiMongodb /> },
+  mariadb: { name: "MariaDB", color: "sky", icon: <SiMariadb /> },
+  gps: { name: "GPS", color: "red", icon: <MdGpsFixed /> },
+  leaflet: { name: "Leaflet", color: "green", icon: <SiLeaflet /> },
 };
 
 // La estructura de proyectos — texto referenciado por clave i18n (p.ej. "p.6.description")
 // El componente ProyectSection llama t(project.nameKey) y t(project.descriptionKey) etc.
 export default {
   web: [
-    {
-      id: 6,
-      nameKey: "p.6.name",
-      link: "https://soundle-one.vercel.app/",
-      github: "https://github.com/JesusM15/Soundle.git",
-      image: soundleWeb,
-      hero: false,
-      featured: false,
-      production: true,
-      reverse: false,
-      video: 'v=ECqYrCinL2s',
-      descriptionKey: "p.6.description",
-      tags: [TAGS.react, TAGS.tailwind, TAGS.node, TAGS.spotify],
-    },
     {
       id: 4,
       nameKey: "p.4.name",
@@ -101,6 +101,20 @@ export default {
       tags: [TAGS.react, TAGS.semantic, TAGS.node, TAGS.socket, TAGS.reduxTb],
     },
     {
+      id: 6,
+      nameKey: "p.6.name",
+      link: "https://soundle-one.vercel.app/",
+      github: "https://github.com/JesusM15/Soundle.git",
+      image: soundleWeb,
+      hero: false,
+      featured: false,
+      production: true,
+      reverse: false,
+      video: 'v=ECqYrCinL2s',
+      descriptionKey: "p.6.description",
+      tags: [TAGS.react, TAGS.tailwind, TAGS.node, TAGS.spotify],
+    },
+    {
       id: 12,
       nameKey: "p.12.name",
       link: null,
@@ -109,6 +123,17 @@ export default {
       video: 'v=bE84aDT-ap8',
       descriptionKey: "p.12.description",
       tags: [TAGS.react, TAGS.tailwind, TAGS.django, TAGS.redis, TAGS.docker, TAGS.socket, TAGS.reduxTb],
+    },
+    {
+      id: 14,
+      nameKey: "p.peerreview.name",
+      link: null,
+      github: null,
+      image: null,
+      video: null,
+      descriptionKey: "p.peerreview.description",
+      highlightsKey: "p.peerreview.functionalities",
+      tags: [TAGS.django, TAGS.mongodb, TAGS.mariadb, TAGS.docker, TAGS.indexeddb, TAGS.react],
     },
     {
       id: 1,
@@ -190,6 +215,34 @@ export default {
       video: 'v=ud_3ZKjDL-4',
       descriptionKey: "p.10.description",
       tags: [TAGS.assembly, TAGS.c, TAGS.raylib],
+    },
+  ],
+  iot: [
+    {
+      id: 15,
+      nameKey: "p.robot.name",
+      link: null,
+      github: null,
+      image: null,
+      video: null,
+      hero: true,
+      featured: true,
+      production: false,
+      reverse: false,
+      descriptionKey: "p.robot.description",
+      highlightsKey: "p.robot.functionalities",
+      tags: [TAGS.esp32, TAGS.lora, TAGS.gps, TAGS.threejs, TAGS.leaflet, TAGS.python, TAGS.c],
+    },
+    {
+      id: 16,
+      nameKey: "p.djangopulse.name",
+      link: null,
+      github: "https://github.com/JesusM15",
+      image: null,
+      video: null,
+      descriptionKey: "p.djangopulse.description",
+      highlightsKey: "p.djangopulse.functionalities",
+      tags: [TAGS.django, TAGS.reactNative, TAGS.python, TAGS.expo],
     },
   ],
 };
