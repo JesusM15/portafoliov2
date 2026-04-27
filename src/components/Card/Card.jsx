@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaMicrochip } from 'react-icons/fa';
 import { FaGithub, FaExternalLinkAlt, FaYoutube } from "react-icons/fa";
 import colorClasses from './../../gradients';
 
@@ -21,7 +22,7 @@ export default function Card({ project, onSelectProject }) {
           />
         ) : (
           <div className="h-48 sm:h-56 md:h-64 w-full bg-gradient-to-br from-purple-950/60 via-indigo-950/40 to-teal-950/30 flex items-center justify-center">
-            <span className="text-5xl opacity-30">🔌</span>
+            <span className="text-5xl opacity-30"><FaMicrochip /></span>
           </div>
         )}
         

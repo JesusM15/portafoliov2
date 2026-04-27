@@ -8,6 +8,7 @@ import {
   FaRocket,
   FaDesktop,
   FaMobileAlt,
+  FaMicrochip,
 } from "react-icons/fa";
 import { IoWatch } from "react-icons/io5";
 import colorClasses from "./../../gradients";
@@ -18,7 +19,7 @@ const TYPE_META = {
   mobile: { label: "Mobile", icon: <FaMobileAlt /> },
   watch: { label: "Wearable", icon: <IoWatch /> },
   desktop: { label: "Desktop", icon: <FaDesktop /> },
-  iot: { label: "IoT / Hardware", icon: <span>🔌</span> },
+  iot: { label: "IoT / Hardware", icon: <FaMicrochip /> },
 };
 
 function getBullets(project) {
@@ -70,7 +71,7 @@ export default function HeroCard({
             />
           ) : (
             <div className="absolute inset-0 bg-gradient-to-br from-purple-950/60 via-indigo-950/40 to-teal-950/30 flex items-center justify-center">
-              <span className="text-6xl opacity-40">🔌</span>
+              <span className="text-6xl opacity-40"><FaMicrochip /></span>
             </div>
           )}
 

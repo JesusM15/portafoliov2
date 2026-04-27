@@ -9,7 +9,8 @@
         "greet": "Hola, soy ",
         "subtitle": "Software Engineer & IoT Integrator. Diseño sistemas fullstack escalables y conecto hardware con software: desde arquitecturas de control de sesiones hasta robots autónomos con telemetría LoRa.",
         "years_experience": "Años de experiencia",
-        "completed_projects": "Proyectos completados"
+        "completed_projects": "Proyectos completados",
+        "oss_libraries": "Librerías Open Source"
     },
     "features": "Funcionalidades",
     "outstanding": "Destacado",

@@ -14,6 +14,8 @@ import FlappyBird from './../assets/flappybird.png';
 import bakersGame from './../assets/bakersgame.png';
 import ejchat from './../assets/chat.png';
 import Gruasgz from './../assets/gruasgz_foto.jpg';
+import PeerReviewImg from './../assets/dashboard_peer_review.png';
+import RobotImg from './../assets/robot.png';
 
 import React from "react";
 import { TbBrandAstro, TbBrandReactNative, TbBrandRedux, TbBox } from "react-icons/tb";
@@ -128,8 +130,8 @@ export default {
       id: 14,
       nameKey: "p.peerreview.name",
       link: null,
-      github: null,
-      image: null,
+      github: "https://github.com/JesusM15/peer-review",
+      image: PeerReviewImg,
       video: null,
       descriptionKey: "p.peerreview.description",
       highlightsKey: "p.peerreview.functionalities",
@@ -223,7 +225,7 @@ export default {
       nameKey: "p.robot.name",
       link: null,
       github: null,
-      image: null,
+      image: RobotImg,
       video: null,
       hero: true,
       featured: true,
@@ -233,16 +235,16 @@ export default {
       highlightsKey: "p.robot.functionalities",
       tags: [TAGS.esp32, TAGS.lora, TAGS.gps, TAGS.threejs, TAGS.leaflet, TAGS.python, TAGS.c],
     },
-    {
-      id: 16,
-      nameKey: "p.djangopulse.name",
-      link: null,
-      github: "https://github.com/JesusM15",
-      image: null,
-      video: null,
-      descriptionKey: "p.djangopulse.description",
-      highlightsKey: "p.djangopulse.functionalities",
-      tags: [TAGS.django, TAGS.reactNative, TAGS.python, TAGS.expo],
-    },
+    // {
+    //   id: 16,
+    //   nameKey: "p.djangopulse.name",
+    //   link: null,
+    //   github: "https://github.com/JesusM15",
+    //   image: null,
+    //   video: null,
+    //   descriptionKey: "p.djangopulse.description",
+    //   highlightsKey: "p.djangopulse.functionalities",
+    //   tags: [TAGS.django, TAGS.reactNative, TAGS.python, TAGS.expo],
+    // },
   ],
 };

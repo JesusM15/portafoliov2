@@ -9,7 +9,8 @@
         "greet": "Hi, I'm ",
         "subtitle": "Software Engineer & IoT Integrator. I build scalable fullstack systems and bridge hardware with software: from session control architectures to autonomous robots with LoRa telemetry.",
         "years_experience": "Years of experience",
-        "completed_projects": "Completed projects"
+        "completed_projects": "Completed projects",
+        "oss_libraries": "Open Source Libraries"
     },
     "features": "Features",
     "outstanding": "Outstanding",

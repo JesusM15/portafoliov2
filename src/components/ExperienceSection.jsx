@@ -100,12 +100,12 @@ const experienceDataEN = [
     description:
       "Development of SaaS enterprise platforms (Web, Mobile, Wearable). Designed and implemented critical security architectures and diagnostic tools that protect the business model.",
     highlights: [
-      "🔒 Revenue Protection: Designed a concurrent session control system (1 web + 1 mobile per account), preventing account sharing and securing the ERP monetization model.",
-      "🛠️ Diagnostic Tools: Implemented a secure 'Impersonation' system for support & QA: replicates real account errors without compromising credentials.",
-      "📦 Staging Environment: Designed and deployed a complete QA environment with database cloning and proprietary APIs to replicate production bugs in isolation.",
-      "⚡ Real-time: Implemented WebSockets for live data and custom push notification systems (Expo + Firebase).",
-      "📊 Led UI/UX redesign of main platforms, improving user retention with dynamic dashboards.",
-      "☁️ Integrated AWS services for bulk document management and third-party APIs for data pipelines.",
+      "Revenue Protection: Designed a concurrent session control system (1 web + 1 mobile per account), preventing account sharing and securing the ERP monetization model.",
+      "Diagnostic Tools: Implemented a secure 'Impersonation' system for support & QA: replicates real account errors without compromising credentials.",
+      "Staging Environment: Designed and deployed a complete QA environment with database cloning and proprietary APIs to replicate production bugs in isolation.",
+      "Real-time: Implemented WebSockets for live data and custom push notification systems (Expo + Firebase).",
+      "Led UI/UX redesign of main platforms, improving user retention with dynamic dashboards.",
+      "Integrated AWS services for bulk document management and third-party APIs for data pipelines.",
     ]
   },
   {
@@ -115,7 +115,7 @@ const experienceDataEN = [
     description:
       "Development of the RUF marketplace and management platform (Web, Mobile & Wearable), an order and assistance system for restaurants, malls, gyms, and events.",
     highlights: [
-      "🏗️ Standalone Swift Apple Watch app with OTP login, real-time sockets, and APNs push notifications.",
+      "Standalone Swift Apple Watch app with OTP login, real-time sockets, and APNs push notifications.",
       "Walmart-style pickup flow: orders ready for pickup without direct staff interaction.",
       "QR code integration for service access, order validation, and quick actions.",
       "Multi-device push notification system (Expo + Firebase) via a single API.",
